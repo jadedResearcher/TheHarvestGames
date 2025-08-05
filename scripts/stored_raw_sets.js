@@ -143,3 +143,89 @@ const all_hallows_eve = {
   },
   "costStatValue": 0
 }
+
+const lomat = {
+  "title": "The Land Of Mists And Trails",
+  "description": "A Card version of the land of mists and trails, Changed by our Harvest's Grace.",
+  "cards": [
+    {
+      "title": "Victory",
+      "text": "[PLAYER] has finally delivered all the gulls! Hooray!",
+      "costStatName": "Energy",
+      "singleUse": true,
+      "autoPlay": false,
+      "costStatValue": 6,
+      "bgAbsoluteSrc": "http://farragofiction.com/LifeSim/images/LifeSimBGs/58.png",
+      "resultStatName": "Victory",
+      "resultChangeValue": 1
+    },
+    {
+      "title": "Get Buff2",
+      "text": "Eirikr lifts a whole lot of Sweet Viking Weights!",
+      "costStatName": "",
+      "singleUse": false,
+      "autoPlay": false,
+      "costStatValue": 0,
+      "bgAbsoluteSrc": "http://farragofiction.com/LifeSim/images/LifeSimBGs/AlternianCliff.png",
+      "resultStatName": "Athleticism",
+      "resultChangeValue": 1
+    },
+    {
+      "title": "Get Buff",
+      "text": "Eirikr lifts a whole lot of Sweet Viking Weights!",
+      "costStatName": "",
+      "singleUse": false,
+      "autoPlay": false,
+      "costStatValue": 0,
+      "bgAbsoluteSrc": "http://farragofiction.com/LifeSim/images/LifeSimBGs/AlternianCliff.png",
+      "resultStatName": "Defense",
+      "resultChangeValue": 1
+    },
+    {
+      "title": "Drink Honey Soda!",
+      "text": "Eirikr drinks so much VIKING MEAD, I mean SODA, and gets a sugar rush from all the honey!",
+      "costStatName": "",
+      "singleUse": false,
+      "autoPlay": false,
+      "costStatValue": 0,
+      "bgAbsoluteSrc": "http://farragofiction.com/LifeSim/images/LifeSimBGs/58.png",
+      "resultStatName": "Energy",
+      "resultChangeValue": 1
+    },
+    {
+      "title": "Dread Rises",
+      "text": "Eirikr watches in horror as his beloved All-Father forsakes everything he stood for.",
+      "costStatName": "",
+      "singleUse": false,
+      "autoPlay": false,
+      "costStatValue": 0,
+      "bgAbsoluteSrc": "http://farragofiction.com/LifeSim/images/LifeSimBGs/58.png",
+      "resultStatName": "Dread",
+      "resultChangeValue": 1
+    },
+    {
+      "title": "Defeat",
+      "text": "Haha what? Don't you know the leg trolls are fated to win farragnarok???",
+      "costStatName": "Nope",
+      "singleUse": true,
+      "autoPlay": true,
+      "costStatValue": 13,
+      "bgAbsoluteSrc": "http://farragofiction.com/LifeSim/images/LifeSimBGs/58.png",
+      "resultStatName": "Defeat",
+      "resultChangeValue": 1
+    }
+  ],
+  "hueRotate": "222",
+  "brightness": "1",
+  "saturation": "3",
+  "contrast": "2",
+  "startingDeck": {
+    "Victory": 1,
+    "Defeat": 1,
+    "Get Buff2": "2",
+    "Get Buff": "2",
+    "Drink Honey Soda!": "2",
+    "Dread Rises": "2"
+  },
+  "costStatValue": 0
+}
