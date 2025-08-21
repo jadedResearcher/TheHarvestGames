@@ -18,6 +18,9 @@ discardCardFX.src = "http://farragofiction.com/CatalystsBathroomSim/audio_utils/
 
 let ohgodplzletjrdebugiaskedniceys = true;
 console.warn("JR NOTE: don't forget to disable debug mode")
+
+
+
 class Game {
   cardset;//what are we actually playing with
   stats = {};// name/value pairs
@@ -132,15 +135,44 @@ class Game {
     textEle.innerText = this.currentText;
   }
 
+  //ignoring any stat that is zero, does the first letter of each stat
+  //capitalized
+  //spell out a file we can find?
+  //for example
+  //Defense, Earth, Air, Dread
+  //spells out DEAD().json)
+  checkForSecrets = async () => {
+    console.log("JR NOTE: I should check for secrets");
+    let fileName = "";
+    for (let stat of Object.keys(this.stats)) {
+      if (this.stats[stat] !== 0) {
+        fileName += stat.charAt(0);
+      }
+    }
+    console.log("JR NOTE: the secret file name would be:", fileName);
+    try {
+      const text = await fetchText(`http://lavinraca.eyedolgames.com/TheHarvestGames/secrets/${fileName.toUpperCase()}.json`);
+      console.log("JR NOTE: text found in the secret was", text);
+    } catch (e) {
+      //couldn't find it but thats fine, most secrets don't exist
+    }
+
+    //should i also have easier secrets that are just what your stats sum to?
+    // no because then i'd have to check EVERY turn not just ones wher ea stat is added or removed")
+  }
+
   applyResultsFromCard = async (parent, card, autoplay) => {
     //all stats are initialized to zero
     //this makes sure any time it was zero and now is a value
     //it goes to the end
     //for Reasons
+    let secretsTime = false;
     if (this.stats[card.resultStatName] === 0) {
       delete this.stats[card.resultStatName];
       this.stats[card.resultStatName] = 0;
+      secretsTime = true;
     }
+
     this.stats[card.resultStatName] += card.resultChangeValue;
     const gameArea = parent.querySelector(".game-area");
     const cardEle = card.renderCard(gameArea);
@@ -160,6 +192,9 @@ class Game {
       cardEle.classList.add("destroying-card");
       destroyFX.play();
       //do not add to discards, simply destroy
+    }
+    if (secretsTime) {
+      this.checkForSecrets();
     }
 
     await sleep(2000)

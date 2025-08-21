@@ -411,7 +411,10 @@ const getAudio = async (url) => {
   return promise;
 }
 
-
+const fetchText = async (url) => {
+  const rawText = await httpGetAsync(url);
+  return rawText;
+}
 
 //returns a promise which resolves with the content, prevents network spam
 const getImages = async (url) => {
@@ -498,7 +501,7 @@ const httpGetAsync = async (theUrl) => {
       };
       xhr.send();
     } catch (e) {
-      console.error(e);
+      console.error("JR NOTE: found a caught error:" + e);
       //window.alert("AN UNKNOWN NETWORK ERROR HAS OCCURED")
       return `[]`;
     }
