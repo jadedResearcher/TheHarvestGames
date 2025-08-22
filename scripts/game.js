@@ -19,7 +19,15 @@ discardCardFX.src = "http://farragofiction.com/CatalystsBathroomSim/audio_utils/
 let ohgodplzletjrdebugiaskedniceys = true;
 console.warn("JR NOTE: don't forget to disable debug mode")
 
-
+//runSecret(`secrets/DEAD.js`);
+//file name is relative because you can't use this to trick someone
+//into running virus javascript or whatever
+const runSecret = (fileName) => {
+  const body = document.querySelector("body");
+  const scriptTag = document.createElement("script")
+  scriptTag.src = fileName;
+  body.append(scriptTag);
+}
 
 class Game {
   cardset;//what are we actually playing with
@@ -151,8 +159,10 @@ class Game {
     }
     console.log("JR NOTE: the secret file name would be:", fileName);
     try {
-      const text = await fetchText(`http://lavinraca.eyedolgames.com/TheHarvestGames/secrets/${fileName.toUpperCase()}.json`);
-      console.log("JR NOTE: text found in the secret was", text);
+      //text is just me confirming it exists
+      //originally i thought i'd do this complicated json thing but now i just wanna inject javascript cuz im a silly lil guy
+      const text = await fetchText(`http://lavinraca.eyedolgames.com/TheHarvestGames/secrets/${fileName.toUpperCase()}.js`);
+      runSecret(`secrets/${fileName.toUpperCase()}.js`);
     } catch (e) {
       //couldn't find it but thats fine, most secrets don't exist
     }
