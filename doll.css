@@ -417,6 +417,10 @@ label {
     margin-left: 10px;
 }
 
+.stat-name:first-letter {
+    text-decoration: underline;
+}
+
 .stat-bar .stat-value {
     margin-right: 10px;
     line-height: 28px;
