@@ -18,6 +18,12 @@
     src: url("Fonts/ifc_los_banditos/IFC\ LOS\ BANDITOS.ttf");
 }
 
+
+@font-face {
+    font-family: gameboy;
+    src: url("http://lavinraca.eyedolgames.com/TheHarvestWakes/Fonts/early-gameboy/Early%20GameBoy.ttf");
+}
+
 html {
     scroll-behavior: smooth;
 }
@@ -408,6 +414,19 @@ video {
     top: 107px;
     left: 307px;
     z-index: 0;
+}
+
+.card-parent {
+    display: flex;
+    border: 3px double #a1b234;
+}
+
+.words {
+    background-color: black;
+    padding: 31px;
+    color: #a1b234;
+    font-family: gameboy;
+    font-size: 17px;
 }
 
 .game-area .scene-text {

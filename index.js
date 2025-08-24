@@ -40,15 +40,20 @@ window.onload = () => {
 //both are in local storage
 //RELICS come from javascript files i load procedurally
 //DECKS can be FOUND or CREATED
-const renderLibrary = () => {
 
-    const parent = createElementWithClassAndParent("div", container, "video-parent");
+const renderLibrary = () => {
+    renderLibraryCardHeader();
+}
+
+//little harvest library card the catalyst made, with looping fox animation on screen
+const renderLibraryCardHeader = () => {
+
+    const parent = createElementWithClassAndParent("div", container, "card-parent");
     parent.style.height = "fit-content";
 
 
     const shop = createElementWithClassAndParent("div", parent, "shop");
-    shop.style.maxHeight = "700px";
-    shop.style.height = "600px";
+
     const harvest = createElementWithClassAndParent("img", shop, "harvest");
     //the Harvest of Inspiration looks like whatever she inspires in you
     //which, practically speaking
@@ -66,7 +71,7 @@ const renderLibrary = () => {
     tv.playsinline = true; //so ios doesn't cry
     tv.setAttribute('playsinline', true)
     tv.style.cssText = `    height: 14px;
-    top: 148px;
+    top: 50px;
     left: 107px;
     z-index: -1;`;
 
@@ -75,6 +80,10 @@ const renderLibrary = () => {
     tv.src = "http://lavinraca.eyedolgames.com/TheHarvestWakes/videos/happy_fox_spin.mp4";
     tv.autoplay = true;
     tv.loop = true;
+
+    const words = createElementWithClassAndParent("div", parent, "words");
+    words.innerText = "The Indulgent Harvest God provides Change and Inspiration to All Who Worship In Her Library of Dreams."
+
 }
 
 const renderTest = () => {
