@@ -421,12 +421,89 @@ video {
     border: 3px double #a1b234;
 }
 
+.card-parent img {
+    border-right: 3px double #a1b234;
+}
+
+.book-case {
+    padding-top: 31px;
+    border: 3px double #a1b234;
+    height: fit-content;
+    background-color: black;
+
+}
+
+
+.shelf {
+    display: flex;
+    border: 13px solid #677221;
+    background-color: #212604;
+    width: 616px;
+    height: 180px;
+}
+
+#console-shortcut {
+    position: fixed;
+    top: 13px;
+    left: 13px;
+    cursor: pointer;
+    opacity: 13%;
+    z-index: 999;
+}
+
+
+#mobileFriendlyConsole {
+    background: white;
+    padding: 31px;
+    width: 90%;
+    height: 90%;
+    overflow: auto;
+    margin-left: auto;
+    margin-right: auto;
+    display: none;
+    position: fixed;
+    z-index: 113;
+    /* my arc number*/
+}
+
+.book {
+    font-family: 'Times New Roman', Times, serif;
+    writing-mode: vertical-rl;
+    background-color: #9db211;
+    border: 1px solid black;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    white-space: nowrap;
+    overflow: hidden;
+    color: black;
+    margin-top: auto;
+    cursor: pointer;
+    text-overflow: ellipsis;
+}
+
+
+.sleeping-shelf {
+    display: flex;
+    border: 13px solid #677221;
+    background-color: #212604;
+    width: 95%;
+    margin-left: auto;
+    height: 180px;
+    margin-right: auto;
+}
+
+.book:hover {
+    border-width: 3px;
+}
+
 .words {
     background-color: black;
     padding: 31px;
     color: #a1b234;
     font-family: gameboy;
     font-size: 17px;
+    border-left: 3px double #a1b234;
+
 }
 
 .game-area .scene-text {

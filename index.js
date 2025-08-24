@@ -26,9 +26,23 @@ if she learns about zampanio she might pick between the two endings: kill the ec
 and it would be OBJECTIVELY funny if theres an entire spooky cult (being murdered by the eye killer in a blind panic) whose sole purpose is to get that billionaire some therapy
 */
 
+let truthEle;
+let scarecrowEle;
+
+
 const click = new Audio();
 click.src = "http://farragofiction.com/CatalystsBathroomSim/audio_utils/weird_sounds/chip.mp3"
 window.onload = () => {
+    truthEle = document.querySelector("#mobileFriendlyConsole")
+    scarecrowEle = document.querySelector("#mobileFriendlyConsole")
+    const consoleShortcut = document.querySelector("#console-shortcut")
+    consoleShortcut.onclick = () => {
+        if (truthEle.style.display === "block") {
+            truthEle.style.display = "none"
+        } else {
+            truthEle.style.display = "block"
+        }
+    }
     renderLibrary();
     window.onclick = () => {
         click.play();
@@ -42,12 +56,64 @@ window.onload = () => {
 //DECKS can be FOUND or CREATED
 
 const renderLibrary = () => {
-    renderLibraryCardHeader();
+    const container = document.querySelector("#container")
+    renderLibraryCardHeader(container);
+    renderBookcase(container);
+
+}
+
+const renderBookcase = (container) => {
+    const parent = createElementWithClassAndParent("div", container, "book-case");
+    const shelves = createElementWithClassAndParent("div", parent, "shelves");
+    //items is EITHER a card set or a relic
+    const renderBookCase = (items, bookCallback) => {
+        const ret = []; //all books
+        shelves.innerHTML = "";
+
+        const chunkSize = 42;
+        for (let i = 0; i < items.length; i += chunkSize) {
+            const chunk = items.slice(i, i + chunkSize);
+            const shelf = createElementWithClassAndParent("div", shelves, "sleeping-shelf");
+            const allowedColors = ["#4c560d", "#677221", "#a1b234", "#d5f40a", "#7a843d", "#9db211"];
+            for (let item of chunk) {
+                const book = createElementWithClassAndParent("div", shelf, "book");
+                book.innerText = item.title ? item.title : item; //either string or object with author title text
+                if (item.isRelic) {
+                    book.innerText = "*" + book.innerText;
+                }
+                const padding = getRandomNumberBetween(3, 13);
+                book.style.cssText = `padding-left: ${padding}px;
+        padding-right: ${padding}px;
+        font-size: ${getRandomNumberBetween(10, 14)}px;
+        font-family: ${pickFrom(["Times New Roman", "Georgia", "Garamond", "serif"])};
+        background-color: ${pickFrom(allowedColors)};
+        height: ${getRandomNumberBetween(75, 150)}px`;
+                ret.push(book);
+                book.onclick = () => {
+                    bookCallback(item);
+                }
+            }
+        }
+        return ret;
+    }
+
+    //list of title/source array pairs
+    //clicking one calls this with a parent book and all derived books have at least one source array in common
+    const content = [{ title: "test1" }, { title: "test2" }];
+    for (let i = 0; i < 113; i++) {
+        content.push({ title: "autotest" + i })
+    }
+
+    const all_books = renderBookCase(content, (item) => {
+        alert("TODO")
+    })
+
 }
 
 //little harvest library card the catalyst made, with looping fox animation on screen
-const renderLibraryCardHeader = () => {
-
+const renderLibraryCardHeader = (container) => {
+    truthLog("Pride", "The Truth is that the Harvest has cherished her Library Card, given by the Catalyst, more than any other gift.")
+    console.log("JR NOTE: container is", container)
     const parent = createElementWithClassAndParent("div", container, "card-parent");
     parent.style.height = "fit-content";
 
@@ -120,4 +186,35 @@ const renderTest = () => {
         game.render(contents)
     }*/
 
+}
+
+const truthLog = (title, text) => {
+
+    const truthCSSTitle = "font-weight: bold;font-family: 'Courier New', monospace;color:red; font-size:25px;text-decoration:underline;";
+    const truthCSSBody = "font-weight: bold;font-family: 'Courier New', monospace;color:red; font-size:13px;";
+    if (truthEle) {
+        const container = createElementWithClassAndParent("div", truthEle);
+        container.style.cssText = "padding: 10px;";
+        const titleEle = createElementWithClassAndParent("div", container);
+        titleEle.innerText = title;
+        titleEle.style.cssText = truthCSSTitle;
+        const textEle = createElementWithClassAndParent("div", container);
+        textEle.innerText = text;
+        textEle.style.cssText = truthCSSBody;
+        container.scrollIntoView();
+
+    }
+    console.log(`%c${title}%c  ${text}`, truthCSSTitle, truthCSSBody);
+}
+
+//https://zampaniosim.fandom.com/wiki/Scarecrow
+const scarecrowLog = (text) => {
+    const scarecrowCSS = "letter-spacing: 10px; padding: 10px;font-weight: bold;font-family: 'Courier New'; background-color: black; monospace;color:#c40444; font-size:33px;";
+    if (scarecrowEle) {
+        const container = createElementWithClassAndParent("div", truthEle);
+        container.style.cssText = scarecrowCSS;
+        container.innerText = text;
+        container.scrollIntoView();
+    }
+    console.log(`%c${text}`, scarecrowCSS);
 }
