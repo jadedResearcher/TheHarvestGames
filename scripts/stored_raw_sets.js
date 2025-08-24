@@ -1,3 +1,15 @@
+const createStartingDecks = () => {
+  const ret = [];
+  const jsonArray = [all_hallows_eve, lomat];
+  for (let json of jsonArray) {
+    const deck = new CardSet();
+    deck.syncToJSON(json);
+    ret.push(deck);
+  }
+
+  return ret;
+}
+
 const all_hallows_eve = {
   "title": "All  Hallow's Eve",
   "description": "Alya, Hallow and Eve are adorable halloween themed kittens I have recently adopted. \n\nThey will be my test cardset, because I am currently obsessed with them and this helps me to focus.\n\nPlus I have lots of gifs of them already.",

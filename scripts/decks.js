@@ -6,7 +6,7 @@
 */
 
 let game;
-
+let startingCardSets = [];
 
 
 const getAllStatsForCardset = (cardset) => {

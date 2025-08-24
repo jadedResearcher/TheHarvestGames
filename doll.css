@@ -451,6 +451,11 @@ video {
     z-index: 999;
 }
 
+.card-popup {
+    padding: 31px;
+    margin: 31px;
+}
+
 
 #mobileFriendlyConsole {
     background: white;

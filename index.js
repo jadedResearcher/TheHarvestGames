@@ -99,13 +99,30 @@ const renderBookcase = (container) => {
 
     //list of title/source array pairs
     //clicking one calls this with a parent book and all derived books have at least one source array in common
-    const content = [{ title: "test1" }, { title: "test2" }];
-    for (let i = 0; i < 113; i++) {
-        content.push({ title: "autotest" + i })
+    const content = [];
+    const unlockedDecks = createStartingDecks();
+    console.warn("JR NOTE: todo add relics first probably")
+
+    for (let i of unlockedDecks) {
+        content.push(i)
     }
+    //test relic
+    content.push(new Relic("DEAD", "404.png"));
 
     const all_books = renderBookCase(content, (item) => {
-        alert("TODO")
+        //render a popupup
+        //if it has a 'render' function, call it inside the popup
+        //otherwise assume its a relic and try fetching it from network
+        if (item.render) {
+            //cardset can handle rendering itself but lets give it a popup first.
+            const contentEle = createElementWithClassAndParent("div", parent, 'card-popup');
+            item.render(contentEle);
+            popup("Deck: " + item.title, contentEle)
+
+        } else {
+            //relic will handle displaying itself and doing its thing
+            runSecret(`secrets/${item.title}.js`);
+        }
     })
 
 }
@@ -217,4 +234,15 @@ const scarecrowLog = (text) => {
         container.scrollIntoView();
     }
     console.log(`%c${text}`, scarecrowCSS);
-}
+}/*
+
+REMINDER OF OVERARCHING GOAL: 
+
+The Harvest is now a teenager, distracted by card games and indulgence (being served) and only occasionally remembers to dilligently answer prayers. She answers prayers by making more cards/books for her library.
+
+The cards and secrets are all about the events leading to her own birth and her role in the world. Even though she seems to be slacking off, she's actually processing and growing. (be nicer to teens, man). 
+
+Previous years were about her identity, both Nature and Nuture.
+
+This year is about her Motivation. What Changes does SHE want to bring to the world? Rather than "I answer prayers because my Identity is a god", what actually will bring her to do things other than hedonism? Only the Faithful can say.
+*/
