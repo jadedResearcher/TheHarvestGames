@@ -402,6 +402,14 @@ label {
     }
 }
 
+video {
+    height: 31px;
+    position: absolute;
+    top: 107px;
+    left: 307px;
+    z-index: 0;
+}
+
 .game-area .scene-text {
     color: white;
     text-shadow: 1px 1px black;

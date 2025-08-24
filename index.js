@@ -29,11 +29,52 @@ and it would be OBJECTIVELY funny if theres an entire spooky cult (being murdere
 const click = new Audio();
 click.src = "http://farragofiction.com/CatalystsBathroomSim/audio_utils/weird_sounds/chip.mp3"
 window.onload = () => {
-    renderTest();
+    renderLibrary();
     window.onclick = () => {
         click.play();
     }
 
+}
+
+//library books are either DECKS or RELICS
+//both are in local storage
+//RELICS come from javascript files i load procedurally
+//DECKS can be FOUND or CREATED
+const renderLibrary = () => {
+
+    const parent = createElementWithClassAndParent("div", container, "video-parent");
+    parent.style.height = "fit-content";
+
+
+    const shop = createElementWithClassAndParent("div", parent, "shop");
+    shop.style.maxHeight = "700px";
+    shop.style.height = "600px";
+    const harvest = createElementWithClassAndParent("img", shop, "harvest");
+    //the Harvest of Inspiration looks like whatever she inspires in you
+    //which, practically speaking
+    //means fanart you make of her that i edit to have a space for her video (if i can)
+    //it is NOT easy to get the video working with whatever image so if i choose more than one
+    //it'll be not many
+    harvest.src = "http://lavinraca.eyedolgames.com/TheHarvestWakes/images/HarvestEyes/Offerings/InspiredHarvests/LibraryCardVideoReady.png";
+
+    const defaultHarvestCSS = ` width: 310px;
+                                z-index: 1;
+                                height: auto;
+                                left: 0px`;
+    harvest.style.cssText = defaultHarvestCSS;
+    const tv = createElementWithClassAndParent("video", shop);
+    tv.playsinline = true; //so ios doesn't cry
+    tv.setAttribute('playsinline', true)
+    tv.style.cssText = `    height: 14px;
+    top: 148px;
+    left: 107px;
+    z-index: -1;`;
+
+    tv.volume = 0.0;
+    tv.id = "tv"
+    tv.src = "http://lavinraca.eyedolgames.com/TheHarvestWakes/videos/happy_fox_spin.mp4";
+    tv.autoplay = true;
+    tv.loop = true;
 }
 
 const renderTest = () => {
