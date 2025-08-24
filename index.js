@@ -69,12 +69,13 @@ const renderBookcase = (container) => {
     const renderBookCase = (items, bookCallback) => {
         const ret = []; //all books
         shelves.innerHTML = "";
+        const allowedColors = ["#4c560d", "#677221", "#a1b234", "#d5f40a", "#7a843d", "#9db211"];
 
         const chunkSize = 42;
         for (let i = 0; i < items.length; i += chunkSize) {
             const chunk = items.slice(i, i + chunkSize);
             const shelf = createElementWithClassAndParent("div", shelves, "sleeping-shelf");
-            const allowedColors = ["#4c560d", "#677221", "#a1b234", "#d5f40a", "#7a843d", "#9db211"];
+
             for (let item of chunk) {
                 const book = createElementWithClassAndParent("div", shelf, "book");
                 book.innerText = item.title ? item.title : item; //either string or object with author title text
@@ -86,7 +87,8 @@ const renderBookcase = (container) => {
         padding-right: ${padding}px;
         font-size: ${getRandomNumberBetween(10, 14)}px;
         font-family: ${pickFrom(["Times New Roman", "Georgia", "Garamond", "serif"])};
-        background-color: ${pickFrom(allowedColors)};
+        background-color: ${item.render ? pickFrom(allowedColors) : "#131313"};
+        color: ${item.render ? "black" : pickFrom(allowedColors)};
         height: ${getRandomNumberBetween(75, 150)}px`;
                 ret.push(book);
                 book.onclick = () => {
