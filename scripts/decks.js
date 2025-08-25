@@ -105,13 +105,39 @@ class CardSet {
   }
 
 
-  render = (parent) => {
+  render = (parent, playCallback, quitCallback) => {
     const title = createElementWithClassAndParent("h2", parent);
     title.innerText = this.title;
     const description = createElementWithClassAndParent("div", parent, 'sub-section');
     description.innerText = this.description;
 
+    const gameTestButton = createElementWithClassAndParent("button", parent);
+    gameTestButton.innerText = "Play Game";
+    gameTestButton.onclick = () => {
+      const container = document.querySelector("#container")
 
+      const gameContainer = createElementWithClassAndParent("div", container, 'game-container');
+      const quitButton = createElementWithClassAndParent("button", container);
+      //expose for testing
+      game = new Game(this);
+      parent.style.display = "none";
+      if (playCallback) {
+        playCallback(); //any other cleanup we need to do
+      }
+      game.render(gameContainer);
+      quitButton.innerText = "Quit Game";
+      quitButton.style.position = "fixed";
+      quitButton.style.top = "31px"
+      quitButton.onclick = () => {
+        gameContainer.remove();
+        parent.style.display = "block";
+        quitButton.remove();
+        if (quitCallback) {
+          quitCallback(); //any other cleanup we need to do
+        }
+      }
+
+    }
     const label = createElementWithClassAndParent("div", parent);
     label.innerText = "All Possible Cards:"
     label.style.marginTop = "31px"

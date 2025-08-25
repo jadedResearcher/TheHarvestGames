@@ -56,7 +56,7 @@ window.onload = () => {
 //DECKS can be FOUND or CREATED
 
 const renderLibrary = () => {
-    const container = document.querySelector("#container")
+    const container = document.querySelector("#library")
     renderLibraryCardHeader(container);
     renderBookcase(container);
 
@@ -118,8 +118,18 @@ const renderBookcase = (container) => {
         if (item.render) {
             //cardset can handle rendering itself but lets give it a popup first.
             const contentEle = createElementWithClassAndParent("div", parent, 'card-popup');
-            item.render(contentEle);
-            popup("Deck: " + item.title, contentEle)
+            const p = popup("Deck: " + item.title, contentEle)
+
+            const playCallback = () => {
+                p.remove();
+                container.style.display = "none";
+            }
+
+            const quitCallback = () => {
+                p.remove();
+                container.style.display = "block";
+            }
+            item.render(contentEle, playCallback, quitCallback);
 
         } else {
             //relic will handle displaying itself and doing its thing
