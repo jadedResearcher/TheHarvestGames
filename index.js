@@ -29,6 +29,8 @@ and it would be OBJECTIVELY funny if theres an entire spooky cult (being murdere
 let truthEle;
 let scarecrowEle;
 
+const FOUNDSECRETSKEY = 'LAVINRACA2025SECRETS'
+
 
 const click = new Audio();
 click.src = "http://farragofiction.com/CatalystsBathroomSim/audio_utils/weird_sounds/chip.mp3"
@@ -102,14 +104,18 @@ const renderBookcase = (container) => {
     //list of title/source array pairs
     //clicking one calls this with a parent book and all derived books have at least one source array in common
     const content = [];
-    const unlockedDecks = createStartingDecks();
-    console.warn("JR NOTE: todo add relics first probably")
 
+
+
+    const unlockedDecks = createStartingDecks();
     for (let i of unlockedDecks) {
         content.push(i)
     }
-    //test relic
-    content.push(new Relic("DEAD", "404.png"));
+
+    const relics = keyToLocalStorageArray(FOUNDSECRETSKEY);
+    for (let relicKey of relics) {
+        content.push({ title: relicKey })
+    }
 
     const all_books = renderBookCase(content, (item) => {
         //render a popupup

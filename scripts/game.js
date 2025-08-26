@@ -159,10 +159,18 @@ class Game {
     }
     console.log("JR NOTE: the secret file name would be:", fileName);
     try {
-      //text is just me confirming it exists
-      //originally i thought i'd do this complicated json thing but now i just wanna inject javascript cuz im a silly lil guy
-      const text = await fetchText(`http://lavinraca.eyedolgames.com/TheHarvestGames/secrets/${fileName.toUpperCase()}.js`);
-      runSecret(`secrets/${fileName.toUpperCase()}.js`);
+
+      const upperFileName = fileName.toUpperCase();
+      const newPossibleSecret = !(isStringInLocalStorageArrayWithKey(FOUNDSECRETSKEY, upperFileName));
+      if (newPossibleSecret) {
+        //text is just me confirming it exists
+        //originally i thought i'd do this complicated json thing but now i just wanna inject javascript cuz im a silly lil guy
+        const text = await fetchText(`http://lavinraca.eyedolgames.com/TheHarvestGames/secrets/${upperFileName}.js`);
+        console.log("JR NOTE: if not already in local storage do it now", upperFileName)
+        addStringToArrayWithKey(FOUNDSECRETSKEY, upperFileName);
+        runSecret(`secrets/${upperFileName}.js`);
+      }
+
     } catch (e) {
       //couldn't find it but thats fine, most secrets don't exist
     }

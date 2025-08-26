@@ -569,6 +569,62 @@ class SeededRandom {
 
 
 
+const isStringInLocalStorageArrayWithKey = (localStorageKey, targetString) => {
+  console.log(`JR NOTE: isStringInLocalStorageArrayWithKey is ${targetString} inside the array stored in ${localStorageKey}`)
+  const arr = keyToLocalStorageArray(localStorageKey);
+  console.log("JR NOTE: isStringInLocalStorageArrayWithKey arr fetched is", arr)
+  return arr.includes(targetString);
+}
+
+//i am so good at naming things
+const addStringToArrayWithKeyUnlessItsAlreadyThere = (localStorageKey, targetString) => {
+  console.log("JR NOTE: addStringToArrayWithKeyUnlessItsAlreadyThere", { localStorageKey, targetString })
+  if (isStringInLocalStorageArrayWithKey(localStorageKey, targetString)) {
+    console.log("JR NOTE: not going to add a duplicate key of ", localStorageKey)
+    return;
+  }
+  const tmp = keyToLocalStorageArray(localStorageKey);
+  tmp.push(targetString);
+  localStorage[localStorageKey] = JSON.stringify(tmp);
+}
+
+const addStringToArrayWithKey = (localStorageKey, targetString) => {
+  const tmp = keyToLocalStorageArray(localStorageKey);
+  tmp.push(targetString);
+  localStorage[localStorageKey] = JSON.stringify(tmp);
+}
+
+const addNumToArrayWithKey = (localStorageKey, targetString) => {
+  const tmp = keyToLocalStorageArray(localStorageKey);
+  tmp.push(targetString);
+  localStorage[localStorageKey] = JSON.stringify(tmp);
+}
+
+
+const removeStringFromArrayWithKey = (localStorageKey, targetString) => {
+  let tmp = keyToLocalStorageArray(localStorageKey);
+  tmp = removeItemOnce(tmp, targetString);
+  localStorage[localStorageKey] = JSON.stringify(tmp);
+}
+
+const initEmptyArrayAtKey = (key) => {
+  console.log("JR NOTE: initEmptyArrayAtKey")
+  const tmp = [];
+  localStorage[key] = JSON.stringify(tmp);
+  return tmp;
+}
+
+const keyToLocalStorageArray = (key) => {
+  console.log('JR NOTE: keyToLocalStorageArray', key)
+  if (localStorage[key]) {
+    return JSON.parse(localStorage[key]);
+  } else {
+    return initEmptyArrayAtKey(key);
+  }
+}
+
+
+
 /*
 it fascinates me that we don't really SEE peewee before the spiral sanded him smooth
 theres a ruthless impotent anger at his core that he can only rarely let out

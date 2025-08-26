@@ -275,7 +275,7 @@ label {
 }
 
 ::-webkit-scrollbar-thumb {
-    background: #4c560d;
+    background: black;
 }
 
 ::-webkit-scrollbar {
@@ -687,8 +687,8 @@ a:hover {
 
 button {
     cursor: pointer;
-    background: var(--main-bg-color);
-    color: var(--main-font-color);
+    background: black;
+    color: white;
     border: 0px;
     padding: 10px;
     margin: 10px;
