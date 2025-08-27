@@ -21,13 +21,13 @@ let DEADhax = false; //lets you zero out any stat  you click
 
 console.warn("JR NOTE: don't forget to disable debug mode")
 
-//runSecret(`secrets/DEAD.js`);
+//runSecret(`DEAD`);
 //file name is relative because you can't use this to trick someone
 //into running virus javascript or whatever
 const runSecret = (fileName) => {
   const body = document.querySelector("body");
   const scriptTag = document.createElement("script")
-  scriptTag.src = fileName;
+  scriptTag.src = `secrets/${fileName}.js`;
   body.append(scriptTag);
 }
 
@@ -170,7 +170,7 @@ class Game {
         const text = await fetchText(`http://lavinraca.eyedolgames.com/TheHarvestGames/secrets/${upperFileName}.js`);
         console.log("JR NOTE: if not already in local storage do it now", upperFileName)
         addStringToArrayWithKey(FOUNDSECRETSKEY, upperFileName);
-        runSecret(`secrets/${upperFileName}.js`);
+        runSecret(upperFileName);
       }
 
     } catch (e) {

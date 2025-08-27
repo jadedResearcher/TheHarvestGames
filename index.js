@@ -139,7 +139,7 @@ const renderBookcase = (container) => {
 
         } else {
             //relic will handle displaying itself and doing its thing
-            runSecret(`secrets/${item.title}.js`);
+            runSecret(item.title);
         }
     })
 

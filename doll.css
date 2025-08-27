@@ -179,6 +179,19 @@ label {
 
 }
 
+#relic-bar img {
+    width: 31px;
+}
+
+#relic-bar {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    right: 13px;
+    top: 90px;
+    gap: 13px;
+}
+
 .stat-area {
     position: absolute;
     margin: 0px;

@@ -16,9 +16,14 @@ const doDEAD = () => {
     const image = createElementWithClassAndParent("img", contentEle, 'big-relic-image');
     image.src = "images/Relics/StatueOfTheANGELOFDARKNESSANDUNDERDOGS_originallybyGuideofHunters.png";
     const explanation = createElementWithClassAndParent("div", contentEle, 'sub-section relic-explaination');
-    explanation.innerHTML = `You got the DEAD relic! <br><br>It's a statue of one of the EIGHT DIVINES!<br><Br>The Angel of Darkness and Underdogs allows you to void out any stat to better find secrets!`;
+    explanation.innerHTML = `You got the DEAD relic! 
+    <br><br>It's a statue of one of the EIGHT DIVINES!
+    <br><Br>The Angel of Darkness and Underdogs allows you to void out any stat to better find secrets!
+    <br><br>It will be applied until you refresh the page! Don't worry though, you can re-apply it any time from your bookshelf.`;
 
-    popup("Your stats spell 'D-E-A-D'!", contentEle)
+    popup("Your stats spelled 'D-E-A-D'!", contentEle)
+
+    addRelicToBar("DEAD", image.src);
 
 }
 
