@@ -183,6 +183,7 @@ label {
     position: absolute;
     margin: 0px;
     left: 0px;
+    top: 13px;
     color: black;
 }
 
@@ -445,7 +446,7 @@ video {
 #console-shortcut {
     position: fixed;
     top: 13px;
-    left: 13px;
+    right: 13px;
     cursor: pointer;
     opacity: 13%;
     z-index: 999;
@@ -683,6 +684,19 @@ a:visited {
 
 a:hover {
     opacity: .9;
+}
+
+.big-relic-image {
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
+
+.relic-explanation {
+    margin-left: auto;
+    margin-right: auto;
+    width: fit-content;
+    margin-top: 31px;
 }
 
 button {

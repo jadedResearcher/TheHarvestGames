@@ -128,6 +128,7 @@ class CardSet {
       quitButton.innerText = "Quit Game";
       quitButton.style.position = "fixed";
       quitButton.style.top = "31px"
+      quitButton.style.right = "31px"
       quitButton.onclick = () => {
         gameContainer.remove();
         parent.style.display = "block";

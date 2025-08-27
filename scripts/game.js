@@ -16,7 +16,9 @@ const discardCardFX = new Audio();
 discardCardFX.src = "http://farragofiction.com/CatalystsBathroomSim/audio_utils/weird_sounds/placecard.mp3";
 
 
-let ohgodplzletjrdebugiaskedniceys = true;
+let ohgodplzletjrdebugiaskedniceys = false;
+let DEADhax = false; //lets you zero out any stat  you click
+
 console.warn("JR NOTE: don't forget to disable debug mode")
 
 //runSecret(`secrets/DEAD.js`);
@@ -315,6 +317,10 @@ class Game {
   }
 
   renderStats = (parent) => {
+    const prevContainer = document.querySelector(".stat-area");
+    if (prevContainer) {
+      prevContainer.remove();
+    }
     const container = createElementWithClassAndParent("div", parent, 'stat-area');
     for (let [key, value] of Object.entries(this.stats)) {
       if (value != 0) {
@@ -329,6 +335,13 @@ class Game {
         if (ohgodplzletjrdebugiaskedniceys) {
           bar.onclick = () => {
             this.stats[key] = this.stats[key] + 1;
+            this.renderStats(parent);
+          }
+        }
+
+        if (DEADhax) {
+          bar.onclick = () => {
+            this.stats[key] = 0; //the guide of void will void anything out you need to guide you to new secrets
             this.renderStats(parent);
           }
         }
