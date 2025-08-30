@@ -1,6 +1,6 @@
 const createStartingDecks = () => {
   const ret = [];
-  const jsonArray = [all_hallows_eve, lomat];
+  const jsonArray = [all_hallows_eve, lomat, TROGDAZORG];
   for (let json of jsonArray) {
     const deck = new CardSet();
     deck.syncToJSON(json);
@@ -238,6 +238,94 @@ const lomat = {
     "Get Buff": "2",
     "Drink Honey Soda!": "2",
     "Dread Rises": "2"
+  },
+  "costStatValue": 0
+}
+
+
+const TROGDAZORG = {
+  "title": "TROGDAZORG THE SUPREME",
+  "description": "Ten versions of TROGDAZORG THE SUPREME were sacrificed by the guests of Lavinraca to make the Harvest. \n\nAll failed to make connections to the others who wandered the corn maze. \n\nAll focused on their own selfish desires for candy and costumes.\n\nCan the Harvest find Motivation through them?\n\nShould they?",
+  "cards": [
+    {
+      "title": "Candy Victory",
+      "text": "TROGDAZORG THE SUPREME has collected so much candy they can finally rest, the sugar high fading into a sugar crash, and sleep finally coming among the corn.",
+      "costStatName": "Bite",
+      "singleUse": true,
+      "autoPlay": false,
+      "costStatValue": 10,
+      "bgAbsoluteSrc": "http://lavinraca.eyedolgames.com/TheHarvestGames/images/Year1/candyvictory.png",
+      "resultStatName": "Victory",
+      "resultChangeValue": 1
+    },
+    {
+      "title": "Burnination",
+      "text": "TROGDAZORG THE SUPREME threatens to burninate the countryside and the peasants give them candy to placate them.",
+      "costStatName": "",
+      "singleUse": false,
+      "autoPlay": false,
+      "costStatValue": 0,
+      "bgAbsoluteSrc": "http://lavinraca.eyedolgames.com/TheHarvestGames/images/Year1/burninate.gif",
+      "resultStatName": "Bite",
+      "resultChangeValue": 1
+    },
+    {
+      "title": "Dinosaur Victory",
+      "text": "TROGDAZORG THE SUPREME ignores all the haters and finally becomes what they were always meant to be: an actual literal dinosaur.",
+      "costStatName": "Dino",
+      "singleUse": false,
+      "autoPlay": true,
+      "costStatValue": 1,
+      "bgAbsoluteSrc": "http://lavinraca.eyedolgames.com/TheHarvestGames/images/Year1/identity_rawr.gif",
+      "resultStatName": "Victory",
+      "resultChangeValue": 1
+    },
+    {
+      "title": "Gain Identity",
+      "text": "TROGDAZORG THE SUPREME feels so good biting all the candy. They feel almost like a real dinosaur!",
+      "costStatName": "Bite",
+      "singleUse": false,
+      "autoPlay": false,
+      "costStatValue": 2,
+      "bgAbsoluteSrc": "http://lavinraca.eyedolgames.com/TheHarvestGames/images/Year1/roar.gif",
+      "resultStatName": "Identity",
+      "resultChangeValue": 1
+    },
+    {
+      "title": "Roar Time",
+      "text": "TROGDAZORG THE SUPREME roars and roars fueled by how much of a dinosaur they feel!",
+      "costStatName": "Identity",
+      "singleUse": false,
+      "autoPlay": false,
+      "costStatValue": 2,
+      "bgAbsoluteSrc": "http://lavinraca.eyedolgames.com/TheHarvestGames/images/Year1/roar.gif",
+      "resultStatName": "Roar",
+      "resultChangeValue": 1
+    },
+    {
+      "title": "Dinosaur Time",
+      "text": "TROGDAZORG THE SUPREME shouts SWEET DINOSAUR FACTS at the top of their lungs, fueled by all the roaring they're doing!",
+      "costStatName": "Roar",
+      "singleUse": false,
+      "autoPlay": false,
+      "costStatValue": 2,
+      "bgAbsoluteSrc": "http://lavinraca.eyedolgames.com/TheHarvestGames/images/Year1/roar.gif",
+      "resultStatName": "Dino",
+      "resultChangeValue": 1
+    }
+  ],
+  "hueRotate": "359",
+  "brightness": "2.1",
+  "saturation": "4",
+  "contrast": "3",
+  "startingDeck": {
+    "Candy Victory": "1",
+    "Burnination": "5",
+    "Identity Victory": "1",
+    "Gain Identity": "3",
+    "Roar Time": "2",
+    "Dinosaur Time": "1",
+    "Dinosaur Victory": "1"
   },
   "costStatValue": 0
 }

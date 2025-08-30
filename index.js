@@ -49,7 +49,36 @@ window.onload = () => {
     window.onclick = () => {
         click.play();
     }
+    handleURLParams();
 
+}
+
+const displayCardAndDeckEdits = () => {
+    const contents = document.querySelector("#contents");
+    const editButton = createElementWithClassAndParent("button", contents);
+    editButton.innerText = "Create A Card";
+    editButton.onclick = () => {
+        contents.innerHTML = "";
+        const testScene = new Card();
+        testScene.renderEditForm(contents);
+    }
+
+    const decjButton = createElementWithClassAndParent("button", contents);
+    decjButton.innerText = "Create A Deck";
+    decjButton.onclick = () => {
+        contents.innerHTML = "";
+        const testDeck = new CardSet();
+        testDeck.renderEditForm(contents);
+    }
+}
+
+const handleURLParams = () => {
+    const queryString = window.location.search;
+    const urlParams = new URLSearchParams(queryString);
+    let edit = urlParams.get('editMode');
+    if (edit) {
+        displayCardAndDeckEdits();
+    }
 }
 
 //library books are either DECKS or RELICS
@@ -172,8 +201,8 @@ const renderLibraryCardHeader = (container) => {
     tv.playsinline = true; //so ios doesn't cry
     tv.setAttribute('playsinline', true)
     tv.style.cssText = `    height: 14px;
-    top: 50px;
-    left: 107px;
+    top: 34px;
+    left: 62px;
     z-index: -1;`;
 
     tv.volume = 0.0;

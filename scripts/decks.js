@@ -36,6 +36,7 @@ i think im ready to get back into this
 */
 
 const getCardWithTitle = (title, cardArray) => {
+  console.log("JR NOTE: trying to get card with title", title)
   return cardArray.find((i) => i.title === title);
 }
 
@@ -94,11 +95,15 @@ class CardSet {
   }
 
   startingDeckToCards = () => {
+    console.log("JR NOTE: this.startingDeck", this.startingDeck)
     const ret = [];
     //for every map in the starting deck, find a card that matches its title and add it the correct amount of times
     for (let category of Object.keys(this.startingDeck)) {
       for (let i = 0; i < this.startingDeck[category]; i++) {
-        ret.push(getCardWithTitle(category, this.cards));
+        const card = getCardWithTitle(category, this.cards);
+        if (card) {
+          ret.push(card);
+        }
       }
     }
     return ret;
@@ -155,6 +160,7 @@ class CardSet {
     const deckContainer = createElementWithClassAndParent("div", parent, 'grid tiny-cards');
 
     const hydratedDeck = this.startingDeckToCards();
+    console.log("JR NOTE: hydratedEck", hydratedDeck)
     for (let card of hydratedDeck) {
       card.renderCard(deckContainer);
     }
