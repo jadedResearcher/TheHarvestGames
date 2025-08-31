@@ -30,7 +30,7 @@ let truthEle;
 let scarecrowEle;
 
 const FOUNDSECRETSKEY = 'LAVINRACA2025SECRETS'
-
+let ALLOWZAMPANIOINFECTION = false;
 
 const click = new Audio();
 click.src = "http://farragofiction.com/CatalystsBathroomSim/audio_utils/weird_sounds/chip.mp3"

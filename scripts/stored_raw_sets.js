@@ -1,6 +1,6 @@
 const createStartingDecks = () => {
   const ret = [];
-  const jsonArray = [all_hallows_eve, lomat, TROGDAZORG];
+  const jsonArray = [all_hallows_eve, lomat, TROGDAZORG, TERRI];
   for (let json of jsonArray) {
     const deck = new CardSet();
     deck.syncToJSON(json);
@@ -245,7 +245,7 @@ const lomat = {
 
 const TROGDAZORG = {
   "title": "TROGDAZORG THE SUPREME",
-  "description": "Ten versions of TROGDAZORG THE SUPREME were sacrificed by the guests of Lavinraca to make the Harvest. \n\nAll failed to make connections to the others who wandered the corn maze. \n\nAll focused on their own selfish desires for candy and costumes.\n\nCan the Harvest find Motivation through them?\n\nShould they?",
+  "description": "Ten versions of TROGDAZORG THE SUPREME were sacrificed by the guests of Lavinraca to make the Harvest. \n\nAll failed to make connections to the others who wandered the corn maze. \n\nAll focused on their own selfish desires for candy and destruction.\n\nCan the Harvest find Motivation through them?\n\nShould they?",
   "cards": [
     {
       "title": "Candy Victory",
@@ -271,7 +271,7 @@ const TROGDAZORG = {
     },
     {
       "title": "Dinosaur Victory",
-      "text": "TROGDAZORG THE SUPREME ignores all the haters and finally becomes what they were always meant to be: an actual literal dinosaur.",
+      "text": "TROGDAZORG THE SUPREME ignores all the haters and finally becomes what they were always meant to be: an actual literal dinosaur. Peace washes over them and they lets themself dissolve into the Harvest.",
       "costStatName": "Dino",
       "singleUse": false,
       "autoPlay": true,
@@ -320,12 +320,86 @@ const TROGDAZORG = {
   "contrast": "3",
   "startingDeck": {
     "Candy Victory": "1",
-    "Burnination": "5",
+    "Burnination": "7",
     "Identity Victory": "1",
     "Gain Identity": "3",
     "Roar Time": "2",
     "Dinosaur Time": "1",
     "Dinosaur Victory": "1"
+  },
+  "costStatValue": 0
+}
+//not unintentional the stat Belief shares the nickname of the rabbitsim protag
+const TERRI = {
+  "title": "Orb Wizard Terri",
+  "description": "Ten versions of Terri were sacrificed by the Guests of Lavinraca to make the Harvest.\n\nAll were blinded by their intrinsic motivation to wander mazes, blinded to the Truth that this was not the Maze they were from.\n\nTo them, the pleasure of being lost, of searching forever for some illusory Truth is all that mattered.\n\n\nCan the Harvest find Motivation through them? Should they?\n",
+  "cards": [
+    {
+      "title": "Recursion Victory",
+      "text": "Terri has finally realized that the End is Never The End only within Zampanio. Within Lavinraca, there is an end each year. Peace washes over her and she lets herself dissolve into the Harvest.",
+      "costStatName": "Recursion",
+      "singleUse": true,
+      "autoPlay": false,
+      "costStatValue": 13,
+      "bgAbsoluteSrc": "http://lavinraca.eyedolgames.com/TheHarvestGames/images/Year1/recursion_victory.gif",
+      "resultStatName": "Victory",
+      "resultChangeValue": 1
+    },
+    {
+      "title": "Maze Love",
+      "text": "Terri is absolutely certain that she is within one of Zampanio's perfectly safe Mazes (TM), where no one ever dies and things only change in an infinite spiral of endless endings.",
+      "costStatName": "",
+      "singleUse": false,
+      "autoPlay": false,
+      "costStatValue": 0,
+      "bgAbsoluteSrc": "http://lavinraca.eyedolgames.com/TheHarvestGames/images/Year1/terri1.png",
+      "resultStatName": "Belief",
+      "resultChangeValue": 1
+    },
+    {
+      "title": "Glitch Time",
+      "text": "Terri confidently glitches through the walls of corn maze, knowing that ALWAYS leads to super cool secrets.",
+      "costStatName": "Belief",
+      "singleUse": false,
+      "autoPlay": false,
+      "costStatValue": 2,
+      "bgAbsoluteSrc": "http://lavinraca.eyedolgames.com/TheHarvestGames/images/Year1/terriglitch.png",
+      "resultStatName": "Energy",
+      "resultChangeValue": 1
+    },
+    {
+      "title": "Horror",
+      "text": "Terri clutches her custom halloween mask in horror. There are no secrets here. There is nothing here. This maze has an end and she is denied it now.",
+      "costStatName": "Energy",
+      "singleUse": false,
+      "autoPlay": false,
+      "costStatValue": 2,
+      "bgAbsoluteSrc": "http://lavinraca.eyedolgames.com/TheHarvestGames/images/Year1/terriabstract.gif",
+      "resultStatName": "Abstraction",
+      "resultChangeValue": 1
+    },
+    {
+      "title": "Recursion",
+      "text": "West is where reality lies but west is needed to leave this maze which means this maze is not within Reality not within Zampanio not within the Echidna not within Reality so its not lying which means west is real which means this is actually a real maze and the scarecrow is actually....",
+      "costStatName": "Abstraction",
+      "singleUse": false,
+      "autoPlay": false,
+      "costStatValue": 2,
+      "bgAbsoluteSrc": "http://farragofiction.com/LifeSim/images/LifeSimBGs/58.png",
+      "resultStatName": "Recursion",
+      "resultChangeValue": 1
+    }
+  ],
+  "hueRotate": "200",
+  "brightness": "1.5",
+  "saturation": "1",
+  "contrast": "5",
+  "startingDeck": {
+    "Recursion Victory": 1,
+    "Maze Love": 7,
+    "Glitch Time": 5,
+    "Horror": 3,
+    "Recursion": 1
   },
   "costStatValue": 0
 }

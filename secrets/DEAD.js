@@ -78,7 +78,6 @@ hell even hagala having no class is sorta in a mirror of wanda being the LORD of
 
 literally no room for hagala
 
-and of course, nidhogg directly effects the echidna, causing the  "no one can die within truth's horrdors" effect, i.e. Zawhei's power is active in killing death
 
 meanwhile i barely even have to talk about despap, zampanio is ALL about teaching you how to hack/create your own realities
 the grace of rage is threaded through it all 

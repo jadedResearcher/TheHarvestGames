@@ -9,31 +9,25 @@ you can click any time in order to re-apply it (along with the popup)
 
 these relics won't be able to run outside the game, cuz it assumes certain other files loaded
 */
-const doBird = () => {
-    displayCardAndDeckEdits(); //the witch of blood lets you see how everything is connected and twist them to your purpose
+const doBear = () => {
+    ALLOWZAMPANIOINFECTION = true; //the reaper of life will destroy all challenge with endless mindlessly spreading life
     const parent = document.querySelector("body");
     const contentEle = createElementWithClassAndParent("div", parent, 'card-popup');
     const image = createElementWithClassAndParent("img", contentEle, 'big-relic-image');
     image.src = "images/Relics/STATUE_OF_THEDEVILOFISOLATIONANDROYALTY_GUIDE_OFhUNTERS.png";
     const explanation = createElementWithClassAndParent("div", contentEle, 'sub-section relic-explaination');
-    explanation.innerHTML = `You got the BIRD relic! 
+    explanation.innerHTML = `You got the BEAR relic! 
     <br><br>It's a statue of one of the EIGHT DIVINES!
-    <br><Br>The Devil of Isolation and Royalty allows you to view the card and deck builder!
+    <br><Br>The Devil of Flesh and Children allows you to create new cards from a mysterious source to add to any deck!
     <br><br>It will be applied until you refresh the page! Don't worry though, you can re-apply it any time from your bookshelf.`;
 
-    popup("Your stats spelled 'B-I-R-D'!", contentEle)
+    popup("Your stats spelled 'B-E-A-R'!", contentEle)
 
-    addRelicToBar("BIRD", image.src);
+    addRelicToBar("BEAR", image.src);
 
 }
 
-doBird();
+doBear();
 
-/*
-our witch of blood was always absent from her session
-only showing up after it all was over
-and here we have our two bound friends/lovers of wodin and the intern never able to reach each other 
-its always been connected even when it wasn't
+//and of course, nidhogg directly effects the echidna, causing the  "no one can die within truth's horrdors" effect, i.e. Zawhei's power is active in killing death
 
-similarly the dinosaur boy never really connected with anyone
-*/
