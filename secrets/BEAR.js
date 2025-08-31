@@ -14,7 +14,7 @@ const doBear = () => {
     const parent = document.querySelector("body");
     const contentEle = createElementWithClassAndParent("div", parent, 'card-popup');
     const image = createElementWithClassAndParent("img", contentEle, 'big-relic-image');
-    image.src = "images/Relics/STATUE_OF_THEDEVILOFISOLATIONANDROYALTY_GUIDE_OFhUNTERS.png";
+    image.src = "images/Relics/THEDEVILOFFLESHANDCHILDREN_byguideofhunters.png";
     const explanation = createElementWithClassAndParent("div", contentEle, 'sub-section relic-explaination');
     explanation.innerHTML = `You got the BEAR relic! 
     <br><br>It's a statue of one of the EIGHT DIVINES!

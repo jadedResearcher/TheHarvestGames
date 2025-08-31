@@ -29,12 +29,18 @@ and it would be OBJECTIVELY funny if theres an entire spooky cult (being murdere
 let truthEle;
 let scarecrowEle;
 
+let weird_gifs;
+
+const gif_url = "http://farragofiction.com/CatalystsBathroomSim/audio_utils/weird_sounds/weird_video/WeirdGifs/";
+
 const FOUNDSECRETSKEY = 'LAVINRACA2025SECRETS'
-let ALLOWZAMPANIOINFECTION = false;
+let ALLOWZAMPANIOINFECTION = false; //life spiralling out of control
 
 const click = new Audio();
 click.src = "http://farragofiction.com/CatalystsBathroomSim/audio_utils/weird_sounds/chip.mp3"
 window.onload = () => {
+    initThemes();
+    initImages();
     truthEle = document.querySelector("#mobileFriendlyConsole")
     scarecrowEle = document.querySelector("#mobileFriendlyConsole")
     const consoleShortcut = document.querySelector("#console-shortcut")
@@ -51,6 +57,11 @@ window.onload = () => {
     }
     handleURLParams();
 
+}
+
+const initImages = async () => {
+    let tmp = await getImages(gif_url);
+    weird_gifs = tmp.map((item) => gif_url + item);
 }
 
 const displayCardAndDeckEdits = () => {

@@ -9,6 +9,7 @@ let game;
 let startingCardSets = [];
 
 
+
 const getAllStatsForCardset = (cardset) => {
   const ret = [];
   const cards = cardset.cards;
@@ -62,10 +63,6 @@ class CardSet {
   saturation = "3";
   contrast = "2";
   //what cards you begin the game with
-  //pairs of card title
-  //its a bit awkward to use but doesn't make us have to encode the cards multiple times (inefficient)
-  //startingDeck = [[victory.title, 1], [findPotato.title, 4], [eatPotato.title, 2], [defeat.title, 1], [evilRises.title, 2], [trainingStrength.title, 3], [fightEvilWithStrength.title, 3], [superTrain.title, 0]]
-  //actually trying to keep track of array of arrays was annoying in the card builder
   startingDeck = {}
 
   constructor(title, description, cards, startingDeck) {
@@ -109,12 +106,65 @@ class CardSet {
     return ret;
   }
 
+  addRandomZampanioCardToDeck = (parent, playCallback, quitCallback) => {
+    console.log("JR NOTE: addRandomZampanioCardToDeck");
+    const card = new Card();
+
+    //todo procedural
+
+    const chosenTheme = pickFrom(Object.values(all_themes));
+    const person = titleCase(chosenTheme.pickPossibilityFor(PERSON));
+    const adj = titleCase(chosenTheme.pickPossibilityFor(ADJ));
+    const compliment = titleCase(chosenTheme.pickPossibilityFor(COMPLIMENT));
+    const insult = titleCase(chosenTheme.pickPossibilityFor(INSULT));
+    const supermove = titleCase(chosenTheme.pickPossibilityFor(SUPERMOVE));
+    const object = titleCase(chosenTheme.pickPossibilityFor(OBJECT));
+    const location = titleCase(chosenTheme.pickPossibilityFor(LOCATION));
+    const philosophy = titleCase(chosenTheme.pickPossibilityFor(PHILOSOPHY));
+
+    const childbackstory = titleCase(chosenTheme.pickPossibilityFor(CHILDBACKSTORY));
+    const generalbackstory = titleCase(chosenTheme.pickPossibilityFor(GENERALBACKSTORY));
+    const miracle = titleCase(chosenTheme.pickPossibilityFor(MIRACLE));
+    const loc_desc = titleCase(chosenTheme.pickPossibilityFor(LOC_DESC));
+    const monster_desc = titleCase(chosenTheme.pickPossibilityFor(MONSTER_DESC));
+    const smell = titleCase(chosenTheme.pickPossibilityFor(SMELL));
+    const taste = titleCase(chosenTheme.pickPossibilityFor(TASTE));
+    const feeling = titleCase(chosenTheme.pickPossibilityFor(FEELING));
+    const sound = titleCase(chosenTheme.pickPossibilityFor(SOUND));
+    const effects = titleCase(chosenTheme.pickPossibilityFor(EFFECTS));
+
+    const titlePossibilities = [`${sound} Sound`, `${feeling} Texture`, `Summon ${object}`, `Summon ${person}`, `Teleport ${location}`, `${smell} Smell`, `${supermove}`, `${taste} Flavor`]
+    card.title = pickFrom(titlePossibilities);
+    card.text = pickFrom([childbackstory, generalbackstory, miracle, loc_desc, monster_desc, effects])
+    card.resultStatName = pickFrom([compliment, insult, adj])
+
+    if (weird_gifs.length > 0) {
+      card.bgAbsoluteSrc = pickFrom(weird_gifs)
+    }
+
+    this.cards.push(card);
+    //exactly one
+    this.startingDeck[card.title] = 1;
+    //refresh
+    parent.innerHTML = "";
+    this.render(parent, playCallback, quitCallback)
+  }
+
 
   render = (parent, playCallback, quitCallback) => {
     const title = createElementWithClassAndParent("h2", parent);
     title.innerText = this.title;
     const description = createElementWithClassAndParent("div", parent, 'sub-section');
     description.innerText = this.description;
+
+    if (ALLOWZAMPANIOINFECTION) {
+      //more life more life
+      const zampanioButton = createElementWithClassAndParent("button", parent);
+      zampanioButton.innerText = "Infect With Zampanio Card?"
+      zampanioButton.onclick = () => {
+        this.addRandomZampanioCardToDeck(parent, playCallback, quitCallback);
+      }
+    }
 
     const gameTestButton = createElementWithClassAndParent("button", parent);
     gameTestButton.innerText = "Play Game";

@@ -34,13 +34,13 @@ const makeColorsForStat = (stat) => {
 class Card {
   title = "An Example Scene";
   text = "A scene happens to [PLAYER]."
-  costStatName = "Strength";
+  costStatName = "";
   singleUse = false;
   autoPlay = false;
-  costStatValue = 3;
+  costStatValue = 0;
   bgAbsoluteSrc = "http://farragofiction.com/LifeSim/images/LifeSimBGs/58.png"; //can be things i don't host, go nuts, but beware the rot
   resultStatName = "Health"
-  resultChangeValue = -1; //can be negative
+  resultChangeValue = 1; //can be negative
 
   syncToJSON = (json) => {
     for (let key of Object.keys(json)) {
