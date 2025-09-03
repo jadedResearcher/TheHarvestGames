@@ -1,6 +1,6 @@
 const createStartingDecks = () => {
   const ret = [];
-  const jsonArray = [all_hallows_eve, lomat, TROGDAZORG, TERRI];
+  const jsonArray = [all_hallows_eve, lomat, TROGDAZORG, TERRI, SAMANDTWIGSWILDRIDE];
   for (let json of jsonArray) {
     const deck = new CardSet();
     deck.syncToJSON(json);
@@ -340,7 +340,7 @@ const TERRI = {
       "costStatName": "Recursion",
       "singleUse": true,
       "autoPlay": false,
-      "costStatValue": 13,
+      "costStatValue": 2,
       "bgAbsoluteSrc": "http://lavinraca.eyedolgames.com/TheHarvestGames/images/Year1/recursion_victory.gif",
       "resultStatName": "Victory",
       "resultChangeValue": 1
@@ -400,6 +400,93 @@ const TERRI = {
     "Glitch Time": 5,
     "Horror": 3,
     "Recursion": 1
+  },
+  "costStatValue": 0
+}
+
+
+const SAMANDTWIGSWILDRIDE = {
+  "title": "Sam and Twig's Wild Ride",
+  "description": "8 version of Twig were sacrificed, despite them finally finding the outhouse they sought. <br><br>The harrowing Truths they were forced to face within forged them into something new. A creature capable of taking both paths in the yellow wood. Sam, the creature of lies and web, and Twig, the creature of fangs and blood each live a half life once they escaped the corn maze.",
+  "cards": [
+    {
+      "title": "Bifurcation Victory",
+      "text": "Sam is Twig and Twig is Sam and Each is Half the Perspective Needed For Growth and Each.... Each accepts they will never grow. They are not the final version of themeslves, only echoes living within a god. Peace washes over them both and they finally allow themselves to be absorbed within the Harvest.",
+      "costStatName": "Dream",
+      "singleUse": true,
+      "autoPlay": false,
+      "costStatValue": 2,
+      "bgAbsoluteSrc": "http://lavinraca.eyedolgames.com/TheHarvestGames/images/Year1/samtwig.gif",
+      "resultStatName": "Victory",
+      "resultChangeValue": 1
+    },
+    {
+      "title": "Become More",
+      "text": "Sam/Twig (or is it Twig/Sam) become more of who they always were all along. You can point back to any part of their past and show the proof that they were always this rage filled animal or always this cold and calculating machine. Funny, how that is? We contain multitudes, until we choose to break down the middle and pretend we never did.",
+      "costStatName": "Ascension",
+      "singleUse": false,
+      "autoPlay": false,
+      "costStatValue": 2,
+      "bgAbsoluteSrc": "http://lavinraca.eyedolgames.com/TheHarvestGames/images/Year1/samtwig.gif",
+      "resultStatName": "Dream",
+      "resultChangeValue": 1
+    },
+    {
+      "title": "Woof Woof",
+      "text": "Twig is a very bad dog. They eat garbage and bite people they weren't told to and only do training exercises they want to.",
+      "costStatName": "Mutt",
+      "singleUse": false,
+      "autoPlay": false,
+      "costStatValue": 2,
+      "bgAbsoluteSrc": "http://lavinraca.eyedolgames.com/TheHarvestGames/images/Year1/hundempty.png",
+      "resultStatName": "Ascension",
+      "resultChangeValue": 1
+    },
+    {
+      "title": "Tick Tock",
+      "text": "Sam is a very good doll. They spin webs and move their limbs according to their Big Bro's whims and barely even notice when it all comes crashing down.",
+      "costStatName": "Doll",
+      "singleUse": false,
+      "autoPlay": false,
+      "costStatValue": 2,
+      "bgAbsoluteSrc": "http://lavinraca.eyedolgames.com/TheHarvestGames/images/Year1/spiderempty.png",
+      "resultStatName": "Ascension",
+      "resultChangeValue": 1
+    },
+    {
+      "title": "Become Dog",
+      "text": "Twig chooses to run away from home and become a Hund forever, fangs and blood and tooth and claw. Their Hundmaster, Rava will train them properly.",
+      "costStatName": "",
+      "singleUse": false,
+      "autoPlay": false,
+      "costStatValue": 0,
+      "bgAbsoluteSrc": "http://lavinraca.eyedolgames.com/TheHarvestGames/images/Year1/twig_to_twig.gif",
+      "resultStatName": "Mutt",
+      "resultChangeValue": 1
+    },
+    {
+      "title": "Become Doll",
+      "text": "Twig chooses stop fooling around with pretending to run away and go back to being Sam.  Their Big Bro will train them properly.",
+      "costStatName": "",
+      "singleUse": false,
+      "autoPlay": false,
+      "costStatValue": 0,
+      "bgAbsoluteSrc": "http://lavinraca.eyedolgames.com/TheHarvestGames/images/Year1/twig_to_sam.gif",
+      "resultStatName": "Doll",
+      "resultChangeValue": 1
+    }
+  ],
+  "hueRotate": "200",
+  "brightness": "1.5",
+  "saturation": "1",
+  "contrast": "5",
+  "startingDeck": {
+    "Bifurcation Victory": 1,
+    "Become Doll": 5,
+    "Become Dog": 5,
+    "Tick Tock": 5,
+    "Woof Woof": 3,
+    "Become More": 1
   },
   "costStatValue": 0
 }
