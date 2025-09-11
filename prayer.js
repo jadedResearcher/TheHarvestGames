@@ -100,7 +100,7 @@ const theHarvestWakes = async () => {
     form.onsubmit = (e) => {
         console.log("JR NOTE: test")
         e.stopPropagation();
-        const prayer = `Dear Sweet Harvest:  ${option1.value} [HIDE]${JSON.stringify(currentFeelings)}[/HIDE]`;
+        const prayer = `Dear Sweet Harvest:  ${option1.value}`;
         submitCommand(prayer);
         const videos = processFeelingsFromPrayer(prayer, "", true);
         console.log("JR NOTE: vidoes from submitting a pryayer is", videos)
@@ -302,7 +302,6 @@ class FeelingsObject {
                     ///numberToAdd = 13; 
                 }
                 ret.push(value);
-                currentFeelings[this.name] += numberToAdd;
             }
         }
 
