@@ -104,13 +104,22 @@ const renderLibrary = () => {
 
 }
 
+const renderPrayerButton = (container) => {
+    const button = createElementWithClassAndParent("button", container, "prayer-button");
+    button.innerText = "Pray For Inspiration To Change"
+
+}
+
 const renderBookcase = (container) => {
     const parent = createElementWithClassAndParent("div", container, "book-case");
     const shelves = createElementWithClassAndParent("div", parent, "shelves");
+
     //items is EITHER a card set or a relic
     const renderBookCase = (items, bookCallback) => {
         const ret = []; //all books
         shelves.innerHTML = "";
+        renderPrayerButton(shelves);
+
         const allowedColors = ["#4c560d", "#677221", "#a1b234", "#d5f40a", "#7a843d", "#9db211"];
 
         const chunkSize = 42;

@@ -440,11 +440,19 @@ video {
 }
 
 .book-case {
-    padding-top: 31px;
     border: 3px double #a1b234;
     height: fit-content;
     background-color: black;
 
+}
+
+.prayer-button {
+    background: #677221;
+    width: 97%;
+    margin-left: 17px;
+    margin-right: 17px;
+    color: black;
+    font-family: 'gameboy';
 }
 
 .shop {
