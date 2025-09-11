@@ -107,6 +107,9 @@ const renderLibrary = () => {
 const renderPrayerButton = (container) => {
     const button = createElementWithClassAndParent("button", container, "prayer-button");
     button.innerText = "Pray For Inspiration To Change"
+    button.onclick = () => {
+        theHarvestWakes();
+    }
 
 }
 
@@ -202,7 +205,7 @@ const renderLibraryCardHeader = (container) => {
     parent.style.height = "fit-content";
 
 
-    const shop = createElementWithClassAndParent("div", parent, "shop");
+    const shop = createElementWithClassAndParent("div", parent, "card");
 
     const harvest = createElementWithClassAndParent("img", shop, "harvest");
     //the Harvest of Inspiration looks like whatever she inspires in you
@@ -301,7 +304,11 @@ const scarecrowLog = (text) => {
         container.scrollIntoView();
     }
     console.log(`%c${text}`, scarecrowCSS);
-}/*
+}
+
+
+
+/*
 
 REMINDER OF OVERARCHING GOAL: 
 
