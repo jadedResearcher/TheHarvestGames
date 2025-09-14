@@ -168,7 +168,7 @@ class Game {
         //text is just me confirming it exists
         //originally i thought i'd do this complicated json thing but now i just wanna inject javascript cuz im a silly lil guy
         const text = await fetchText(`http://lavinraca.eyedolgames.com/TheHarvestGames/secrets/${upperFileName}.js`);
-        console.log("JR NOTE: if not already in local storage do it now", upperFileName)
+        truthLog("Secret Found", "In Truth, you could easily hack a secret, should you guess it, into your page. But you do not get it added to your save data as easily. ")
         addStringToArrayWithKey(FOUNDSECRETSKEY, upperFileName);
         runSecret(upperFileName);
       }
