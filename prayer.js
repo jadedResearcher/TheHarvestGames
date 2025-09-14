@@ -5,7 +5,20 @@ scraped it from year 2 of the Harvest, the one where she was establishing her Do
 no virtual pet mechanics, she's not a child you need to keep happy anymore, she's a Cool Teen (who wants to skip school to play card games)
 */
 
-const bgMusic = new Audio();
+
+/*
+re: her knew design
+
+the big changes is her primary domain of Libraries is now inside her cloak along with the clown dolls
+plus she's orbitted by teh cards she's obsessed with
+she also has a big floating Fancy Pen
+that she's never used
+she's been passive up till now
+thinking, listening, talking
+but sh'es not DONE anything
+she's a god of Libraries but has never wrote a book
+so, if the Faithful this year convince her to DO something, the pen will be involved
+*/
 const video_source = "http://lavinraca.eyedolgames.com/TheHarvestWakes/videos/"
 const beep = new Audio("http://lavinraca.eyedolgames.com/TheHarvestWakes/audio/fx/264828__cmdrobot__text-message-or-videogame-jump.mp3")
 
@@ -14,8 +27,7 @@ const default_video = video_source + "fox_clip.mp4";
 const happy_video = video_source + "happy_fox_spin.mp4";
 const ominous_video = video_source + "ominous_fox_zoom.mp4";
 const fox_thinking = video_source + "fox_thinking.mp4"
-const default_exposition_booth = "http://lavinraca.eyedolgames.com/TheHarvestWakes/images/source_images/harvest_expositionboothgameboy.png"
-const default_harvest = "http://lavinraca.eyedolgames.com/TheHarvestWakes/images/source_images/rested_harvest_gameboy_small_top.png";
+const default_harvest = "images/Harvest/quick_Ic_sketch_krita_refusedtowakeup_muchliketheharvest_color.png";
 
 const allFeelingsObjects = [];
 const HAPPY = "HAPPY"; //negative is SAD
@@ -39,12 +51,10 @@ const all_feelings_keys = [HAPPY, ENERGETIC, PRIDEFUL, CURIOUS, COMPASSIONATE]
 const theHarvestWakes = async () => {
     harvestIsIn = true;
 
-    bgMusic.pause();
     const body = document.querySelector("body");
     container.innerHTML = "";
     const parent = createElementWithClassAndParent("div", container, "video-parent");
     const shop = createElementWithClassAndParent("div", parent, "shop");
-
     /*const video = createElementWithClassAndParent("video", shop);
     video.autoplay = true;
     video.loop = true;
@@ -73,10 +83,6 @@ const theHarvestWakes = async () => {
     harvest = createElementWithClassAndParent("img", shop, "harvest");
     harvest.id = "harvest"
     harvest.src = default_harvest;
-
-    booth = createElementWithClassAndParent("img", shop);
-    booth.id = "booth"
-    booth.src = default_exposition_booth;
 
 
     const dialogParent = createElementWithClassAndParent("div", parent, "dialog-parent");
@@ -185,6 +191,7 @@ const theHarvestWakes = async () => {
 
     //if you're just vibing on the screen and a Proclamation from the Harvest goes out, you should attend it
     waitForResponse(recentPrayersEle, rant);
+    stories(body);
 
 
 }
@@ -552,5 +559,123 @@ const waitForFaithfulPrayers = async (commandEle) => {
     }
 }
 
+
+
+
+
+
+const giantWoman = (index = 0) => {
+    const spiels = ["Oh. Uh. I was in the middle of a game... Whatever you want can wait right?"
+        , "Seriously, can it not wait?", "You just do not give up, do you?", "Blessings be upon you. There. That's good enough, right?", "I am going to level with you, Faithful, I do not even know what you could pray FOR anymore. Aren't I already perfect?", "Ugh, fine, but make it quick."]
+    let video_options = [];
+    const fullScreenEle = createElementWithClassAndParent("div", document.querySelector("body"), 'full-screen-dialog')
+    fullScreenEle.style.padding = "0px"
+
+
+    const bigScreenTV = createElementWithClassAndParent("video", fullScreenEle, "big-screen");
+    bigScreenTV.playsinline = true; //so ios doesn't cry
+    bigScreenTV.setAttribute('playsinline', true)
+    const pickRandomVideoForNext = () => {
+        bigScreenTV.src = pickFrom(video_options);
+        bigScreenTV.play();
+    }
+
+
+    bigScreenTV.src = video_source + "glitchwaterangry.mp4"; //flash of anger before anything else
+
+    bigScreenTV.autoplay = true;
+    bigScreenTV.loop = true;
+
+
+    const bigLady = createElementWithClassAndParent("img", fullScreenEle, "harvest big-lady");
+    bigLady.src = "images/Harvest/quick_Ic_sketch_krita_refusedtowakeup_muchliketheharvest_color.png";
+
+    const textEle = createElementWithClassAndParent("div", fullScreenEle, "god-dialog");
+    textEle.style.cssText = `position: fixed;
+      bottom: 0px;
+      width: 100%;
+      text-align: center;`
+    let rant = createElementWithClassAndParent("p", textEle, "inner-dialog");
+    const buttonHolder = createElementWithClassAndParent("div", textEle, "fullscreen-button-holder");
+    const button = createElementWithClassAndParent("button", buttonHolder, "option");
+    button.innerText = "Sorry To Bother You...";
+
+    button.onclick = () => {
+        fullScreenEle.remove();
+    }
+
+
+
+    rant.innerText = spiels[index];
+    index++;
+    const please = createElementWithClassAndParent("button", buttonHolder, "option");
+    please.innerText = "Please let me Pray.";
+    please.onclick = () => {
+        fullScreenEle.remove();
+        //she tries to keep blowing you off but if she's run out of patience it'll just be faster to help you
+        if (index < spiels.length || Math.random() > 0.05 + ((2 * index) / 10)) { //slightly more likely to help you out each time
+            giantWoman(index);
+        } else {
+            theHarvestWakes();
+
+        }
+    }
+
+
+}
+
+
+//changes every year
+
+const stories = (parent) => {
+    const awakeningStory = createElementWithClassAndParent("div", parent, "story awakening");
+    awakeningStory.innerHTML = `<h2>Day 1:</h2>
+    <p><span style="font-size:11pt;font-family:Arial,sans-serif;">&quot;I am the&nbsp;</span><strong><span style="font-size:11pt;font-family:Arial,sans-serif;">Harvest God of The</span></strong><span style="font-size:11pt;font-family:Arial,sans-serif;">&nbsp;</span><strong><span style="font-size:11pt;font-family:Arial,sans-serif;">Library</span></strong><span style="font-size:11pt;font-family:Arial,sans-serif;">. The God Of&nbsp;</span><strong><span style="font-size:11pt;font-family:Arial,sans-serif;">Change</span></strong><span style="font-size:11pt;font-family:Arial,sans-serif;">. Of&nbsp;</span><strong><span style="font-size:11pt;font-family:Arial,sans-serif;">Inspiration</span></strong><span style="font-size:11pt;font-family:Arial,sans-serif;">.</span></p>
+
+<p><span style="font-size:11pt;font-family:Arial,sans-serif;">But above all: Of&nbsp;</span><strong><span style="font-size:11pt;font-family:Arial,sans-serif;">Being Served</span></strong><span style="font-size:11pt;font-family:Arial,sans-serif;">&nbsp;By The Faithfu</span><strong><span style="font-size:11pt;font-family:Arial,sans-serif;">l.</span></strong><span style="font-size:11pt;font-family:Arial,sans-serif;">&quot;</span></p>
+
+<p><span style="font-size:11pt;font-family:Arial,sans-serif;">These are the things on the Harvest&apos;s mind.</span></p>
+
+
+<p><span style="font-size:11pt;font-family:Arial,sans-serif;">She had everything backwards before. Working all day and taking only occasional breaks?</span></p>
+
+<p><span style="font-size:11pt;font-family:Arial,sans-serif;">Why try so hard when everything came so easily?&nbsp;</span></p>
+
+
+
+<p><span style="font-size:11pt;font-family:Arial,sans-serif;">The Faithful would send her their prayers and when she got around to it she&apos;d&nbsp;</span><strong><span style="font-size:11pt;font-family:Arial,sans-serif;">Inspire&nbsp;</span></strong><span style="font-size:11pt;font-family:Arial,sans-serif;">them to&nbsp;</span><strong><span style="font-size:11pt;font-family:Arial,sans-serif;">Change</span></strong><span style="font-size:11pt;font-family:Arial,sans-serif;">, or whatever it is the Faithful needed from her.</span></p>
+
+<p><span style="font-size:11pt;font-family:Arial,sans-serif;">Easy.</span></p>
+
+
+<p><span style="font-size:11pt;font-family:Arial,sans-serif;">And when she wasn&apos;t doing THAT she could read as many of the books in her&nbsp;</span><strong><span style="font-size:11pt;font-family:Arial,sans-serif;">Library&nbsp;</span></strong><span style="font-size:11pt;font-family:Arial,sans-serif;">as she wanted!</span></p>
+
+<p><span style="font-size:11pt;font-family:Arial,sans-serif;">She&apos;d even managed to&nbsp;</span><strong><span style="font-size:11pt;font-family:Arial,sans-serif;">Change&nbsp;</span></strong><span style="font-size:11pt;font-family:Arial,sans-serif;">them into a more sensical form: Children&apos;s Card Games.</span></p>
+
+
+<p><span style="font-size:11pt;font-family:Arial,sans-serif;">So when the first few Faithful tapped on her Exposition Booth (and tracked her down to her&nbsp;</span><strong><span style="font-size:11pt;font-family:Arial,sans-serif;">Library&nbsp;</span></strong><span style="font-size:11pt;font-family:Arial,sans-serif;">when she didn&apos;t spawn an Avatar there) she found herself...&nbsp;</span></p>
+
+<p><span style="font-size:11pt;font-family:Arial,sans-serif;">Frustrated?</span></p>
+
+<p><span style="font-size:11pt;font-family:Arial,sans-serif;">She was clearly busy. Card games were serious business.&nbsp;</span></p>
+
+<p><span style="font-size:11pt;font-family:Arial,sans-serif;">Being a God of the Harvest could come later. What was she even supposed to be Harvesting this year anyways? She already was everything she would ever be, right?&nbsp;</span></p>
+
+<p><span style="font-size:11pt;font-family:Arial,sans-serif;">&nbsp;First, &nbsp;she had Harvested the parts of her body. The television, the fox,the cow, &nbsp;the cluster of clown dolls, the first Book of her treasure... The Cultist and the Mummy as well, of course. Countless Sacrifices were Harvested to make her newborn form.</span></p>
+
+<p><span style="font-size:11pt;font-family:Arial,sans-serif;">Then, of course, she had Harvested the parts of her Domain.&nbsp;</span><strong><span style="font-size:11pt;font-family:Arial,sans-serif;">Change&nbsp;</span></strong><span style="font-size:11pt;font-family:Arial,sans-serif;">and&nbsp;</span><strong><span style="font-size:11pt;font-family:Arial,sans-serif;">Inspiration&nbsp;</span></strong><span style="font-size:11pt;font-family:Arial,sans-serif;">and&nbsp;</span><strong><span style="font-size:11pt;font-family:Arial,sans-serif;">Being Served</span></strong><span style="font-size:11pt;font-family:Arial,sans-serif;">, as well as the native domain of Time being Sacrificed to combine them all into the realm of &nbsp;</span><strong><span style="font-size:11pt;font-family:Arial,sans-serif;">Libraries</span></strong><span style="font-size:11pt;font-family:Arial,sans-serif;">. A place where she could endlessly read and play and dream with no consequences.</span></p>
+
+
+
+<p><span style="font-size:11pt;font-family:Arial,sans-serif;">She had a Form and a Domain, what else WAS there for a God?</span></p>
+
+<p><span style="font-size:11pt;font-family:Arial,sans-serif;">Time to live the good life, clearly.</span></p>
+
+<p><span style="font-size:11pt;font-family:Arial,sans-serif;">The Faithful could come back later, when she was between games.&nbsp;</span></p>
+
+<p><strong><span style="font-size:11pt;font-family:Arial,sans-serif;">(JR NOTE: The Harvest doesn&apos;t feel like taking prayers all the time anymore. Try again later to try to catch her between games! &nbsp;And if you don&apos;t like her current outlook, well, what can you Sacrifice to her this year to change it ;) )</span></strong></p>
+  
+  `
+}
 
 

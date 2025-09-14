@@ -106,12 +106,35 @@ const renderLibrary = () => {
 
 const renderPrayerButton = (container) => {
     const button = createElementWithClassAndParent("button", container, "prayer-button");
-    button.innerText = "Pray For Inspiration To Change"
+    button.innerText = "Pray For Inspiration, Change or To Serve The Harvest"
     button.onclick = () => {
-        theHarvestWakes();
-    }
+        //true random, she's not keeping set hours anymore, too lazy
+        //i should encourage people to click the button again if she's said no, like a little text box you can put flattery into, to see if you can coax her pride into working instead of rotting
+        //the Harvest is here to HELP the people, not to simply rot in the field
+        if (Math.random() > 0.05) {
+            theHarvestSlacks();
+        } else {
+            theHarvestWakes();
 
+        }
+    }
 }
+
+/*
+It turns out when you max out a god's Pride and make an entire third of her being
+"Being Served By The Faithful"...
+
+She doesn't exactly have a good work ethic anymore, lol. 
+
+I hope we can work together to find something she cares about more than reading her books and playing her card games. 
+
+The Harvest is meant to be used to help the people, not to rot in the field.
+*/
+const theHarvestSlacks = () => {
+    giantWoman();
+}
+
+
 
 const renderBookcase = (container) => {
     const parent = createElementWithClassAndParent("div", container, "book-case");
@@ -264,7 +287,7 @@ const renderTest = () => {
         contents.innerHTML = "";
         genericCardset.render(contents)
     }
-
+ 
     const gameTestButton = createElementWithClassAndParent("button", contents);
     gameTestButton.innerText = "Play Test Game";
     gameTestButton.onclick = ()=>{
