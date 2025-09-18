@@ -23,4 +23,4 @@ OwO what's this? It's Zawhei's Lusus.
 Chickens and Penguins and Rooster Chickens are all types of _ _ _ _ S.
 The Harvest has become very obsesed with _ _ _ _ S.
 `;
-const relicRiddles = relicRiddlesRaw.split("");
+const relicRiddles = relicRiddlesRaw.trim().split("\n");

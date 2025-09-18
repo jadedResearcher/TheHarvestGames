@@ -1,5 +1,5 @@
 
-const doOUIJA = () => {
+const doDRINK = () => {
     alert("Not Complete :( Why Not Suggest Something To Put Here?");
     truthLog("Placeholder", `In Truth, JR wanted to make sure obvious words had placeholder secrets in them. 
         
@@ -10,4 +10,4 @@ const doOUIJA = () => {
         Consider it a Sacrifice to the Harvest, that she may learn what Motivates her for the coming Seasons.`)
 }
 
-doOUIJA();
+doDRINK();

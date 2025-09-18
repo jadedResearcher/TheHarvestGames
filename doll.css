@@ -943,11 +943,7 @@ button {
 button:disabled {
     cursor: auto;
     opacity: 0.5;
-    background: var(--main-bg-color);
-    color: var(--main-font-color);
-    border: 0px;
-    padding: 10px;
-    margin: 10px;
+    filter: grayscale(1)
 }
 
 .shelf {

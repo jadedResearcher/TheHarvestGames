@@ -30,6 +30,10 @@ let truthEle;
 let scarecrowEle;
 
 let weird_gifs;
+//relics will modify this
+let candyEarnedPerVictory = 0;
+
+
 
 const gif_url = "http://farragofiction.com/CatalystsBathroomSim/audio_utils/weird_sounds/weird_video/WeirdGifs/";
 
@@ -39,6 +43,7 @@ let ALLOWZAMPANIOINFECTION = false; //life spiralling out of control
 const click = new Audio();
 click.src = "http://farragofiction.com/CatalystsBathroomSim/audio_utils/weird_sounds/chip.mp3"
 window.onload = () => {
+    load();
     initThemes();
     initImages();
     truthEle = document.querySelector("#mobileFriendlyConsole")
@@ -124,8 +129,9 @@ const renderPrayerButton = (parent) => {
         Inspiration, Change, Being Served. All Swirled together to become a god of Libraries.</p>
         <p>Now she Wakes once more, requiring Prayers yet not understanding why. When the fantasy of books is so noursishing, why do anything but passively consume fantasy? Why wake when dreams are so pleasant?</p>
         <p>The Faithful have Sacrificed to give her Form, and they have Prayed to give her a Domain.</p>
-        <p>Will they help her find her Cause? Her Motivation?</p>
+        <p>Will the Faithful, both Old and New, help her find her Cause? Her Motivation?</p>
         <p>Only the Lost Domain of Time will Tell.</p>
+
 
         `
         popup("About", contentEle)
@@ -150,11 +156,78 @@ const renderPrayerButton = (parent) => {
     const button2 = createElementWithClassAndParent("button", container, "prayer-button");
     button2.innerText = "Buy Hints For Relics"
     button2.onclick = () => {
-        alert("TODO")
+        relicHintStore();
     }
 
     const button3 = createElementWithClassAndParent("button", container, "prayer-button");
     button3.innerHTML = "<a href='https://discord.gg/TEE7P8qakp' target='_blank'>Join Discord</a>"
+}
+
+const relicHintStore = () => {
+    let popupEle;
+    const contentEle = createElementWithClassAndParent("div", container);
+    contentEle.style.padding = "31px"
+
+    const instructions = createElementWithClassAndParent("div", contentEle);
+    instructions.innerHTML = `Buy Relics with 🍬! Relics change the rules, unlock secrets and are just plain bragging rights! <br><Br>You currently have ${globalDataObject.candy} candy. Get more by earning Victory through card games! `;
+    //seed riddle
+    const seedRiddle = "Can you spell 'S-O-W' with your stats to gain what you Reap from the Harvest?"
+    if (!globalDataObject.relicHintsBought.includes(seedRiddle)) {
+        const riddleEle = createElementWithClassAndParent("button", contentEle);
+        const cost = 13;
+        const canBuy = globalDataObject.candy >= cost;
+        riddleEle.innerHTML = `${cost} 🍬 ${canBuy ? "" : ":("}`;
+        if (canBuy) {
+            riddleEle.onclick = () => {
+                globalDataObject.candy += -1 * cost;
+                globalDataObject.relicHintsBought.push(seedRiddle);
+                save();
+                alert(seedRiddle)
+                popupEle.remove();
+                popupEle = popup("Buy Relic Hints With 🍬", contentEle)
+            }
+        } else {
+            riddleEle.disabled = true;
+        }
+
+    }
+
+    for (let riddle of relicRiddles) {
+        //don't display a riddle we already bought here
+        if (!globalDataObject.relicHintsBought.includes(riddle)) {
+            const riddleEle = createElementWithClassAndParent("button", contentEle);
+            const cost = stringtoseed(riddle)
+            const canBuy = globalDataObject.candy >= cost;
+            riddleEle.innerHTML = `${cost} 🍬 ${canBuy ? "" : ":("}`;
+            if (canBuy) {
+                riddleEle.onclick = () => {
+                    globalDataObject.candy += -1 * cost;
+                    globalDataObject.relicHintsBought.push(riddle);
+                    save();
+                    alert(riddle)
+                    popupEle.remove();
+                    popupEle = popup("Buy Relic Hints With 🍬", contentEle)
+                }
+            } else {
+                riddleEle.disabled = true;
+            }
+        }
+
+    }
+
+
+    const purchases = createElementWithClassAndParent("div", contentEle);
+    purchases.innerText = "Purchased Hints:"
+    purchases.style.marginBottom = "13px";
+    purchases.style.marginTop = "31px";
+    for (let riddle of globalDataObject.relicHintsBought) {
+        const riddleEle = createElementWithClassAndParent("li", contentEle);
+        riddleEle.innerHTML = riddle;
+    }
+
+
+    popupEle = popup("Buy Relic Hints With 🍬", contentEle)
+
 }
 
 /*
