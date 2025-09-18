@@ -104,9 +104,37 @@ const renderLibrary = () => {
 
 }
 
-const renderPrayerButton = (container) => {
+const renderPrayerButton = (parent) => {
+    const container = createElementWithClassAndParent("div", parent, "button-container");
+
+
+    const aboutButton = createElementWithClassAndParent("button", container, "prayer-button");
+    aboutButton.innerText = "About"
+    aboutButton.onclick = () => {
+        const contentEle = createElementWithClassAndParent("div", container);
+        contentEle.style.padding = "31px"
+        contentEle.innerHTML = `
+        <p>Lavinraca (or is it pronounced Lavinraca? I can never keep them straight) is a month long Halloween party that anyone can join. 
+        I (JR) joined in 2023, though it had already been around several years at that point.</p>
+        <p>I made a <a  target='_blank' href='http://lavinraca.eyedolgames.com/Week3/'>Hotel Site</a> and a <a target='_blank' href='http://lavinraca.eyedolgames.com/Week3/Corn'>Corn Maze</a> in collaboration with Maccus and haven't looked back since!
+        That year, we all sacrificed together, over four long weeks,  to bring forth <a  target='_blank' href='http://lavinraca.eyedolgames.com/Week4/Corn'>The Harvest God</a>.
+        With the ending of the season, the Harvest lay fallow, dreaming quietly to herself, afraid she would never again awake.</p>
+        <p>We all remembered her, though, and the next year she awoke to take our Prayers and let us Define her <a target='_blank' href='http://lavinraca.eyedolgames.com/TheHarvestWakes/'>Domains</a>, again over four long weeks.</p>
+        The Faithful prayed to her dilligently and she tried on various Identites before settling on a synthesis of them all.
+        Inspiration, Change, Being Served. All Swirled together to become a god of Libraries.</p>
+        <p>Now she Wakes once more, requiring Prayers yet not understanding why. When the fantasy of books is so noursishing, why do anything but passively consume fantasy? Why wake when dreams are so pleasant?</p>
+        <p>The Faithful have Sacrificed to give her Form, and they have Prayed to give her a Domain.</p>
+        <p>Will they help her find her Cause? Her Motivation?</p>
+        <p>Only the Lost Domain of Time will Tell.</p>
+
+        `
+        popup("About", contentEle)
+
+    }
+
+
     const button = createElementWithClassAndParent("button", container, "prayer-button");
-    button.innerText = "Pray For Inspiration, Change or To Serve The Harvest"
+    button.innerText = "Pray To The Harvest"
     button.onclick = () => {
         //true random, she's not keeping set hours anymore, too lazy
         //i should encourage people to click the button again if she's said no, like a little text box you can put flattery into, to see if you can coax her pride into working instead of rotting
@@ -118,6 +146,15 @@ const renderPrayerButton = (container) => {
 
         }
     }
+
+    const button2 = createElementWithClassAndParent("button", container, "prayer-button");
+    button2.innerText = "Buy Hints For Relics"
+    button2.onclick = () => {
+        alert("TODO")
+    }
+
+    const button3 = createElementWithClassAndParent("button", container, "prayer-button");
+    button3.innerHTML = "<a href='https://discord.gg/TEE7P8qakp' target='_blank'>Join Discord</a>"
 }
 
 /*

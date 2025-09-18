@@ -17,3 +17,10 @@ const addRelicToBar = (alt, image_src) => {
   image.alt = alt;
 }
 
+
+const relicRiddlesRaw = `Peewee bifurcated into two, one M _ _ and one D _ _.
+OwO what's this? It's Zawhei's Lusus.
+Chickens and Penguins and Rooster Chickens are all types of _ _ _ _ S.
+The Harvest has become very obsesed with _ _ _ _ S.
+`;
+const relicRiddles = relicRiddlesRaw.split("");
