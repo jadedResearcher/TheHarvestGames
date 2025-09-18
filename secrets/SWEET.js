@@ -9,32 +9,29 @@ you can click any time in order to re-apply it (along with the popup)
 
 these relics won't be able to run outside the game, cuz it assumes certain other files loaded
 */
-const doMEAT = () => {
-    candyEarnedPerVictory += candyEarnedPerVictory * candyEarnedPerVictory; //lets get exponential baby
+const doSWEET = () => {
+    candyEarnedPerVictory += candyEarnedPerVictory; //lets get multiplicative baby
 
     const contentEle = createElementWithClassAndParent("div", parent, 'card-popup');
     const image = createElementWithClassAndParent("img", contentEle, 'big-relic-image');
-    image.src = "http://lavinraca.eyedolgames.com/Week1/Corn/images/candy.png";
+    image.src = "http://lavinraca.eyedolgames.com/Week1/Corn/images/candy_small.png";
     const explanation = createElementWithClassAndParent("div", contentEle, 'sub-section relic-explaination');
-    explanation.innerHTML = `You got the ??? CANDY relic!
+    explanation.innerHTML = `You got the EXPERT CANDY relic!
     <br><br>
-    Uh.
+    It makes sense to at least get SOMETHING for winning right?
     <br><br>
-    Was this...
-    <br><br>
-    ALWAYS made of meat and bone and blood and fat?
-    <br><br>
-    Now that you look...
-    <br><br>Closer?
+    Doesn't reward make the effort all the sweeter?
+    <br><Br>
+    If there's not a reward, you're basically not playing a game, now are you?
     `;
 
-    popup("Your stats spelled 'M-E-A-T'!", contentEle)
+    popup("Your stats spelled 'S-W-E-E-T'!", contentEle)
 
-    addRelicToBar("MEAT", image.src);
+    addRelicToBar("SWEET", image.src);
 
 }
 
-doMEAT();
+doSWEET();
 
 /*
 it always comes back to candy doesn't it? 
