@@ -173,24 +173,30 @@ class CardSet {
 
       const gameContainer = createElementWithClassAndParent("div", container, 'game-container');
       const quitButton = createElementWithClassAndParent("button", container);
+      quitButton.id = "quit-game"
       //expose for testing
       game = new Game(this);
       parent.style.display = "none";
       if (playCallback) {
         playCallback(); //any other cleanup we need to do
       }
-      game.render(gameContainer);
       quitButton.innerText = "Quit Game";
       quitButton.style.position = "fixed";
       quitButton.style.top = "31px"
       quitButton.style.right = "31px"
-      quitButton.onclick = () => {
+
+      const quit = () => {
         gameContainer.remove();
         parent.style.display = "block";
         quitButton.remove();
         if (quitCallback) {
           quitCallback(); //any other cleanup we need to do
         }
+      }
+      game.render(gameContainer, quit);
+
+      quitButton.onclick = () => {
+        quit();
       }
 
     }

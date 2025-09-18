@@ -183,21 +183,24 @@ const relicHintStore = () => {
                 globalDataObject.relicHintsBought.push(seedRiddle);
                 save();
                 alert(seedRiddle)
+                console.log("JR NOTE: why won't this remove?")
                 popupEle.remove();
-                popupEle = popup("Buy Relic Hints With 🍬", contentEle)
+                relicHintStore();
             }
         } else {
             riddleEle.disabled = true;
         }
 
     }
-
+    let riddlesCanBuy = 0;
     for (let riddle of relicRiddles) {
         //don't display a riddle we already bought here
         if (!globalDataObject.relicHintsBought.includes(riddle)) {
+            riddlesCanBuy++;
             const riddleEle = createElementWithClassAndParent("button", contentEle);
             const rand = new SeededRandom(stringtoseed(riddle));
-            const cost = rand.getRandomNumberBetween(1, 113);
+            //hints get more expensive, on average, the more you buy
+            const cost = rand.getRandomNumberBetween(1, globalDataObject.relicHintsBought.length);
             const canBuy = globalDataObject.candy >= cost;
             riddleEle.innerHTML = `${cost} 🍬 ${canBuy ? "" : ":("}`;
             if (canBuy) {
@@ -206,14 +209,20 @@ const relicHintStore = () => {
                     globalDataObject.relicHintsBought.push(riddle);
                     save();
                     alert(riddle)
+                    console.log("JR NOTE: why won't this remove?", popupEle)
                     popupEle.remove();
-                    popupEle = popup("Buy Relic Hints With 🍬", contentEle)
+                    relicHintStore();
                 }
             } else {
                 riddleEle.disabled = true;
             }
         }
 
+    }
+    if (riddlesCanBuy === 0) {
+        const whoops = createElementWithClassAndParent("div", contentEle);
+        whoops.innerText = "You bought all the available hints... If only there were some way to add more hints, because there are surely more Relics to find..."
+        whoops.style.padding = "31px"
     }
 
 

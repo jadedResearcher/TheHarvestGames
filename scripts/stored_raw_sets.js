@@ -23,7 +23,7 @@ const all_hallows_eve = {
       "costStatValue": 13,
       "bgAbsoluteSrc": "http://farragofiction.com/CatalystsBathroomSim/audio_utils/weird_sounds/weird_video/WeirdGifs/eve_breathes-moshed-04-30-23-25-49-267.gif",
       "resultStatName": "Victory",
-      "resultChangeValue": 1
+      "resultChangeValue": 13
     },
     {
       "title": "Behold Eve, the Gremlin!",
@@ -169,7 +169,7 @@ const lomat = {
       "costStatValue": 6,
       "bgAbsoluteSrc": "http://farragofiction.com/LifeSim/images/LifeSimBGs/58.png",
       "resultStatName": "Victory",
-      "resultChangeValue": 1
+      "resultChangeValue": 6
     },
     {
       "title": "Get Buff2",
@@ -278,7 +278,7 @@ const TROGDAZORG = {
       "costStatValue": 1,
       "bgAbsoluteSrc": "http://lavinraca.eyedolgames.com/TheHarvestGames/images/Year1/identity_rawr.gif",
       "resultStatName": "Victory",
-      "resultChangeValue": 1
+      "resultChangeValue": 10
     },
     {
       "title": "Gain Identity",
@@ -343,7 +343,7 @@ const TERRI = {
       "costStatValue": 2,
       "bgAbsoluteSrc": "http://lavinraca.eyedolgames.com/TheHarvestGames/images/Year1/recursion_victory.gif",
       "resultStatName": "Victory",
-      "resultChangeValue": 1
+      "resultChangeValue": 2
     },
     {
       "title": "Maze Love",
@@ -418,7 +418,7 @@ const SAMANDTWIGSWILDRIDE = {
       "costStatValue": 2,
       "bgAbsoluteSrc": "http://lavinraca.eyedolgames.com/TheHarvestGames/images/Year1/samtwig.gif",
       "resultStatName": "Victory",
-      "resultChangeValue": 1
+      "resultChangeValue": 2
     },
     {
       "title": "Become More",

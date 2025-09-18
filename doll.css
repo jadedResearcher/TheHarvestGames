@@ -201,7 +201,7 @@ label {
 }
 
 .stat-bar {
-    width: 100px;
+    min-width: 100px;
     font-family: GT America;
     display: flex;
     justify-content: space-between;

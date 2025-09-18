@@ -35,6 +35,7 @@ class Game {
   cardset;//what are we actually playing with
   stats = {};// name/value pairs
   deck;
+  quitCallback; //gets set by whatever starts the game, how does the game tear itself down
   done = false;
   drawAtATime = 5; //in theory we can let things change this
   discards = [];
@@ -401,7 +402,15 @@ class Game {
 
   scanForVictoryOrDefeat = () => {
     if (this.stats[VICTORY] > 0) {
-      alert("You WON!  JR hasn't made this do anything yet tho...")
+      const winnings = candyEarnedPerVictory * this.stats[VICTORY];
+      if (winnings > 0) {
+        //harder it was to win, more candy you get
+        globalDataObject.candy += winnings;
+        save();
+        alert(`You WON ${winnings} 🍬!`);
+      } else {
+        alert("You won! Huh. Kinda unsatisfying though isn't it? You don't even get anything? What's the point? If only you could reap what you sow...")
+      }
       return true;
     }
 
@@ -412,14 +421,17 @@ class Game {
     return false;
   }
 
-  render = (parent) => {
+  render = (parent, quitCallback) => {
+    if (quitCallback) {
+      this.quitCallback = quitCallback;
+    }
     if (this.done) {
       return;
     }
-    console.log("JR NOTE: rendering frame of game")
     const done = this.scanForVictoryOrDefeat();
     if (done) {
       this.done = true;
+      this.quitCallback();
       return;
     }
     parent.innerHTML = ""; //clear previous frame

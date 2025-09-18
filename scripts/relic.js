@@ -18,9 +18,17 @@ const addRelicToBar = (alt, image_src) => {
 }
 
 
+/*
+Why YES a clever Waste COULD get all these hints for free.
+
+I wonder if an equally clever Waste could just...
+Make that not be all the hints there are :) :) ;)
+*/
 const relicRiddlesRaw = `Peewee bifurcated into two, one M _ _ and one D _ _.
 OwO what's this? It's Zawhei's Lusus.
-Chickens and Penguins and Rooster Chickens are all types of _ _ _ _ S.
-The Harvest has become very obsesed with _ _ _ _ S.
+Chickens and Penguins and Rooster Chickens are all types of _ _ _ _ (S).
+The Harvest has become very obsesed with _ _ _ _ (S).
+What is the reason for the season? C _ _ _ Y!
+The Harvest is often surrounded by C _ _ (S)!
 `;
 const relicRiddles = relicRiddlesRaw.trim().split("\n");
