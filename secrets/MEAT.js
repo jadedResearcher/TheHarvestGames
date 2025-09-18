@@ -11,6 +11,7 @@ these relics won't be able to run outside the game, cuz it assumes certain other
 */
 const doMEAT = () => {
     candyEarnedPerVictory += candyEarnedPerVictory * candyEarnedPerVictory; //lets get exponential baby
+    const parent = document.querySelector("body");
 
     const contentEle = createElementWithClassAndParent("div", parent, 'card-popup');
     const image = createElementWithClassAndParent("img", contentEle, 'big-relic-image');

@@ -11,6 +11,7 @@ these relics won't be able to run outside the game, cuz it assumes certain other
 */
 const doCandy = () => {
     candyEarnedPerVictory += 3; //increases it a little
+    const parent = document.querySelector("body");
 
     const contentEle = createElementWithClassAndParent("div", parent, 'card-popup');
     const image = createElementWithClassAndParent("img", contentEle, 'big-relic-image');
@@ -18,11 +19,10 @@ const doCandy = () => {
     const explanation = createElementWithClassAndParent("div", contentEle, 'sub-section relic-explaination');
     explanation.innerHTML = `You got the ADVANCED CANDY relic!
     <br><br>
-    It makes sense to at least get SOMETHING for winning right?
+    Just a little more reward. 
     <br><br>
-    Doesn't reward make the effort all the sweeter?
-    <br><Br>
-    If there's not a reward, you're basically not playing a game, now are you?
+    What could it hurt?
+    <br><br>After all, its no fun to get so little each time, right?
     `;
 
     popup("Your stats spelled 'C-A-N-D-Y'!", contentEle)
@@ -31,7 +31,7 @@ const doCandy = () => {
 
 }
 
-doCANDY();
+doCandy();
 
 /*
 it always comes back to candy doesn't it? 

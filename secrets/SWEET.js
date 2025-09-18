@@ -11,6 +11,7 @@ these relics won't be able to run outside the game, cuz it assumes certain other
 */
 const doSWEET = () => {
     candyEarnedPerVictory += candyEarnedPerVictory; //lets get multiplicative baby
+    const parent = document.querySelector("body");
 
     const contentEle = createElementWithClassAndParent("div", parent, 'card-popup');
     const image = createElementWithClassAndParent("img", contentEle, 'big-relic-image');
@@ -18,11 +19,9 @@ const doSWEET = () => {
     const explanation = createElementWithClassAndParent("div", contentEle, 'sub-section relic-explaination');
     explanation.innerHTML = `You got the EXPERT CANDY relic!
     <br><br>
-    It makes sense to at least get SOMETHING for winning right?
+    Candy is so great!
     <br><br>
-    Doesn't reward make the effort all the sweeter?
-    <br><Br>
-    If there's not a reward, you're basically not playing a game, now are you?
+    More please!
     `;
 
     popup("Your stats spelled 'S-W-E-E-T'!", contentEle)
