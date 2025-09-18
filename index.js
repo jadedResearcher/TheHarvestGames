@@ -196,7 +196,8 @@ const relicHintStore = () => {
         //don't display a riddle we already bought here
         if (!globalDataObject.relicHintsBought.includes(riddle)) {
             const riddleEle = createElementWithClassAndParent("button", contentEle);
-            const cost = stringtoseed(riddle)
+            const rand = new SeededRandom(stringtoseed(riddle));
+            const cost = rand.getRandomNumberBetween(1, 113);
             const canBuy = globalDataObject.candy >= cost;
             riddleEle.innerHTML = `${cost} 🍬 ${canBuy ? "" : ":("}`;
             if (canBuy) {
