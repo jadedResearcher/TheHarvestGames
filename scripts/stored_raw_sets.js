@@ -407,7 +407,7 @@ const TERRI = {
 
 const SAMANDTWIGSWILDRIDE = {
   "title": "Sam and Twig's Wild Ride",
-  "description": "8 version of Twig were sacrificed, despite them finally finding the outhouse they sought. <br><br>The harrowing Truths they were forced to face within forged them into something new. A creature capable of taking both paths in the yellow wood. Sam, the creature of lies and web, and Twig, the creature of fangs and blood each live a half life once they escaped the corn maze.",
+  "description": "8 version of Twig were sacrificed, despite them finally finding the outhouse they sought. <br><br>The harrowing <a target='_blank' href='http://farragofiction.com/AdventureSimWest/?nostalgia=lavinraca.txt'>Truths</a> they were forced to face within forged them into something new. A creature capable of taking both paths in the yellow wood. Sam, the creature of lies and web, and Twig, the creature of fangs and blood each live a half life once they escaped the corn maze.",
   "cards": [
     {
       "title": "Bifurcation Victory",

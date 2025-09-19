@@ -155,7 +155,7 @@ class CardSet {
     const title = createElementWithClassAndParent("h2", parent);
     title.innerText = this.title;
     const description = createElementWithClassAndParent("div", parent, 'sub-section');
-    description.innerText = this.description;
+    description.innerHTML = this.description;
 
     if (ALLOWZAMPANIOINFECTION) {
       //more life more life

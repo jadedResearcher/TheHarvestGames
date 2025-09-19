@@ -39,3 +39,23 @@ const load = () => {
 
 }
 
+
+/*
+alright i hit midnight, seriously time to stop
+but
+i got a lot done today
+i felt really inspired
+i think , gun to my head etc etc
+
+that my 'secret' is just
+i try to always have it so when i feel inspired theres an obvious hook into doing what less inspired me wanted
+current me might not feel like coding or writing or whatever
+but they CAN write a quick note to try to influence future me
+and future me struggles with feeling inspired but not knowing what to do, which usually turns into a million started projects that are never finished
+so having a specific list means that before i start anything new i can look at the list and go "oh oh does this spark anything"
+and its not even USUALLY what past me was thinking with the note
+but at least the chaos is in teh direction of the thing past me wanted
+instead of going in a thousand different directions, i june bug around what i wanted to do before
+so i finish a lot of what i start 
+okay for real, rest time 
+*/

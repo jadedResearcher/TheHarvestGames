@@ -402,13 +402,21 @@ class Game {
 
   scanForVictoryOrDefeat = () => {
     if (this.stats[VICTORY] > 0) {
+      if (!globalDataObject.deckVictories[this.cardset.title]) {
+        globalDataObject.deckVictories[this.cardset.title] = 0;
+      }
+      //want to keep track of what decks people are giving attention to
+      //the Harvest will know
+      globalDataObject.deckVictories[this.cardset.title] = globalDataObject.deckVictories[this.title] + 1;
       const winnings = candyEarnedPerVictory * this.stats[VICTORY];
+      //candy earned is zero unless you have a relic in play
       if (winnings > 0) {
         //harder it was to win, more candy you get
         globalDataObject.candy += winnings;
         save();
         alert(`You WON ${winnings} 🍬!`);
       } else {
+        save();
         alert("You won! Huh. Kinda unsatisfying though isn't it? You don't even get anything? What's the point? If only you could reap what you sow...")
       }
       return true;
