@@ -277,6 +277,8 @@ label {
     justify-content: space-between;
     background-color: #ff5c39;
     color: white;
+    position: fixed;
+    width: 97%;
 }
 
 .popup-button {
