@@ -28,6 +28,8 @@ and it would be OBJECTIVELY funny if theres an entire spooky cult (being murdere
 
 let truthEle;
 let scarecrowEle;
+//all_hallows_eve in relic, others as well,lomat
+let unlockedDecks = createStartingDecks();
 
 let weird_gifs;
 //relics will modify this
@@ -62,6 +64,23 @@ window.onload = () => {
     }
     handleURLParams();
 
+}
+
+//this only works if the library gets rerendered
+//but we don't know the library is there rn so don't rerender it yourself
+//trust that we rerender it every time we display it
+//not doing that currently but future me please :( :( :(
+const addBookToBookcase = (cardset) => {
+    //mostly relics will be using this
+    //relics just have to trust that there is a global variable
+    //with teh same name as their book
+    //if there isn't, we shouldn't crash teh page
+    //in theory this means you can add anything with a 'render' function to the book case but..
+    //well, it SHOULD be fine
+    if (cardset && cardset.render) {
+        unlockedDecks.push(cardset);
+
+    }
 }
 
 const initImages = async () => {
@@ -302,7 +321,6 @@ const renderBookcase = (container) => {
 
 
 
-    const unlockedDecks = createStartingDecks();
     for (let i of unlockedDecks) {
         content.push(i)
     }
