@@ -10,7 +10,7 @@ const doTRUTH = () => {
     image.src = "http://farragofiction.com/ZampanioHotlink/eirkrvoided.png";
 
     const explanation = createElementWithClassAndParent("div", contentEle, 'sub-section relic-explaination');
-    explanation.innerHTML = `You got a new Book!
+    explanation.innerHTML = `You got a new Book, ${lomat.title}!
     The LOMAT book will teach you all about the creation of the Echidna Universe, you think...
     `;
 

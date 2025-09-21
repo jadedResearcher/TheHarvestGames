@@ -24,11 +24,20 @@ console.warn("JR NOTE: don't forget to disable debug mode")
 //runSecret(`DEAD`);
 //file name is relative because you can't use this to trick someone
 //into running virus javascript or whatever
-const runSecret = (fileName) => {
+const runSecret = async (fileName, optionalCallback) => {
+  console.log("JR NOTE: runSecret being called", optionalCallback)
   const body = document.querySelector("body");
   const scriptTag = document.createElement("script")
   scriptTag.src = `secrets/${fileName}.js`;
   body.append(scriptTag);
+  //if you ran this secret from the library it'll re-render itself in case it added any books
+  if (optionalCallback) {
+    //wait long enough for the script to (hopefully) load
+    //and if it added a book it should be ready
+    //can't do a callback cuz i don't know what the thing is
+    await sleep(1000);
+    optionalCallback();
+  }
 }
 
 class Game {

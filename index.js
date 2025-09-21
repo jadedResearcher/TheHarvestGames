@@ -70,15 +70,18 @@ window.onload = () => {
 //but we don't know the library is there rn so don't rerender it yourself
 //trust that we rerender it every time we display it
 //not doing that currently but future me please :( :( :(
-const addBookToBookcase = (cardset) => {
+const addBookToBookcase = (cardset_json) => {
+    console.log("JR NOTE: addBookToBookcase", cardset_json)
     //mostly relics will be using this
     //relics just have to trust that there is a global variable
     //with teh same name as their book
     //if there isn't, we shouldn't crash teh page
     //in theory this means you can add anything with a 'render' function to the book case but..
     //well, it SHOULD be fine
-    if (cardset && cardset.render) {
-        unlockedDecks.push(cardset);
+    if (cardset_json && cardset_json.cards) {
+        const deck = new CardSet();
+        deck.syncToJSON(cardset_json);
+        unlockedDecks.push(deck);
 
     }
 }
@@ -123,6 +126,7 @@ const handleURLParams = () => {
 
 const renderLibrary = () => {
     const container = document.querySelector("#library")
+    container.innerHTML = "";
     renderLibraryCardHeader(container);
     renderBookcase(container);
 
@@ -342,17 +346,21 @@ const renderBookcase = (container) => {
             const playCallback = () => {
                 p.remove();
                 container.style.display = "none";
+                //re-render library cuz you mighta unlocked a book
+                renderLibrary();
             }
 
             const quitCallback = () => {
                 p.remove();
                 container.style.display = "block";
+                //re-render library cuz you mighta unlocked a book
+                renderLibrary();
             }
             item.render(contentEle, playCallback, quitCallback);
 
         } else {
             //relic will handle displaying itself and doing its thing
-            runSecret(item.title);
+            runSecret(item.title, renderLibrary);
         }
     })
 

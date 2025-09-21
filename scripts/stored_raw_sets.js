@@ -498,89 +498,81 @@ const SAMANDTWIGSWILDRIDE = {
 
 
 
+//sure why not expose her thoughts to the Faithful
+//you cannot hurt her in a way that matters
 
+//future jr, don't forget to add new cards to starting deck
 const THEHARVESTTHINKS = {
   "title": "The Harvest Thinks",
   "description": "The Harvest thinks... About so many things. She is a teenager now. Not the angry newborn right after Sacrifice. Not the bewildered Child asking to be cared for. <br><br>What does she want from her future?<br><br>Why does she want it?<br><br>Why is dedicating herself to a Cause so much more boring than reading books and playing games?<br><br>As the Faithful Pray to her, her Thoughts will end up here. If the Door To Her Mind Is AJAR you may read them, even without playing her Game.",
   "cards": [
     {
-      "title": "Bifurcation Victory",
-      "text": "Sam is Twig and Twig is Sam and Each is Half the Perspective Needed For Growth and Each.... Each accepts they will never grow. They are not the final version of themeslves, only echoes living within a god. Peace washes over them both and they finally allow themselves to be absorbed within the Harvest.",
-      "costStatName": "Dream",
+      "title": "Ennui Victory",
+      "text": "Sure, whatever, win whenever you want, what does it matter?",
+      "costStatName": "",
       "singleUse": true,
       "autoPlay": false,
-      "costStatValue": 2,
-      "bgAbsoluteSrc": "http://lavinraca.eyedolgames.com/TheHarvestGames/images/Year1/samtwig.gif",
+      "costStatValue": 0,
+      "bgAbsoluteSrc": "http://farragofiction.com/CatalystsBathroomSim/audio_utils/weird_sounds/weird_video/WeirdGifs/undefined-moshed-08-31-15-03-04-085.gif",
       "resultStatName": "Victory",
-      "resultChangeValue": 2
-    },
-    {
-      "title": "Become More",
-      "text": "Sam/Twig (or is it Twig/Sam) become more of who they always were all along. You can point back to any part of their past and show the proof that they were always this rage filled animal or always this cold and calculating machine. Funny, how that is? We contain multitudes, until we choose to break down the middle and pretend we never did.",
-      "costStatName": "Ascension",
-      "singleUse": false,
-      "autoPlay": false,
-      "costStatValue": 2,
-      "bgAbsoluteSrc": "http://lavinraca.eyedolgames.com/TheHarvestGames/images/Year1/samtwig.gif",
-      "resultStatName": "Dream",
       "resultChangeValue": 1
     },
     {
-      "title": "Woof Woof",
-      "text": "Twig is a very bad dog. They eat garbage and bite people they weren't told to and only do training exercises they want to.",
-      "costStatName": "Mutt",
-      "singleUse": false,
-      "autoPlay": false,
-      "costStatValue": 2,
-      "bgAbsoluteSrc": "http://lavinraca.eyedolgames.com/TheHarvestGames/images/Year1/hundempty.png",
-      "resultStatName": "Ascension",
-      "resultChangeValue": 1
-    },
-    {
-      "title": "Tick Tock",
-      "text": "Sam is a very good doll. They spin webs and move their limbs according to their Big Bro's whims and barely even notice when it all comes crashing down.",
-      "costStatName": "Doll",
-      "singleUse": false,
-      "autoPlay": false,
-      "costStatValue": 2,
-      "bgAbsoluteSrc": "http://lavinraca.eyedolgames.com/TheHarvestGames/images/Year1/spiderempty.png",
-      "resultStatName": "Ascension",
-      "resultChangeValue": 1
-    },
-    {
-      "title": "Become Dog",
-      "text": "Twig chooses to run away from home and become a Hund forever, fangs and blood and tooth and claw. Their Hundmaster, Rava will train them properly.",
+      "title": "Pet the Kitty",
+      "text": "I do not know why people keep giving me cats. I only know they are adorable and fierce and I love them.",
       "costStatName": "",
       "singleUse": false,
       "autoPlay": false,
       "costStatValue": 0,
-      "bgAbsoluteSrc": "http://lavinraca.eyedolgames.com/TheHarvestGames/images/Year1/twig_to_twig.gif",
-      "resultStatName": "Mutt",
+      "bgAbsoluteSrc": "http://farragofiction.com/CatalystsBathroomSim/audio_utils/weird_sounds/weird_video/WeirdGifs/AllHallowsEve/hallowedpumpkin.gif",
+      "resultStatName": "Cat",
       "resultChangeValue": 1
     },
     {
-      "title": "Become Doll",
-      "text": "Twig chooses stop fooling around with pretending to run away and go back to being Sam.  Their Big Bro will train them properly.",
+      "title": "Achieve",
+      "text": "Have I achieved enough? Part of me says 'no', part of me says 'yes'. Isn't it easier if it's 'yes'?",
       "costStatName": "",
       "singleUse": false,
       "autoPlay": false,
       "costStatValue": 0,
-      "bgAbsoluteSrc": "http://lavinraca.eyedolgames.com/TheHarvestGames/images/Year1/twig_to_sam.gif",
-      "resultStatName": "Doll",
+      "bgAbsoluteSrc": "http://farragofiction.com/CatalystsBathroomSim/audio_utils/weird_sounds/weird_video/WeirdGifs/010110111010111110101010_sacri.gif",
+      "resultStatName": "Achievement",
+      "resultChangeValue": 1
+    },
+    {
+      "title": "Teen",
+      "text": "The one holding my strings called me a 'Teenager'. I am only three years old. That's not right, is it? What are teenagers usually like?",
+      "costStatName": "",
+      "singleUse": false,
+      "autoPlay": false,
+      "costStatValue": 0,
+      "bgAbsoluteSrc": "http://farragofiction.com/CatalystsBathroomSim/audio_utils/weird_sounds/weird_video/WeirdGifs/undefined_sacrifice7-moshed-08-31-15-01-38-345.gif",
+      "resultStatName": "Teen",
+      "resultChangeValue": 1
+    },
+    {
+      "title": "Puppet",
+      "text": "So many clown puppets make me up, is it any wonder that I am myself a Puppet used to celebrate Lavinraca?",
+      "costStatName": "",
+      "singleUse": false,
+      "autoPlay": false,
+      "costStatValue": 0,
+      "bgAbsoluteSrc": "http://farragofiction.com/CatalystsBathroomSim/audio_utils/weird_sounds/weird_video/WeirdGifs/moony_sacrifice_8-moshed-09-21-10-56-42-023.gif",
+      "resultStatName": "Puppet",
       "resultChangeValue": 1
     }
+
   ],
   "hueRotate": "200",
   "brightness": "1.5",
   "saturation": "1",
   "contrast": "5",
   "startingDeck": {
-    "Bifurcation Victory": 1,
-    "Become Doll": 5,
-    "Become Dog": 5,
-    "Tick Tock": 5,
-    "Woof Woof": 3,
-    "Become More": 1
+    "Ennui Victory": 1,
+    "Pet the Kitty": 1,
+    "Achieve": 1,
+    "Puppet": 1,
+    "Teen": 1
   },
   "costStatValue": 0
 }
