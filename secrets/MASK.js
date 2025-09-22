@@ -1,13 +1,11 @@
 
 const doMask = () => {
-    alert("Not Complete :( Why Not Suggest Something To Put Here?");
-    truthLog("Placeholder", `In Truth, JR wanted to make sure obvious words had placeholder secrets in them. 
+    truthLog("Mask", `In Truth, JR wanted there to be at least one spook this year.
         
-        Most secrets are intended to be created as the holiday progresses, but if a Faithful finds one before its created, they won't think to check again.
-        
-        Do feel free to suggest something to put here for other Faithful to find. 
-        
-        Consider it a Sacrifice to the Harvest, that she may learn what Motivates her for the coming Seasons.`)
+        So this sends you to another page, quietly, which must be very startling if it happens mid game.
+        `);
+
+    window.open("masks.html", "_blank");
 }
 
 doMask();

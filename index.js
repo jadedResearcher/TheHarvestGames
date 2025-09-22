@@ -34,7 +34,7 @@ let unlockedDecks = createStartingDecks();
 let weird_gifs;
 //relics will modify this
 let candyEarnedPerVictory = 0;
-
+let THE_DOOR_IS_A_JAR = false;
 
 
 const gif_url = "http://farragofiction.com/CatalystsBathroomSim/audio_utils/weird_sounds/weird_video/WeirdGifs/";

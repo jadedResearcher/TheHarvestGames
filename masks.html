@@ -1,0 +1,72 @@
+<html language="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="description" content="Choose Your Mask">
+
+  <title>What Mask Do You Wear?</title>
+  <style>
+    body {
+      background-color: black;
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-image: url("http://farragofiction.com/CatalystsBathroomSim/audio_utils/weird_sounds/weird_video/WeirdGifs/sunlessmask.jpg");
+    }
+
+    .box {
+      position: fixed;
+      color: #466500;
+      right: 31px;
+      width: 500px;
+      font-size: 31px;
+      text-align: center;
+    }
+  </style>
+  <script src="scripts/utils.js"></script>
+
+  <script>
+    //4665 is 'honk' in text code btw
+    //just coincidentally its harvest colored
+
+    window.onload = async () => {
+      await sleep(getRandomNumberBetween(1, 3) * 1000);
+      randomImage();
+      await sleep(getRandomNumberBetween(10, 31) * 1000)
+      //tiny flash of the sun
+      const body = document.querySelector("body");
+      body.style.backgroundImage = `url(http://farragofiction.com/CatalystsBathroomSim/audio_utils/weird_sounds/weird_video/WeirdGifs/sunmask.gif`;
+      await sleep(500)
+      randomImage();
+
+    }
+
+    const randomImage = async () => {
+      console.log("JR NOTE: click")
+      const options = ["http://farragofiction.com/CatalystsBathroomSim/audio_utils/weird_sounds/weird_video/WeirdGifs/sunlessmaskspook2.gif", "http://farragofiction.com/CatalystsBathroomSim/audio_utils/weird_sounds/weird_video/WeirdGifs/sunlessmaskspook.gif", "http://farragofiction.com/CatalystsBathroomSim/audio_utils/weird_sounds/weird_video/WeirdGifs/sunlessmask.jpg"];
+      const body = document.querySelector("body");
+      body.style.backgroundImage = `url(${pickFrom(options)})`;
+    }
+
+    //are you sure you saw what you thought you saw?
+    window.onclick = () => {
+      randomImage();
+    }
+  </script>
+
+
+
+</head>
+
+<body>
+  <div class="box">
+    <p>We all wear masks.</p>
+    <p>Take care when choosing yours.</p>
+    <p>Who do you show the world?</p>
+    <p>Who do you keep for yourself?</p>
+    <p>Who wears you?</p>
+
+
+  </div>
+</body>
+
+</html>
