@@ -19,7 +19,7 @@ const doAJAR = () => {
     explanation.innerHTML = `You got the DOOR relic! 
     <br><br>When is a door not a door? 
     <br><br>When it's ajar!
-    <br><br>The Harvest's Mind is now AJAR. You can view the text of any card in the deck view, without having to play the game!
+    <br><br>The Harvest's Mind is now AJAR. You can view the text of any card in the deck view by hovering over it or clicking it, without having to play the game!
     <br><br>It will be applied until you refresh the page! Don't worry though, you can re-apply it any time from your bookshelf.`;
 
     popup("Your stats spelled 'A-J-A-R'!", contentEle)

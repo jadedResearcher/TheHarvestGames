@@ -27,7 +27,8 @@
   <script>
     //4665 is 'honk' in text code btw
     //just coincidentally its harvest colored
-
+    let music = new Audio("http://farragofiction.com/CatalystsBathroomSim/audio_utils/weird_sounds/ambient_long_sounds/circusreversuslong.mp3");
+    music.loop = true;
     window.onload = async () => {
       await sleep(getRandomNumberBetween(1, 3) * 1000);
       randomImage();
@@ -50,6 +51,9 @@
     //are you sure you saw what you thought you saw?
     window.onclick = () => {
       randomImage();
+      if (music.paused) {
+        music.play();
+      }
     }
   </script>
 

@@ -33,7 +33,7 @@ const makeColorsForStat = (stat) => {
 
 class Card {
   title = "An Example Scene";
-  text = "A scene happens to [PLAYER]."
+  text = "A scene happens to [PLAYER]."//actually no [PLAYER], no names, only preset text, we're telling a story non-linearly, unlike past jr trying to adapt lifesim
   costStatName = "";
   singleUse = false;
   autoPlay = false;
@@ -57,6 +57,12 @@ class Card {
 
     const container = parent;
     const outerCardBoxWithRoundedEdges = createElementWithClassAndParent("div", container, 'outer-card');
+    //the door is open, you can see within without entering
+    if (THE_DOOR_IS_A_JAR) {
+      outerCardBoxWithRoundedEdges.classList.add('tooltip')
+      const tooltip = createElementWithClassAndParent("div", outerCardBoxWithRoundedEdges, 'tooltiptext');
+      tooltip.innerText = this.text;
+    }
     outerCardBoxWithRoundedEdges.style.backgroundColor = costColors[0];
 
     const innerCardBoxWithSquareEdges = createElementWithClassAndParent("div", outerCardBoxWithRoundedEdges, 'inner-card');
