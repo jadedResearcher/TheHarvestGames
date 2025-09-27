@@ -1,13 +1,28 @@
 
 const doFLESH = () => {
-    alert("Not Complete :( Why Not Suggest Something To Put Here?");
-    truthLog("Placeholder", `In Truth, JR wanted to make sure obvious words had placeholder secrets in them. 
-        
-        Most secrets are intended to be created as the holiday progresses, but if a Faithful finds one before its created, they won't think to check again.
-        
-        Do feel free to suggest something to put here for other Faithful to find. 
-        
-        Consider it a Sacrifice to the Harvest, that she may learn what Motivates her for the coming Seasons.`)
+    candyEarnedPerVictory += candyEarnedPerVictory * candyEarnedPerVictory * candyEarnedPerVictory; //lets get exponential baby
+    const parent = document.querySelector("body");
+
+    const contentEle = createElementWithClassAndParent("div", parent, 'card-popup');
+    const image = createElementWithClassAndParent("img", contentEle, 'big-relic-image');
+    image.src = "http://lavinraca.eyedolgames.com/Week1/Corn/images/candy.png";
+    const explanation = createElementWithClassAndParent("div", contentEle, 'sub-section relic-explaination');
+    explanation.innerHTML = `You got the ??? CANDY relic!
+    <br><br>
+    Uh.
+    <br><br>
+    Was this...
+    <br><br>
+    ALWAYS made of meat and bone and blood and fat?
+    <br><br>
+    Now that you look...
+    <br><br>Closer?
+    `;
+
+    popup("Your stats spelled 'F-L-E-S-H'!", contentEle)
+
+    addRelicToBar("FLESH", image.src);
+
 }
 
 doFLESH();

@@ -2,7 +2,7 @@
 const doCircus = () => {
     global_background_music.src = "http://lavinraca.eyedolgames.com/Week1/Corn/audio/006141890-carnival-fair-carousel-ambienc.mp3";
     global_background_music.play();
-    globalDataObject.candy += 10; //just a taste
+    globalDataObject.candy += 10; //a bit more of a taste than simple Tent
     const parent = document.querySelector("body");
 
     const contentEle = createElementWithClassAndParent("div", parent, 'card-popup');
