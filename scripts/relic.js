@@ -24,11 +24,13 @@ Why YES a clever Waste COULD get all these hints for free.
 I wonder if an equally clever Waste could just...
 Make that not be all the hints there are :) :) ;)
 */
-const relicRiddlesRaw = `Peewee bifurcated into two, one M _ _ and one D _ _.
-OwO what's this? It's Zawhei's Lusus.
-Chickens and Penguins and Rooster Chickens are all types of _ _ _ _ (S).
+const relicRiddlesRaw = `Lost in Lavinraca Heights, the premier Hotel on the grounds? Why not ask a helpful B _ _ _ _ _ to show you the way?
+A horrible F_ _ _ ravaged the corn maze one year.
 The Harvest has become very obsesed with _ _ _ _ (S).
 What is the reason for the season? C _ _ _ Y!
 The Harvest is often surrounded by C _ _ (S)!
+Peewee bifurcated into two, one M _ _ and one D _ _.
+OwO what's this? It's Zawhei's Lusus.
+Chickens and Penguins and Rooster Chickens are all types of _ _ _ _ (S).
 `;
 const relicRiddles = relicRiddlesRaw.trim().split("\n");

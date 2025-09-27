@@ -1,13 +1,12 @@
 
 const doDARK = () => {
-    alert("Not Complete :( Why Not Suggest Something To Put Here?");
-    truthLog("Placeholder", `In Truth, JR wanted to make sure obvious words had placeholder secrets in them. 
-        
-        Most secrets are intended to be created as the holiday progresses, but if a Faithful finds one before its created, they won't think to check again.
-        
-        Do feel free to suggest something to put here for other Faithful to find. 
-        
-        Consider it a Sacrifice to the Harvest, that she may learn what Motivates her for the coming Seasons.`)
-}
+    const parent = document.querySelector("body");
+    const contentEle = createElementWithClassAndParent("div", parent, 'card-popup');
+    const explanation = createElementWithClassAndParent("div", contentEle, 'sub-section relic-explaination');
+    explanation.innerHTML = `You found a ...<a target='_blank' href ='darkness.html'>flashlight</a>?  You hope you have enough candy to power it...
+`;
 
+    popup("Your stats spelled 'D-A-R-K'!", contentEle)
+
+}
 doDARK();

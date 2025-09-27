@@ -1,0 +1,579 @@
+<html language="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="description" content="It's so dark in here... And you're so hungry..."><!--What could go wrong?-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Lavinraca Basement</title>
+  <link rel="stylesheet" href="dark.css">
+  <link rel="icon" href="favicon.ico" />
+  <script src="http://lavinraca.eyedolgames.com/Week2/SeededRandom.js"></script>
+  <script src="http://lavinraca.eyedolgames.com/Week2/utils.js"></script>
+
+
+  <script>
+
+    const backgroundAudio = new Audio("http://lavinraca.eyedolgames.com/audio/234918__timbahrij__ambient-low-hum-aircon.mp3");
+
+
+
+    backgroundAudio.play();
+    const rand = new SeededRandom(new Date().getTimezoneOffset()); //we all see something different, unless we don't
+
+    let saveData;
+    const LAVINRACA_KEY = "PLEASE_HELP_THE_HARVEST_FIND_A_PURPOSE";
+
+    const blankimage = (rand, parent) => {
+      const ele = createElementWithClassAndParent("img", parent, "blank-image");
+      ele.src = "data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs="; //nothing remains
+      ele.style.width = `${rand.getRandomNumberBetween(5, 250)}px`;
+      ele.style.height = `${rand.getRandomNumberBetween(5, 250)}px`;
+
+    }
+
+    const syncFlashLight = (e) => {
+
+
+      const width = saveData.candy * 10;
+      const offset = width / 2;
+      const mask = document.querySelector("#mask-overlay");
+      mask.style.display = "block";
+      mask.style.width = `${saveData.candy * 10}px`;
+      mask.style.height = `${saveData.candy * 10}px`;
+
+      const mask2 = document.querySelector("#mask-underlay");
+      mask2.style.width = `${width}px`;
+      mask2.style.height = `${width}px`;
+      if (e) {
+        mask.style.transform = 'translate(' + (e.pageX - offset) + 'px,' + (e.pageY - offset) + 'px)';
+        mask.style.webkitTransform = 'translate(' + (e.pageX - offset) + 'px,' + (e.pageY - offset) + 'px)';
+        mask.style.mozTransform = 'translate(' + (e.pageX - offset) + 'px,' + (e.pageY - offset) + 'px)';
+        mask.style.oTransform = 'translate(' + (e.pageX - offset) + 'px,' + (e.pageY - offset) + 'px)';
+        mask.style.msTransform = 'translate(' + (e.pageX - offset) + 'px,' + (e.pageY - offset) + 'px)';
+      }
+    }
+
+
+    const loadSaveData = () => {
+      saveData = JSON.parse(localStorage.getItem(LAVINRACA_KEY));
+      if (!saveData) {
+        saveData = {
+          candy: 0,//wait i thought this was meat
+        }
+      }
+
+    }
+
+    let images = [];
+
+    const init = async () => {
+      document.onmousemove = syncFlashLight;
+      document.onclick = syncFlashLight;
+      let loc = 'http://lavinraca.eyedolgames.com/images/little_guys/'
+      let image_root = "http://lavinraca.eyedolgames.com/images/little_guys/"
+      let tmp = await getImages(loc);
+
+      images = tmp.map((item) => image_root + item);
+      start();
+    }
+
+    const start = async () => {
+      images = rand.shuffle(images);
+      const body = document.querySelector("body");
+
+
+      const container = document.querySelector("#container");
+      container.innerHTML = "";
+      for (let image of images) {
+        for (let i = 0; i < 5; i++) {
+          if (rand.nextDouble() > 0.25 / i) { //first is guaranteed, then a lot less common
+            blankimage(rand, container);
+          }
+        }
+        const wrapper = createElementWithClassAndParent("div", container, "wrapper");
+
+        const ele = createElementWithClassAndParent("img", wrapper, "dark-image");
+        ele.src = image;
+        if (gimmickMap[image]) {
+          ele.onmouseenter = () => {
+            gimmickMap[image](ele, wrapper);
+          }
+        }
+
+      }
+      syncFlashLight();
+
+    }
+
+    window.onload = async () => {
+      loadSaveData();
+      const button = document.querySelector("button");
+      if (!(saveData.candy > 0)) {
+        window.alert("No candy found. I'm sorry, but you are being sent to the Harvest to collect some!")
+        window.location.href = "http://lavinraca.eyedolgames.com/";
+      }
+      button.innerText = `Click To Turn On Flashlight Made of ${saveData.candy > 0 ? saveData.candy : '[ERROR CANDY NOT FOUND, PLEASE FIND CANDY IN THE HARVESTS GAME]'} Candy`;
+      button.onclick = () => {
+        button.remove();
+        if (backgroundAudio.paused) {
+          backgroundAudio.play();
+          backgroundAudio.loop = true;
+        }
+        init();
+      };
+
+    }
+
+    const gimmickMap = {
+      "http://lavinraca.eyedolgames.com/images/little_guys/Honk.png": () => {
+        new Audio("http://lavinraca.eyedolgames.com/Corn/audio/ender_sounds_like_clown.wav").play();
+      }
+      , "": (ele, parent) => {
+
+      }, "http://lavinraca.eyedolgames.com/images/little_guys/NOTMACCUS.png": () => {
+        new Audio("http://lavinraca.eyedolgames.com/Corn/audio/SC-imsohungry.mp3").play();
+      }, "http://lavinraca.eyedolgames.com/images/little_guys/maccus.png": (ele) => {
+        ele.classList.add("spin");
+        ele.onanimationend = () => {
+          window.alert("You found Maccus! Shuffling!");
+          start();
+        }
+      }, "http://lavinraca.eyedolgames.com/images/little_guys/crowscare.png": () => {
+        new Audio("http://lavinraca.eyedolgames.com/Corn/audio/SC-imsohungry.mp3").play();
+
+      }, "http://lavinraca.eyedolgames.com/images/little_guys/unknown.png": () => {
+        new Audio("http://lavinraca.eyedolgames.com/Corn/audio/415510__inspectorj__bell-counter-a.wav").play();
+
+      }
+      , "http://lavinraca.eyedolgames.com/images/little_guys/outhousev1.png": (ele) => {
+        ele.src = "http://lavinraca.eyedolgames.com/images/little_guys/outhousev2.png";
+      }
+
+      , "http://lavinraca.eyedolgames.com/images/little_guys/ring.png": (ele) => {
+        ele.classList.add("ring-spin")
+      }
+
+      , "http://lavinraca.eyedolgames.com/images/little_guys/image.png": (ele, parent) => {
+        new Audio("http://lavinraca.eyedolgames.com/Corn/audio/456433__mycompasstv__old-rotary-phone-ringing-western-electric-bell-500-phone.mp3").play();
+        ele.src = "http://lavinraca.eyedolgames.com/images/little_guys/phonebottom.png";
+
+        document.querySelectorAll(".ringing-phone").forEach((e) => e.remove());//clear old
+
+        ele.style.cursor = "pointer";
+
+        const top = createElementWithClassAndParent("img", parent, "dark-img ringing-phone");
+        top.src = "http://lavinraca.eyedolgames.com/images/little_guys/phonetop.png";
+        top.style.position = "absolute";
+
+        ele.onclick = () => {
+          new Audio("http://lavinraca.eyedolgames.com/Corn/audio/phonecall.mp3").play();
+        }
+
+
+
+      }
+
+      , "http://lavinraca.eyedolgames.com/images/little_guys/shadow.png": (ele) => {
+        ele.classList.add("ghost")
+
+      }
+
+      , "http://lavinraca.eyedolgames.com/images/little_guys/warden.png": (ele) => {
+        ele.classList.add("ghost")
+
+      }
+
+      , "http://lavinraca.eyedolgames.com/images/little_guys/pumpkin.png": () => {
+        new Audio("http://lavinraca.eyedolgames.com/Corn/audio/SC-funnybumpingintoyou.mp3").play();
+
+      }
+
+      , "http://lavinraca.eyedolgames.com/images/little_guys/joker2.png": (ele) => {
+        ele.classList.add("ring-spin")
+        new Audio("http://lavinraca.eyedolgames.com/Corn/audio/ender_sounds_like_clown.wav").play();
+
+      }
+
+      , "http://lavinraca.eyedolgames.com/images/little_guys/flicker.png": (ele) => {
+        ele.classList.add("ghost")
+
+      }
+
+      , "http://lavinraca.eyedolgames.com/images/little_guys/Tinkerbell.png": () => {
+        new Audio("http://lavinraca.eyedolgames.com/Corn/audio/ender.wav").play();
+
+      }
+
+      , "http://lavinraca.eyedolgames.com/images/little_guys/black_mass-cultists.png": async (ele) => {
+        //play a five second chunk of nonsense chanting
+        const source = `http://lavinraca.eyedolgames.com/Corn/audio/Chant/output_${('000' + rand.getRandomNumberBetween(0, 83)).slice(-3)}.mp3`;
+        const cult = new Audio(source);
+        const cult2 = new Audio(source);
+        const cult3 = new Audio(source);
+
+        cult.volume = 0.1;
+        cult2.volume = 0.1;
+        cult3.volume = 0.1;
+
+        cult.play();
+        sleep(300);
+        cult2.play();
+        sleep(300);
+        cult3.play();
+
+      }
+
+      , "http://lavinraca.eyedolgames.com/images/little_guys/Eclair.png": () => {
+        new Audio("http://lavinraca.eyedolgames.com/Corn/audio/donut_wail.wav").play();//yes, donut and ender are my cats, but this is my branch of lavinraca as well so....honk and tinkerbell and eclair can have a connection
+
+      }
+      , "http://lavinraca.eyedolgames.com/images/little_guys/shifter.png": (ele) => {
+        ele.classList.add("ghost")
+
+      }, "http://lavinraca.eyedolgames.com/images/little_guys/scarecrow.png": (ele, parent) => {
+        new Audio("http://lavinraca.eyedolgames.com/Corn/audio/SC-funnybumpingintoyou.mp3").play();
+
+
+      }
+      , "http://lavinraca.eyedolgames.com/images/little_guys/eat.png": (ele, parent) => {
+        new Audio("http://lavinraca.eyedolgames.com/Corn/audio/SC-imsohungry.mp3").play();
+
+      }
+      , "http://lavinraca.eyedolgames.com/images/little_guys/smiley.png": (ele, parent) => {
+        new Audio("http://lavinraca.eyedolgames.com/Corn/audio/SC-funnybumpingintoyou.mp3").play();
+
+
+      }, "http://lavinraca.eyedolgames.com/images/little_guys/flicker2.png": (ele, parent) => {
+        ele.classList.add("ghost")
+
+
+      }, "http://lavinraca.eyedolgames.com/images/little_guys/SPOILER_scarecrow.png": (ele, parent) => {
+        new Audio("http://lavinraca.eyedolgames.com/Corn/audio/SC-funnybumpingintoyou.mp3").play();
+
+      }, "http://lavinraca.eyedolgames.com/images/little_guys/ghost3.png": (ele, parent) => {
+        ele.classList.add("ghost")
+
+      }, "": (ele, parent) => {
+
+      }, "": (ele, parent) => {
+
+      }, "": (ele, parent) => {
+
+      }, "": (ele, parent) => {
+
+      }, "": (ele, parent) => {
+
+      }, "": (ele, parent) => {
+
+      }, "": (ele, parent) => {
+
+      }, "": (ele, parent) => {
+
+      }, "": (ele, parent) => {
+
+      }, "": (ele, parent) => {
+
+      }, "": (ele, parent) => {
+
+      }, "": (ele, parent) => {
+
+      }, "": (ele, parent) => {
+
+      }, "": (ele, parent) => {
+
+      }, "": (ele, parent) => {
+
+      }, "": (ele, parent) => {
+
+      }, "": (ele, parent) => {
+
+      }, "": (ele, parent) => {
+
+      }, "": (ele, parent) => {
+
+      }
+    }
+
+
+    /*
+
+    someone joked
+
+    that zampanio is a bit like a cult
+
+    or that the butler stuff is
+
+
+    and i think
+
+
+
+
+
+    i think its more like
+
+    i'm trying to inocculate you all against cults
+
+
+
+don't send randos money
+
+don't stay in situations you feel uncomfortable
+
+
+takes breaks
+
+remember to hydrate
+
+take care of yourself
+
+
+
+
+memes im trying to spread
+
+
+but more
+
+
+
+
+god isn't it hard?
+
+
+isn't the hardest thing in the entire world to LEAVE when you feel like you belong? like everyone you care about in the world is in a place?
+
+
+that's how cults get you isn't it?
+
+
+
+this idea that if you DON'T obsess, if you don't live and breathe the cult, you're disloyal
+
+
+
+FUCK that shit
+
+
+okay?
+
+
+leave zampanio
+
+
+go spend months, years, DECADES doing other things
+
+remember it on a whim and decide if you wanna see what ever happened to us
+
+
+
+
+THATS what I'm telling you.
+
+
+
+zampanio wants to colonize your mind
+
+
+its not here to make money or to organize people or to go viral
+
+
+zampanio isn't meant to be big
+
+
+
+
+its meant to be this weird, impossibly deep niche concept you find and dig and dig and dig into
+
+
+until you hit some kind of dead end
+
+
+and either wander off
+
+
+or grab a shovel
+
+
+
+
+and yeah, grabbing a shovel might be the opposite of leaving when its not fun
+
+
+
+but IS it
+
+
+
+most people who make branches make them entirely their own thing. 
+
+
+i can tell you for free that ZampanioSim is INCREASINGLY only loosely connected to the bits of zampanio i was able to piece together before i paradoxically became its center  (its so weird how varied the fandom used to be and now everyone is branching off me)
+
+
+so as you dig you stop being stuck in my maze and start making your own
+
+
+because its a "fan" thing you feel free to experiement, to make mistakes, to get messy (to paraphrase ms frizzle)
+
+and you find yourself growing
+
+outgrowing the need for the crutch of zampanio
+
+
+
+
+
+and then
+
+
+do you know what happens?
+
+
+
+
+you create and create and create
+
+
+and people become fans of YOU
+
+
+
+and if they dig
+
+if they look into your past
+
+
+
+they find zampanio
+
+
+and fall to it
+
+
+
+
+
+THATS what zampanio is
+
+
+
+
+the cognito hazard lurking in the roots of as many things as it can
+
+
+
+if you stay clustered up in a community, in a fandom, it doesn't spread, now does it?
+
+
+if you go obsessed and weird,and are an obvious cautionary tale, you can hardly convince those not yet infected to take it up
+
+
+
+so many cognito hazards are about being true parasites. in eating you away until you're HORRIFIED at what you've become
+until everyone else is horrified as well. 
+
+how pointless.
+
+
+did you know? 
+
+a virus that kills its host doesn't spread very far or fast. 
+
+
+
+the most succesful viruses we've seen are the ones that barely harm their host. or even help them. where having it is just part of your life. 
+
+
+
+zampanio wants you to be healthy and strong. zampanio NEEDS you to be. 
+
+
+zampanio wants you to look back on your own past self, HORRIFIED at what you used to be. till you cringe at who you were because of how much you've grown and changed.
+
+learn new skills. learn to take care of yourself. learn to create and make friends and love and be loved.  learn to accept others without cringing.  learn to help others learn new skills and grow.
+
+
+if you do this? zampanio will spread naturally in everything you do. 
+
+
+
+
+
+
+so yeah...
+
+
+it needs you to take breaks, to do other things, to stay healthy and stable and happy
+
+
+
+because its not like it will leave your mind just because you left IT , you know?
+
+
+
+the stronger you are, the stronger it is, the more it leads other to it
+
+
+
+
+ten years from now, All Star will play on the radio and you'll lose the game and you won't know why and that will make you remember Zampanio
+
+
+
+won't it be fun, then, to find out whatever happened to us? what did the rot leave behind?
+
+
+maybe you'll be the one to revive things
+
+
+maybe someone else already has
+
+
+maybe nothing remains, and you'll always wonder if you imagined it all
+
+
+
+
+
+
+either way.  zampanio isn't about today.
+
+or even yesterday.
+
+
+zampanio has ALWAYS been about the future.  about what we do today rotting away in ways we can't predict or control or monetize until all thats left is a shambling horror trying so so hard to be remembered.
+
+
+
+
+remember us
+
+
+i'll do my best, with my many many eyes,  to make sure we rememeber you
+
+
+
+
+
+
+
+
+    */
+  </script>
+
+</head>
+
+
+<body class="dark">
+  <button id="click-button">Click To Turn On Flashlight Made of Corn Maze Candy</button>
+  <div id="mask-overlay" style="display:none">
+
+    <div id="mask-underlay"></div>
+  </div>
+  <div id="container"> </div>
+
+</body>
+
+</html>
