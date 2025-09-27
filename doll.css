@@ -297,10 +297,10 @@ label {
 .popup-title-container {
     display: flex;
     justify-content: space-between;
-    background-color: #ff5c39;
+    background-color: #484848;
     color: white;
     position: fixed;
-    width: 97%;
+    width: 98%;
 }
 
 .popup-button {
@@ -330,8 +330,8 @@ label {
 
 
 .popup {
-    color: #ff5c39;
-    background: black;
+    color: #484848;
+    background: #484848;
 
     font-family: 'Courier New', Courier, monospace;
     margin-left: auto;
@@ -341,10 +341,10 @@ label {
     top: 3%;
     left: 1%;
     font-size: 14px;
-    background-color: #432a63;
+    background-color: #c4c4c4;
     width: 98%;
     overflow-y: auto;
-    border: 3px solid #ff5c39;
+    border: 3px solid #484848;
     z-index: 4556;
     height: 90%;
     border-top-left-radius: 13px;
@@ -918,7 +918,7 @@ h1 {
 
 h2 {
     font-weight: bolder;
-    color: #ff5c39;
+    color: black;
     margin-top: 0px;
 }
 
@@ -930,12 +930,13 @@ h2 {
 
 
 a {
-    color: white;
+    color: black;
     opacity: .75;
+    font-weight: bolder;
 }
 
 a:visited {
-    color: white;
+    color: black;
 }
 
 a:hover {

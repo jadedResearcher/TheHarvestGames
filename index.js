@@ -140,7 +140,9 @@ const renderPrayerButton = (parent) => {
     aboutButton.innerText = "About"
     aboutButton.onclick = () => {
         const contentEle = createElementWithClassAndParent("div", container);
-        contentEle.style.padding = "31px"
+        contentEle.style.padding = "31px";
+        contentEle.style.marginTop = "31px";
+
         contentEle.innerHTML = `
         <p>Lavinraca (or is it pronounced Lavinraca? I can never keep them straight) is a month long Halloween party that anyone can join. 
         I (JR) joined in 2023, though it had already been around several years at that point.</p>
