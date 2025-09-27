@@ -218,33 +218,36 @@ const relicHintStore = () => {
 
     }
     let riddlesCanBuy = 0;
-    for (let riddle of relicRiddles) {
-        //don't display a riddle we already bought here
-        if (!globalDataObject.relicHintsBought.includes(riddle)) {
-            riddlesCanBuy++;
-            const riddleEle = createElementWithClassAndParent("button", contentEle);
-            const rand = new SeededRandom(stringtoseed(riddle));
-            //hints get more expensive, on average, the more you buy
-            const cost = rand.getRandomNumberBetween(1, globalDataObject.relicHintsBought.length);
-            const canBuy = globalDataObject.candy >= cost;
-            riddleEle.innerHTML = `${cost} 🍬 ${canBuy ? "" : ":("}`;
-            if (canBuy) {
-                riddleEle.onclick = () => {
-                    globalDataObject.candy += -1 * cost;
-                    globalDataObject.relicHintsBought.push(riddle);
-                    save();
-                    alert(riddle)
-                    console.log("JR NOTE: why won't this remove?", popupEle)
-                    popupEle.remove();
-                    relicHintStore();
+    let canBuyRealHints = globalDataObject.relicHintsBought.includes(seedRiddle); //you HAVE to buy this one first
+    if (canBuyRealHints) {
+        for (let riddle of relicRiddles) {
+            //don't display a riddle we already bought here
+            if (!globalDataObject.relicHintsBought.includes(riddle)) {
+                riddlesCanBuy++;
+                const riddleEle = createElementWithClassAndParent("button", contentEle);
+                const rand = new SeededRandom(stringtoseed(riddle));
+                //hints get more expensive, on average, the more you buy
+                const cost = rand.getRandomNumberBetween(1, globalDataObject.relicHintsBought.length);
+                const canBuy = globalDataObject.candy >= cost;
+                riddleEle.innerHTML = `${cost} 🍬 ${canBuy ? "" : ":("}`;
+                if (canBuy) {
+                    riddleEle.onclick = () => {
+                        globalDataObject.candy += -1 * cost;
+                        globalDataObject.relicHintsBought.push(riddle);
+                        save();
+                        alert(riddle)
+                        console.log("JR NOTE: why won't this remove?", popupEle)
+                        popupEle.remove();
+                        relicHintStore();
+                    }
+                } else {
+                    riddleEle.disabled = true;
                 }
-            } else {
-                riddleEle.disabled = true;
             }
-        }
 
+        }
     }
-    if (riddlesCanBuy === 0) {
+    if (riddlesCanBuy === 0 && canBuyRealHints) {
         const whoops = createElementWithClassAndParent("div", contentEle);
         whoops.innerText = "You bought all the available hints... If only there were some way to add more hints, because there are surely more Relics to find..."
         whoops.style.padding = "31px"
