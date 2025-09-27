@@ -620,6 +620,9 @@ const giantWoman = (index = 0) => {
 
         }
     }
+    if (!document.querySelector(".story")) {
+        stories(document.querySelector("#library"));
+    }
 
 
 }

@@ -560,6 +560,28 @@ const THEHARVESTTHINKS = {
       "bgAbsoluteSrc": "http://farragofiction.com/CatalystsBathroomSim/audio_utils/weird_sounds/weird_video/WeirdGifs/moony_sacrifice_8-moshed-09-21-10-56-42-023.gif",
       "resultStatName": "Puppet",
       "resultChangeValue": 1
+    },
+    {
+      "title": "Render",
+      "text": "Do I really need to get all dressed up to answer prayers? Surely this sketchy form is fine, right? It's easier...",
+      "costStatName": "",
+      "singleUse": false,
+      "autoPlay": false,
+      "costStatValue": 0,
+      "bgAbsoluteSrc": "http://lavinraca.eyedolgames.com/TheHarvestGames/images/Harvest/literallytheharvestthisyear_forafewdaysatleast.jpg",
+      "resultStatName": "Dressed",
+      "resultChangeValue": 1
+    },
+    {
+      "title": "Pray",
+      "text": "Ugh... Why do I even need to answer Prayers? Aren't I already perfect? The Faithful sure seem to like doing it though... Fine... but I'm NOT going to bother rendering a back button. They wanted to pray so badly they can just stay there till they get bored and refresh. ",
+      "costStatName": "",
+      "singleUse": false,
+      "autoPlay": false,
+      "costStatValue": 0,
+      "bgAbsoluteSrc": "http://lavinraca.eyedolgames.com/TheHarvestGames/images/Harvest/prototype1.png",
+      "resultStatName": "Faithful",
+      "resultChangeValue": 1
     }
 
   ],
