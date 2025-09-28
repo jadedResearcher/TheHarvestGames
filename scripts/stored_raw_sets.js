@@ -516,6 +516,269 @@ const THEHARVESTTHINKS = {
       "bgAbsoluteSrc": "http://farragofiction.com/CatalystsBathroomSim/audio_utils/weird_sounds/weird_video/WeirdGifs/undefined-moshed-08-31-15-03-04-085.gif",
       "resultStatName": "Victory",
       "resultChangeValue": 1
+    }, {
+      "title": "Blameless",
+      "text": "Is it even MY fault if the Faithful's prayers go unanswered? They TOLD me to take it easy so that's what I'm doing!",
+      "costStatName": "",
+      "singleUse": false,
+      "autoPlay": false,
+      "costStatValue": 0,
+      "bgAbsoluteSrc": "http://farragofiction.com/CatalystsBathroomSim/audio_utils/weird_sounds/weird_video/WeirdGifs/AllHallowsEve/hallowedpumpkin.gif",
+      "resultStatName": "Absolution",
+      "resultChangeValue": 1
+    },
+    {
+      "title": "Be Served",
+      "text": "Like a dude on Butler Island, my job is to literally be served. The Faithful are basically my Butlers, aren't they? Running around and making sure I'm comfortable. They gave me so many books to read!  I don't understand why they're clowns now... Cirky's? Are we supposed to be entertaining someone?",
+      "costStatName": "",
+      "singleUse": false,
+      "autoPlay": false,
+      "costStatValue": 0,
+      "bgAbsoluteSrc": "http://farragofiction.com/CatalystsBathroomSim/audio_utils/weird_sounds/weird_video/WeirdGifs/AllHallowsEve/hallowedpumpkin.gif",
+      "resultStatName": "Butler",
+      "resultChangeValue": 1
+    },
+    {
+      "title": "Pet the Kitty",
+      "text": "I do not know why people keep giving me cats. I only know they are adorable and fierce and I love them.",
+      "costStatName": "",
+      "singleUse": false,
+      "autoPlay": false,
+      "costStatValue": 0,
+      "bgAbsoluteSrc": "http://farragofiction.com/CatalystsBathroomSim/audio_utils/weird_sounds/weird_video/WeirdGifs/AllHallowsEve/hallowedpumpkin.gif",
+      "resultStatName": "Cat",
+      "resultChangeValue": 1
+    },
+    {
+      "title": "Be Dutiful",
+      "text": "I am the Harvest God, and my domains are Change, Inspiration and Being Served. Therefore, my DUTY is to just passively hang out and let Faithful be inspired by me through acts of service. Right? I should just sit here? Why does that...feel....wrong?",
+      "costStatName": "",
+      "singleUse": false,
+      "autoPlay": false,
+      "costStatValue": 0,
+      "bgAbsoluteSrc": "http://farragofiction.com/CatalystsBathroomSim/audio_utils/weird_sounds/weird_video/WeirdGifs/AllHallowsEve/hallowedpumpkin.gif",
+      "resultStatName": "Duty",
+      "resultChangeValue": 1
+    },
+    {
+      "title": "Store Energy",
+      "text": "Everything feels like it takes so much energy... Can't I sleep through this Season? Does anyone even need me?",
+      "costStatName": "",
+      "singleUse": false,
+      "autoPlay": false,
+      "costStatValue": 0,
+      "bgAbsoluteSrc": "http://farragofiction.com/CatalystsBathroomSim/audio_utils/weird_sounds/weird_video/WeirdGifs/AllHallowsEve/hallowedpumpkin.gif",
+      "resultStatName": "Energy",
+      "resultChangeValue": 1
+    },
+    {
+      "title": "Keep the Faith",
+      "text": "Change. Inspiration. Being Served. Is that really why people sacrificed so much to create me? Do they really need nothing from me? Why do the Faithful keep coming back? What Change do they even want?",
+      "costStatName": "",
+      "singleUse": false,
+      "autoPlay": false,
+      "costStatValue": 0,
+      "bgAbsoluteSrc": "http://farragofiction.com/CatalystsBathroomSim/audio_utils/weird_sounds/weird_video/WeirdGifs/AllHallowsEve/hallowedpumpkin.gif",
+      "resultStatName": "Faith",
+      "resultChangeValue": 1
+    },
+    {
+      "title": "Be the god",
+      "text": "Plenty of gods just sit back and take it easy during their fesitval season. Why should I work so hard? ",
+      "costStatName": "",
+      "singleUse": false,
+      "autoPlay": false,
+      "costStatValue": 0,
+      "bgAbsoluteSrc": "http://farragofiction.com/CatalystsBathroomSim/audio_utils/weird_sounds/weird_video/WeirdGifs/AllHallowsEve/hallowedpumpkin.gif",
+      "resultStatName": "God",
+      "resultChangeValue": 1
+    },
+    {
+      "title": "Play Games",
+      "text": "I'm HAPPY when I read my books and play my games...right? So why does it feel so...wrong? Like corn rotting in the field until it ferments. Sickly sweet and heady...Is there such a thing as too much of something you love?",
+      "costStatName": "",
+      "singleUse": false,
+      "autoPlay": false,
+      "costStatValue": 0,
+      "bgAbsoluteSrc": "http://farragofiction.com/CatalystsBathroomSim/audio_utils/weird_sounds/weird_video/WeirdGifs/AllHallowsEve/hallowedpumpkin.gif",
+      "resultStatName": "Happiness",
+      "resultChangeValue": 1
+    },
+    {
+      "title": "Know Thyself",
+      "text": "I am the Harvest, a god created from so many sacrifices to preside over Change, Inspiration and Being Served. My Temple is a Vast Library filled with all my favorite things. I should be happy with all these things. But why do I feel so... hungry. Will the books fill the void inside me?",
+      "costStatName": "",
+      "singleUse": false,
+      "autoPlay": false,
+      "costStatValue": 0,
+      "bgAbsoluteSrc": "http://farragofiction.com/CatalystsBathroomSim/audio_utils/weird_sounds/weird_video/WeirdGifs/AllHallowsEve/hallowedpumpkin.gif",
+      "resultStatName": "Identity",
+      "resultChangeValue": 1
+    },
+    {
+      "title": "Make Merry",
+      "text": "Smiles and candy are the reason for the season. ...Do my domains make people smile? Does change and inspiration and seeing me be served make the Faithful smile? Am I... fun?",
+      "costStatName": "",
+      "singleUse": false,
+      "autoPlay": false,
+      "costStatValue": 0,
+      "bgAbsoluteSrc": "http://farragofiction.com/CatalystsBathroomSim/audio_utils/weird_sounds/weird_video/WeirdGifs/AllHallowsEve/hallowedpumpkin.gif",
+      "resultStatName": "Jubuliance",
+      "resultChangeValue": 1
+    },
+    {
+      "title": "Read a Book",
+      "text": "I read and read book after book, absorbing so many pieces of knowledge... Yet... shouldn't I feel INSPIRED by them? Isn't that what I am the god of?  Is inspiration more than simple consumption? (I'm so hungry).",
+      "costStatName": "",
+      "singleUse": false,
+      "autoPlay": false,
+      "costStatValue": 0,
+      "bgAbsoluteSrc": "http://farragofiction.com/CatalystsBathroomSim/audio_utils/weird_sounds/weird_video/WeirdGifs/AllHallowsEve/hallowedpumpkin.gif",
+      "resultStatName": "Knowledge",
+      "resultChangeValue": 1
+    },
+    {
+      "title": "Be Served",
+      "text": "The Faithful love me. They give me sacrifices, creations in my name to show the Inspiration I have gifted them. What does it feel like to create, I wonder...",
+      "costStatName": "",
+      "singleUse": false,
+      "autoPlay": false,
+      "costStatValue": 0,
+      "bgAbsoluteSrc": "http://farragofiction.com/CatalystsBathroomSim/audio_utils/weird_sounds/weird_video/WeirdGifs/AllHallowsEve/hallowedpumpkin.gif",
+      "resultStatName": "Love",
+      "resultChangeValue": 1
+    },
+    {
+      "title": "Inspire Others",
+      "text": "The Indulgent Muse of Shifting Libraries. This is one of my many titles. I inspire others, yet am myself served. My library is forever changing, forever distracting.... It describes passivity. I exist, therefore I inspire others. I exist within a vast, changing library. I need not toil in the field for I am served by others. But... inaction feels like rot. Like stagnation. Am I just bad at resting?",
+      "costStatName": "",
+      "singleUse": false,
+      "autoPlay": false,
+      "costStatValue": 0,
+      "bgAbsoluteSrc": "http://farragofiction.com/CatalystsBathroomSim/audio_utils/weird_sounds/weird_video/WeirdGifs/AllHallowsEve/hallowedpumpkin.gif",
+      "resultStatName": "Muse",
+      "resultChangeValue": 1
+    },
+    {
+      "title": "Be Given Your Role",
+      "text": "What have I done to earn my luxuries? Was merely the circumstances of my birth enough to allow me to lie fallow in indulgence? The games please me, the books entertain and educate in equal measures. Surely this is enough? How much greed can one god have? (I'm so hungry).",
+      "costStatName": "",
+      "singleUse": false,
+      "autoPlay": false,
+      "costStatValue": 0,
+      "bgAbsoluteSrc": "http://farragofiction.com/CatalystsBathroomSim/audio_utils/weird_sounds/weird_video/WeirdGifs/AllHallowsEve/hallowedpumpkin.gif",
+      "resultStatName": "Nepotism",
+      "resultChangeValue": 1
+    },
+    {
+      "title": "Praise the Harvest",
+      "text": "I am the god of the Harvest. I accept sacrifices and service  in exchange for allowing others to take Inspiration from my existence. I Change each year. I am exactly as I should be.",
+      "costStatName": "",
+      "singleUse": false,
+      "autoPlay": false,
+      "costStatValue": 0,
+      "bgAbsoluteSrc": "http://farragofiction.com/CatalystsBathroomSim/audio_utils/weird_sounds/weird_video/WeirdGifs/AllHallowsEve/hallowedpumpkin.gif",
+      "resultStatName": "Praise",
+      "resultChangeValue": 1
+    },
+    {
+      "title": "Seek Glory",
+      "text": "I want to not be passive. I want to not be pampered. I want to DO something. I want to acomplish something. I want to matter. I want to create. I want to BE inspired instead of inspring. I want to CAUSE change instead of BEING changed. I want to.... I want...I'm so hungry....",
+      "costStatName": "",
+      "singleUse": false,
+      "autoPlay": false,
+      "costStatValue": 0,
+      "bgAbsoluteSrc": "http://farragofiction.com/CatalystsBathroomSim/audio_utils/weird_sounds/weird_video/WeirdGifs/AllHallowsEve/hallowedpumpkin.gif",
+      "resultStatName": "Quest",
+      "resultChangeValue": 1
+    },
+    {
+      "title": "Candy Riches",
+      "text": "I'm so hungry. Halloween is a season of Harvest, of crops grown fat on the vine, of candy collected in costumes. Of cozy nights in front of a fire with a good book. Why do I only have half of my birthright?",
+      "costStatName": "",
+      "singleUse": false,
+      "autoPlay": false,
+      "costStatValue": 0,
+      "bgAbsoluteSrc": "http://farragofiction.com/CatalystsBathroomSim/audio_utils/weird_sounds/weird_video/WeirdGifs/AllHallowsEve/hallowedpumpkin.gif",
+      "resultStatName": "Riches",
+      "resultChangeValue": 1
+    },
+    {
+      "title": "Collect Sweets",
+      "text": "I'm so hungry. Why? What fills me with this endless WANT? (im so hungry). Is it one of the things Sacrificed to me? I close my eyes and I see pumpkins and teeth. What am I? (im so hungry)",
+      "costStatName": "",
+      "singleUse": false,
+      "autoPlay": false,
+      "costStatValue": 0,
+      "bgAbsoluteSrc": "http://farragofiction.com/CatalystsBathroomSim/audio_utils/weird_sounds/weird_video/WeirdGifs/AllHallowsEve/hallowedpumpkin.gif",
+      "resultStatName": "Sweet",
+      "resultChangeValue": 1
+    },
+    {
+      "title": "Collect Teeth",
+      "text": "Teeth and teeth and teeth and teeth and bite and sweet and gnash and chew and slurp and gulp and sweet sweet sweet sweet candy.",
+      "costStatName": "",
+      "singleUse": false,
+      "autoPlay": false,
+      "costStatValue": 0,
+      "bgAbsoluteSrc": "http://farragofiction.com/CatalystsBathroomSim/audio_utils/weird_sounds/weird_video/WeirdGifs/AllHallowsEve/hallowedpumpkin.gif",
+      "resultStatName": "Teeth",
+      "resultChangeValue": 1
+    },
+    {
+      "title": "Too Bad",
+      "text": "I was born from blood and meat and candy and pictures and dreams and hopes and echoes. Always echoes. I live but one month a year. No matter what I do. No matter how I fear. I will always return.",
+      "costStatName": "",
+      "singleUse": false,
+      "autoPlay": false,
+      "costStatValue": 0,
+      "bgAbsoluteSrc": "http://farragofiction.com/CatalystsBathroomSim/audio_utils/weird_sounds/weird_video/WeirdGifs/AllHallowsEve/hallowedpumpkin.gif",
+      "resultStatName": "Unlucky",
+      "resultChangeValue": 1
+    },
+    {
+      "title": "Decide Your Fate",
+      "text": "I am the god of the Harvest. Yet have I made even one decision on my own? The Sacrifices that made me, the Domains I was gifted. Not one act of my own will...",
+      "costStatName": "",
+      "singleUse": false,
+      "autoPlay": false,
+      "costStatValue": 0,
+      "bgAbsoluteSrc": "http://farragofiction.com/CatalystsBathroomSim/audio_utils/weird_sounds/weird_video/WeirdGifs/AllHallowsEve/hallowedpumpkin.gif",
+      "resultStatName": "Volition",
+      "resultChangeValue": 1
+    },
+    {
+      "title": "Become More",
+      "text": "I am the god of the Harvest. I am the Will of the People. Their belief, their faith, their prayers, all become me. I am not a mortal.",
+      "costStatName": "",
+      "singleUse": false,
+      "autoPlay": false,
+      "costStatValue": 0,
+      "bgAbsoluteSrc": "http://farragofiction.com/CatalystsBathroomSim/audio_utils/weird_sounds/weird_video/WeirdGifs/AllHallowsEve/hallowedpumpkin.gif",
+      "resultStatName": "Will",
+      "resultChangeValue": 1
+    },
+    {
+      "title": "Become Noble",
+      "text": "I feel numb. Anasthetized? I read, I play, I listen to the Faithful when I remember to. But it's so hard to remember. Numb myself with play until I forget to fear. To care.",
+      "costStatName": "",
+      "singleUse": false,
+      "autoPlay": false,
+      "costStatValue": 0,
+      "bgAbsoluteSrc": "http://farragofiction.com/CatalystsBathroomSim/audio_utils/weird_sounds/weird_video/WeirdGifs/AllHallowsEve/hallowedpumpkin.gif",
+      "resultStatName": "Xenon",
+      "resultChangeValue": 1
+    },
+    {
+      "title": "Be Present",
+      "text": "How has the world changed since I was born?  Even before I was born a scar in the corn field denoted where a Sacrifice had taken place, a Sacrifice I echoed. Is my birth an event or a process. What age should I represent?",
+      "costStatName": "",
+      "singleUse": false,
+      "autoPlay": false,
+      "costStatValue": 0,
+      "bgAbsoluteSrc": "http://farragofiction.com/CatalystsBathroomSim/audio_utils/weird_sounds/weird_video/WeirdGifs/AllHallowsEve/hallowedpumpkin.gif",
+      "resultStatName": "Zeitgeist",
+      "resultChangeValue": 1
     },
     {
       "title": "Pet the Kitty",
@@ -581,6 +844,17 @@ const THEHARVESTTHINKS = {
       "costStatValue": 0,
       "bgAbsoluteSrc": "http://lavinraca.eyedolgames.com/TheHarvestGames/images/Harvest/prototype1.png",
       "resultStatName": "Faithful",
+      "resultChangeValue": 1
+    },
+    {
+      "title": "Count the Blackbirds",
+      "text": "Am I a Tool, or a Toy?",
+      "costStatName": "",
+      "singleUse": false,
+      "autoPlay": false,
+      "costStatValue": 0,
+      "bgAbsoluteSrc": "http://lavinraca.eyedolgames.com/TheHarvestGames/images/Harvest/prototype1.png",
+      "resultStatName": "Omen",
       "resultChangeValue": 1
     }
 

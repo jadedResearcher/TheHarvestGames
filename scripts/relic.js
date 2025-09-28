@@ -30,6 +30,7 @@ When is a door not a door?
 The Harvest has become very obsesed with _ _ _ _ (S).
 What is the reason for the season? C _ _ _ Y!
 The Harvest is often surrounded by C _ _ (S)!
+The Harvest surrounds herself with more than one BOOK-_ _ _ _ _.
 Peewee bifurcated into two, one M _ _ and one D _ _.
 OwO what's this? It's Zawhei's Lusus.
 Chickens and Penguins and Rooster Chickens are all types of _ _ _ _ (S).
