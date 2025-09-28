@@ -6,7 +6,7 @@ const doBUTLER = () => {
     explanation.innerHTML = `You found a ...<a target='_blank' href ='http://lavinraca.eyedolgames.com/Week1/butler.html'>job application?</a>? 
 `;
 
-    popup("Your stats spelled 'C-I-R-K-Y'!", contentEle)
+    popup("Your stats spelled 'B-U-T-L-E-R'!", contentEle)
 
 }
 

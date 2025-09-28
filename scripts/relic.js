@@ -26,6 +26,7 @@ Make that not be all the hints there are :) :) ;)
 */
 const relicRiddlesRaw = `Lost in Lavinraca Heights, the premier Hotel on the grounds? Why not ask a helpful B _ _ _ _ _ to show you the way?
 A horrible F_ _ _ ravaged the corn maze one year.
+When is a door not a door?
 The Harvest has become very obsesed with _ _ _ _ (S).
 What is the reason for the season? C _ _ _ Y!
 The Harvest is often surrounded by C _ _ (S)!

@@ -6,7 +6,7 @@ const doWEEN = () => {
     const image = createElementWithClassAndParent("img", contentEle, 'big-relic-image');
     image.src = "http://farragofiction.com/CatalystsBathroomSim/audio_utils/weird_sounds/weird_video/WeirdGifs/hallow.gif";
     const explanation = createElementWithClassAndParent("div", contentEle, 'sub-section relic-explaination');
-    explanation.innerHTML = `You found Hallow, the faceless Halloween Cat! `;
+    explanation.innerHTML = `You found Hallow, the faceless Halloween Cat! You unlocked the book ${all_hallows_eve.title}! `;
 
     popup("Your stats spelled 'W-E-E-N'!", contentEle)
 
