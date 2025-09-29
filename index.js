@@ -35,6 +35,7 @@ let weird_gifs;
 //relics will modify this
 let candyEarnedPerVictory = 0;
 let THE_DOOR_IS_A_JAR = false;
+let WASTED_WASTED_FOLLOWING_THE_TREE = false;
 
 
 const gif_url = "http://farragofiction.com/CatalystsBathroomSim/audio_utils/weird_sounds/weird_video/WeirdGifs/";
@@ -114,7 +115,8 @@ const handleURLParams = () => {
     const queryString = window.location.search;
     const urlParams = new URLSearchParams(queryString);
     let edit = urlParams.get('editMode');
-    if (edit) {
+
+    if (edit || WASTED_WASTED_FOLLOWING_THE_TREE) {
         displayCardAndDeckEdits();
     }
 }
