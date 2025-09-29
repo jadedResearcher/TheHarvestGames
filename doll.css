@@ -303,6 +303,11 @@ label {
     width: 98%;
 }
 
+.popup-body {
+    padding: 31px;
+    margin-top: 31px;
+}
+
 .popup-button {
     margin: 0px;
     padding: 0px;

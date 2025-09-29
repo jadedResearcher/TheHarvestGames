@@ -28,7 +28,7 @@ const popup = (title, contentEle) => {
   const closeButton = createElementWithClassAndParent("button", titleSection, "popup-button");
   closeButton.innerText = "X";
 
-  const popupbody = createElementWithClassAndParent("div", popup);
+  const popupbody = createElementWithClassAndParent("div", popup, "popup-body");
   popupbody.append(contentEle);
 
   closeButton.onclick = () => {
