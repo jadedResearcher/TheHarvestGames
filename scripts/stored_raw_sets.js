@@ -667,7 +667,7 @@ const THEHARVESTTHINKS = {
       "singleUse": false,
       "autoPlay": false,
       "costStatValue": 0,
-      "bgAbsoluteSrc": "",
+      "bgAbsoluteSrc": "http://farragofiction.com/CatalystsBathroomSim/audio_utils/weird_sounds/weird_video/WeirdGifs/exactly_where-moshed-05-03-23-31-43-287.gif",
       "resultStatName": "Nepotism",
       "resultChangeValue": 1
     },
@@ -678,7 +678,7 @@ const THEHARVESTTHINKS = {
       "singleUse": false,
       "autoPlay": false,
       "costStatValue": 0,
-      "bgAbsoluteSrc": "",
+      "bgAbsoluteSrc": "http://lavinraca.eyedolgames.com/TheHarvestWakes/images/source_images/chibi_harvest1.png",
       "resultStatName": "Praise",
       "resultChangeValue": 1
     },
@@ -689,7 +689,7 @@ const THEHARVESTTHINKS = {
       "singleUse": false,
       "autoPlay": false,
       "costStatValue": 0,
-      "bgAbsoluteSrc": "",
+      "bgAbsoluteSrc": "http://farragofiction.com/CatalystsBathroomSim/audio_utils/weird_sounds/weird_video/WeirdGifs/smiley-moshed-09-28-21-26-07-630.gif",
       "resultStatName": "Quest",
       "resultChangeValue": 1
     },
@@ -700,7 +700,7 @@ const THEHARVESTTHINKS = {
       "singleUse": false,
       "autoPlay": false,
       "costStatValue": 0,
-      "bgAbsoluteSrc": "",
+      "bgAbsoluteSrc": "http://farragofiction.com/CatalystsBathroomSim/audio_utils/weird_sounds/weird_video/WeirdGifs/smiley-moshed-09-28-21-24-16-077.gif",
       "resultStatName": "Riches",
       "resultChangeValue": 1
     },
@@ -722,7 +722,7 @@ const THEHARVESTTHINKS = {
       "singleUse": false,
       "autoPlay": false,
       "costStatValue": 0,
-      "bgAbsoluteSrc": "",
+      "bgAbsoluteSrc": "http://farragofiction.com/CatalystsBathroomSim/audio_utils/weird_sounds/weird_video/WeirdGifs/smiley-moshed-09-28-21-30-24-456.gif",
       "resultStatName": "Teeth",
       "resultChangeValue": 1
     },
@@ -733,7 +733,7 @@ const THEHARVESTTHINKS = {
       "singleUse": false,
       "autoPlay": false,
       "costStatValue": 0,
-      "bgAbsoluteSrc": "",
+      "bgAbsoluteSrc": "http://farragofiction.com/CatalystsBathroomSim/audio_utils/weird_sounds/weird_video/WeirdGifs/corn%20maze%2001-moshed-09-28-21-3-moshed-09-28-21-35-35-015.gif",
       "resultStatName": "Unlucky",
       "resultChangeValue": 1
     },
