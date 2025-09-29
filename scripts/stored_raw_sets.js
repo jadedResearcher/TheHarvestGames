@@ -516,14 +516,15 @@ const THEHARVESTTHINKS = {
       "bgAbsoluteSrc": "http://farragofiction.com/CatalystsBathroomSim/audio_utils/weird_sounds/weird_video/WeirdGifs/undefined-moshed-08-31-15-03-04-085.gif",
       "resultStatName": "Victory",
       "resultChangeValue": 1
-    }, {
+    },
+    {
       "title": "Blameless",
       "text": "Is it even MY fault if the Faithful's prayers go unanswered? They TOLD me to take it easy so that's what I'm doing!",
       "costStatName": "",
       "singleUse": false,
       "autoPlay": false,
       "costStatValue": 0,
-      "bgAbsoluteSrc": "http://farragofiction.com/CatalystsBathroomSim/audio_utils/weird_sounds/weird_video/WeirdGifs/AllHallowsEve/hallowedpumpkin.gif",
+      "bgAbsoluteSrc": "http://farragofiction.com/CatalystsBathroomSim/audio_utils/weird_sounds/weird_video/WeirdGifs/simba-moshed-08-31-14-58-24-871.gif",
       "resultStatName": "Absolution",
       "resultChangeValue": 1
     },
@@ -534,7 +535,7 @@ const THEHARVESTTHINKS = {
       "singleUse": false,
       "autoPlay": false,
       "costStatValue": 0,
-      "bgAbsoluteSrc": "http://farragofiction.com/CatalystsBathroomSim/audio_utils/weird_sounds/weird_video/WeirdGifs/AllHallowsEve/hallowedpumpkin.gif",
+      "bgAbsoluteSrc": "http://farragofiction.com/CatalystsBathroomSim/audio_utils/weird_sounds/weird_video/WeirdGifs/bellhop.gif",
       "resultStatName": "Butler",
       "resultChangeValue": 1
     },
@@ -556,7 +557,7 @@ const THEHARVESTTHINKS = {
       "singleUse": false,
       "autoPlay": false,
       "costStatValue": 0,
-      "bgAbsoluteSrc": "http://farragofiction.com/CatalystsBathroomSim/audio_utils/weird_sounds/weird_video/WeirdGifs/AllHallowsEve/hallowedpumpkin.gif",
+      "bgAbsoluteSrc": "http://farragofiction.com/CatalystsBathroomSim/audio_utils/weird_sounds/weird_video/WeirdGifs/2024-10-10_21.24.54-moshed-09-28-17-40-54-331.gif",
       "resultStatName": "Duty",
       "resultChangeValue": 1
     },
@@ -567,7 +568,7 @@ const THEHARVESTTHINKS = {
       "singleUse": false,
       "autoPlay": false,
       "costStatValue": 0,
-      "bgAbsoluteSrc": "http://farragofiction.com/CatalystsBathroomSim/audio_utils/weird_sounds/weird_video/WeirdGifs/AllHallowsEve/hallowedpumpkin.gif",
+      "bgAbsoluteSrc": "http://farragofiction.com/CatalystsBathroomSim/audio_utils/weird_sounds/weird_video/WeirdGifs/tumblr_7874dc032986f6e7328618a205b03c3a_87d05544_1280.jpg",
       "resultStatName": "Energy",
       "resultChangeValue": 1
     },
@@ -578,7 +579,7 @@ const THEHARVESTTHINKS = {
       "singleUse": false,
       "autoPlay": false,
       "costStatValue": 0,
-      "bgAbsoluteSrc": "http://farragofiction.com/CatalystsBathroomSim/audio_utils/weird_sounds/weird_video/WeirdGifs/AllHallowsEve/hallowedpumpkin.gif",
+      "bgAbsoluteSrc": "http://farragofiction.com/CatalystsBathroomSim/audio_utils/weird_sounds/weird_video/WeirdGifs/2024-10-10_23.50.20-moshed-09-28-17-44-02-116.gif",
       "resultStatName": "Faith",
       "resultChangeValue": 1
     },
@@ -589,7 +590,7 @@ const THEHARVESTTHINKS = {
       "singleUse": false,
       "autoPlay": false,
       "costStatValue": 0,
-      "bgAbsoluteSrc": "http://farragofiction.com/CatalystsBathroomSim/audio_utils/weird_sounds/weird_video/WeirdGifs/AllHallowsEve/hallowedpumpkin.gif",
+      "bgAbsoluteSrc": "http://farragofiction.com/CatalystsBathroomSim/audio_utils/weird_sounds/weird_video/WeirdGifs/worlds_tiredest_guy-moshed-09-28-17-47-36-201.gif",
       "resultStatName": "God",
       "resultChangeValue": 1
     },
@@ -600,7 +601,7 @@ const THEHARVESTTHINKS = {
       "singleUse": false,
       "autoPlay": false,
       "costStatValue": 0,
-      "bgAbsoluteSrc": "http://farragofiction.com/CatalystsBathroomSim/audio_utils/weird_sounds/weird_video/WeirdGifs/AllHallowsEve/hallowedpumpkin.gif",
+      "bgAbsoluteSrc": "http://farragofiction.com/CatalystsBathroomSim/audio_utils/weird_sounds/weird_video/WeirdGifs/handdrip2-moshed-05-03-23-40-3-moshed-09-28-17-49-06-272.gif",
       "resultStatName": "Happiness",
       "resultChangeValue": 1
     },
@@ -611,7 +612,7 @@ const THEHARVESTTHINKS = {
       "singleUse": false,
       "autoPlay": false,
       "costStatValue": 0,
-      "bgAbsoluteSrc": "http://farragofiction.com/CatalystsBathroomSim/audio_utils/weird_sounds/weird_video/WeirdGifs/AllHallowsEve/hallowedpumpkin.gif",
+      "bgAbsoluteSrc": "http://farragofiction.com/CatalystsBathroomSim/audio_utils/weird_sounds/weird_video/WeirdGifs/2024-10-10_21.24.16-moshed-09-28-17-38-46-408.gif",
       "resultStatName": "Identity",
       "resultChangeValue": 1
     },
@@ -622,7 +623,7 @@ const THEHARVESTTHINKS = {
       "singleUse": false,
       "autoPlay": false,
       "costStatValue": 0,
-      "bgAbsoluteSrc": "http://farragofiction.com/CatalystsBathroomSim/audio_utils/weird_sounds/weird_video/WeirdGifs/AllHallowsEve/hallowedpumpkin.gif",
+      "bgAbsoluteSrc": "http://farragofiction.com/CatalystsBathroomSim/audio_utils/weird_sounds/weird_video/WeirdGifs/theharvest-moshed-09-28-17-51-21-192.gif",
       "resultStatName": "Jubuliance",
       "resultChangeValue": 1
     },
@@ -633,7 +634,7 @@ const THEHARVESTTHINKS = {
       "singleUse": false,
       "autoPlay": false,
       "costStatValue": 0,
-      "bgAbsoluteSrc": "http://farragofiction.com/CatalystsBathroomSim/audio_utils/weird_sounds/weird_video/WeirdGifs/AllHallowsEve/hallowedpumpkin.gif",
+      "bgAbsoluteSrc": "http://farragofiction.com/CatalystsBathroomSim/audio_utils/weird_sounds/weird_video/WeirdGifs/undefined_sacrifice7-moshed-08-31-15-01-38-345.gif",
       "resultStatName": "Knowledge",
       "resultChangeValue": 1
     },
@@ -644,7 +645,7 @@ const THEHARVESTTHINKS = {
       "singleUse": false,
       "autoPlay": false,
       "costStatValue": 0,
-      "bgAbsoluteSrc": "http://farragofiction.com/CatalystsBathroomSim/audio_utils/weird_sounds/weird_video/WeirdGifs/AllHallowsEve/hallowedpumpkin.gif",
+      "bgAbsoluteSrc": "http://farragofiction.com/CatalystsBathroomSim/audio_utils/weird_sounds/weird_video/WeirdGifs/fey.gif",
       "resultStatName": "Love",
       "resultChangeValue": 1
     },
@@ -655,7 +656,7 @@ const THEHARVESTTHINKS = {
       "singleUse": false,
       "autoPlay": false,
       "costStatValue": 0,
-      "bgAbsoluteSrc": "http://farragofiction.com/CatalystsBathroomSim/audio_utils/weird_sounds/weird_video/WeirdGifs/AllHallowsEve/hallowedpumpkin.gif",
+      "bgAbsoluteSrc": "http://farragofiction.com/CatalystsBathroomSim/audio_utils/weird_sounds/weird_video/WeirdGifs/cult-moshed-09-28-17-54-26-428.gif",
       "resultStatName": "Muse",
       "resultChangeValue": 1
     },
@@ -666,7 +667,7 @@ const THEHARVESTTHINKS = {
       "singleUse": false,
       "autoPlay": false,
       "costStatValue": 0,
-      "bgAbsoluteSrc": "http://farragofiction.com/CatalystsBathroomSim/audio_utils/weird_sounds/weird_video/WeirdGifs/AllHallowsEve/hallowedpumpkin.gif",
+      "bgAbsoluteSrc": "",
       "resultStatName": "Nepotism",
       "resultChangeValue": 1
     },
@@ -677,7 +678,7 @@ const THEHARVESTTHINKS = {
       "singleUse": false,
       "autoPlay": false,
       "costStatValue": 0,
-      "bgAbsoluteSrc": "http://farragofiction.com/CatalystsBathroomSim/audio_utils/weird_sounds/weird_video/WeirdGifs/AllHallowsEve/hallowedpumpkin.gif",
+      "bgAbsoluteSrc": "",
       "resultStatName": "Praise",
       "resultChangeValue": 1
     },
@@ -688,7 +689,7 @@ const THEHARVESTTHINKS = {
       "singleUse": false,
       "autoPlay": false,
       "costStatValue": 0,
-      "bgAbsoluteSrc": "http://farragofiction.com/CatalystsBathroomSim/audio_utils/weird_sounds/weird_video/WeirdGifs/AllHallowsEve/hallowedpumpkin.gif",
+      "bgAbsoluteSrc": "",
       "resultStatName": "Quest",
       "resultChangeValue": 1
     },
@@ -699,7 +700,7 @@ const THEHARVESTTHINKS = {
       "singleUse": false,
       "autoPlay": false,
       "costStatValue": 0,
-      "bgAbsoluteSrc": "http://farragofiction.com/CatalystsBathroomSim/audio_utils/weird_sounds/weird_video/WeirdGifs/AllHallowsEve/hallowedpumpkin.gif",
+      "bgAbsoluteSrc": "",
       "resultStatName": "Riches",
       "resultChangeValue": 1
     },
@@ -710,7 +711,7 @@ const THEHARVESTTHINKS = {
       "singleUse": false,
       "autoPlay": false,
       "costStatValue": 0,
-      "bgAbsoluteSrc": "http://farragofiction.com/CatalystsBathroomSim/audio_utils/weird_sounds/weird_video/WeirdGifs/AllHallowsEve/hallowedpumpkin.gif",
+      "bgAbsoluteSrc": "http://farragofiction.com/CatalystsBathroomSim/audio_utils/weird_sounds/weird_video/WeirdGifs/pumpkin_lantern_crochet-moshed-05-03-23-35-53-531.gif",
       "resultStatName": "Sweet",
       "resultChangeValue": 1
     },
@@ -721,7 +722,7 @@ const THEHARVESTTHINKS = {
       "singleUse": false,
       "autoPlay": false,
       "costStatValue": 0,
-      "bgAbsoluteSrc": "http://farragofiction.com/CatalystsBathroomSim/audio_utils/weird_sounds/weird_video/WeirdGifs/AllHallowsEve/hallowedpumpkin.gif",
+      "bgAbsoluteSrc": "",
       "resultStatName": "Teeth",
       "resultChangeValue": 1
     },
@@ -732,7 +733,7 @@ const THEHARVESTTHINKS = {
       "singleUse": false,
       "autoPlay": false,
       "costStatValue": 0,
-      "bgAbsoluteSrc": "http://farragofiction.com/CatalystsBathroomSim/audio_utils/weird_sounds/weird_video/WeirdGifs/AllHallowsEve/hallowedpumpkin.gif",
+      "bgAbsoluteSrc": "",
       "resultStatName": "Unlucky",
       "resultChangeValue": 1
     },
@@ -743,7 +744,7 @@ const THEHARVESTTHINKS = {
       "singleUse": false,
       "autoPlay": false,
       "costStatValue": 0,
-      "bgAbsoluteSrc": "http://farragofiction.com/CatalystsBathroomSim/audio_utils/weird_sounds/weird_video/WeirdGifs/AllHallowsEve/hallowedpumpkin.gif",
+      "bgAbsoluteSrc": "",
       "resultStatName": "Volition",
       "resultChangeValue": 1
     },
@@ -754,7 +755,7 @@ const THEHARVESTTHINKS = {
       "singleUse": false,
       "autoPlay": false,
       "costStatValue": 0,
-      "bgAbsoluteSrc": "http://farragofiction.com/CatalystsBathroomSim/audio_utils/weird_sounds/weird_video/WeirdGifs/AllHallowsEve/hallowedpumpkin.gif",
+      "bgAbsoluteSrc": "",
       "resultStatName": "Will",
       "resultChangeValue": 1
     },
@@ -765,7 +766,7 @@ const THEHARVESTTHINKS = {
       "singleUse": false,
       "autoPlay": false,
       "costStatValue": 0,
-      "bgAbsoluteSrc": "http://farragofiction.com/CatalystsBathroomSim/audio_utils/weird_sounds/weird_video/WeirdGifs/AllHallowsEve/hallowedpumpkin.gif",
+      "bgAbsoluteSrc": "",
       "resultStatName": "Xenon",
       "resultChangeValue": 1
     },
@@ -776,7 +777,7 @@ const THEHARVESTTHINKS = {
       "singleUse": false,
       "autoPlay": false,
       "costStatValue": 0,
-      "bgAbsoluteSrc": "http://farragofiction.com/CatalystsBathroomSim/audio_utils/weird_sounds/weird_video/WeirdGifs/AllHallowsEve/hallowedpumpkin.gif",
+      "bgAbsoluteSrc": "",
       "resultStatName": "Zeitgeist",
       "resultChangeValue": 1
     },
@@ -787,7 +788,7 @@ const THEHARVESTTHINKS = {
       "singleUse": false,
       "autoPlay": false,
       "costStatValue": 0,
-      "bgAbsoluteSrc": "http://farragofiction.com/CatalystsBathroomSim/audio_utils/weird_sounds/weird_video/WeirdGifs/AllHallowsEve/hallowedpumpkin.gif",
+      "bgAbsoluteSrc": "",
       "resultStatName": "Cat",
       "resultChangeValue": 1
     },
@@ -857,7 +858,6 @@ const THEHARVESTTHINKS = {
       "resultStatName": "Omen",
       "resultChangeValue": 1
     }
-
   ],
   "hueRotate": "200",
   "brightness": "1.5",
@@ -868,7 +868,32 @@ const THEHARVESTTHINKS = {
     "Pet the Kitty": 1,
     "Achieve": 1,
     "Puppet": 1,
-    "Teen": 1
+    "Teen": 1,
+    "Keep the Faith": 1,
+    "Store Energy": 1,
+    "Blameless": 1,
+    "Be Served": 1,
+    "Be Dutiful": 1,
+    "Be the god": "1",
+    "Play Games": "1",
+    "Know Thyself": "1",
+    "Make Merry": "1",
+    "Read a Book": "1",
+    "Inspire Others": "1",
+    "Count the Blackbirds": "1",
+    "Pray": "1",
+    "Render": "1",
+    "Be Present": "1",
+    "Become Noble": "1",
+    "Become More": "1",
+    "Decide Your Fate": "1",
+    "Too Bad": "1",
+    "Collect Teeth": "1",
+    "Collect Sweets": "1",
+    "Candy Riches": "1",
+    "Seek Glory": "1",
+    "Praise the Harvest": "1",
+    "Be Given Your Role": "1"
   },
   "costStatValue": 0
 }
