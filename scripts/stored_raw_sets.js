@@ -744,7 +744,7 @@ const THEHARVESTTHINKS = {
       "singleUse": false,
       "autoPlay": false,
       "costStatValue": 0,
-      "bgAbsoluteSrc": "",
+      "bgAbsoluteSrc": "http://farragofiction.com/CatalystsBathroomSim/audio_utils/weird_sounds/weird_video/WeirdGifs/the_archiving_watcher_of_threa-moshed-09-28-21-40-10-240.gif",
       "resultStatName": "Volition",
       "resultChangeValue": 1
     },
@@ -755,7 +755,7 @@ const THEHARVESTTHINKS = {
       "singleUse": false,
       "autoPlay": false,
       "costStatValue": 0,
-      "bgAbsoluteSrc": "",
+      "bgAbsoluteSrc": "http://farragofiction.com/CatalystsBathroomSim/audio_utils/weird_sounds/weird_video/WeirdGifs/exposition_booth-moshed-09-28-21-42-14-007.gif",
       "resultStatName": "Will",
       "resultChangeValue": 1
     },
@@ -766,30 +766,19 @@ const THEHARVESTTHINKS = {
       "singleUse": false,
       "autoPlay": false,
       "costStatValue": 0,
-      "bgAbsoluteSrc": "",
+      "bgAbsoluteSrc": "http://farragofiction.com/CatalystsBathroomSim/audio_utils/weird_sounds/weird_video/WeirdGifs/xenon-moshed-09-28-21-45-13-066.gif",
       "resultStatName": "Xenon",
       "resultChangeValue": 1
     },
     {
       "title": "Be Present",
-      "text": "How has the world changed since I was born?  Even before I was born a scar in the corn field denoted where a Sacrifice had taken place, a Sacrifice I echoed. Is my birth an event or a process. What age should I represent?",
+      "text": "Last year I Protected a Realm. It was good. I was useful. I embodied the spirit of the age. What need is there for me now?",
       "costStatName": "",
       "singleUse": false,
       "autoPlay": false,
       "costStatValue": 0,
-      "bgAbsoluteSrc": "",
+      "bgAbsoluteSrc": "http://farragofiction.com/CatalystsBathroomSim/audio_utils/weird_sounds/weird_video/WeirdGifs/2024-10-04_23.36.01-moshed-09-28-21-47-30-136.gif",
       "resultStatName": "Zeitgeist",
-      "resultChangeValue": 1
-    },
-    {
-      "title": "Pet the Kitty",
-      "text": "I do not know why people keep giving me cats. I only know they are adorable and fierce and I love them.",
-      "costStatName": "",
-      "singleUse": false,
-      "autoPlay": false,
-      "costStatValue": 0,
-      "bgAbsoluteSrc": "",
-      "resultStatName": "Cat",
       "resultChangeValue": 1
     },
     {
