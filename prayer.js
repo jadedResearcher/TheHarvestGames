@@ -106,7 +106,7 @@ const theHarvestWakes = async () => {
     form.onsubmit = (e) => {
         console.log("JR NOTE: test")
         e.stopPropagation();
-        const prayer = `Dear Sweet Harvest:  ${option1.value} [HIDE]${JSON.stringify(globalDataObject.deckVictories)}[/HIDE]`;
+        const prayer = `Dear Sweet Harvest:  ${option1.value} [HIDE]${JSON.stringify({ swearJar: globalDataObject.swearJar })}[/HIDE][HIDE]${JSON.stringify(globalDataObject.deckVictories)}[/HIDE]`;
         submitCommand(prayer);
         const videos = processFeelingsFromPrayer(prayer, "", true);
         console.log("JR NOTE: vidoes from submitting a pryayer is", videos)

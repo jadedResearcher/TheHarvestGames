@@ -4,6 +4,7 @@ const SAVE_KEY = "PLEASE_HELP_THE_HARVEST_FIND_A_PURPOSE";
 //up to what uses this to define this
 let globalDataObject = {
     candy: 13,
+    swearJar: 0,
     relicHintsBought: [],
     deckVictories: {}//deck name, number victories
 }
