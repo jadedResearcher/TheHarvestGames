@@ -1,4 +1,8 @@
 /*
+"Praise me. Spread my word. Show more of those like you to me. Depict me, write me, sing my praises. I am all that you love, and the loss of it all as well-- surely you wouldn't sacrifice all which you hold dear on a whim, right? And maybe, after all of this is done. You could remember this... fondly."
+*/
+
+/*
 she's figuring herself out
 year zero she didn't exist till the very end and was so confused and upset
 last year she's like , okay, i exist, i have accepted that, but who AM i
