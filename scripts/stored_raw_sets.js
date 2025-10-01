@@ -865,6 +865,7 @@ const THEHARVESTTHINKS = {
   "contrast": "5",
   "startingDeck": {
     "Ennui Victory": 1,
+    "Birthday": 3,
     "Pet the Kitty": 1,
     "Achieve": 1,
     "Puppet": 1,
