@@ -9,7 +9,7 @@ you can click any time in order to re-apply it (along with the popup)
 
 these relics won't be able to run outside the game, cuz it assumes certain other files loaded
 */
-
+//http://eyedolgames.com/Eyedlr/images/Secrets/guide_of_hunters_sprites/VB%20Pixel%20Art/
 //https://www.tumblr.com/jadedresearcher/796163897486901248/hello-jadedresearcher-i-am-a-big-fan-of-your-work?source=share
 const doDEAD = () => {
     DEADhax = true;//the guide of void will let you void anything out to guide you to secrets

@@ -695,7 +695,7 @@ video.big-screen {
 
 #console-shortcut {
     position: fixed;
-    top: 13px;
+    bottom: 13px;
     right: 13px;
     cursor: pointer;
     opacity: 13%;
