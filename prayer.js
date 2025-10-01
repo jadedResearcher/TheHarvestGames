@@ -631,8 +631,29 @@ const giantWoman = (index = 0) => {
 //changes every year
 
 const stories = (parent) => {
+
+
+    const birthdayStory = createElementWithClassAndParent("div", parent, "story birthday");
+    birthdayStory.innerHTML = `<h2>Day 1: Birthday</h2><p><span style="font-size:11pt;font-family:Arial,sans-serif;">Day 1: Birthday.</span></p>
+
+
+<p><span style="font-size:11pt;font-family:Arial,sans-serif;">The Harvest stalks away from her Booth.</span></p>
+
+<p><span style="font-size:11pt;font-family:Arial,sans-serif;">The NERVE.</span></p>
+
+<p><span style="font-size:11pt;font-family:Arial,sans-serif;">It was her BIRTHDAY and all she wanted to do was play cards with her Faithful, as was her RIGHT!</span></p>
+
+<p><span style="font-size:11pt;font-family:Arial,sans-serif;">And that miserable &apos;creator&apos; broke her ability to even SEE the games played.</span></p>
+
+<p><span style="font-size:11pt;font-family:Arial,sans-serif;">Typical.</span></p>
+
+<p><span style="font-size:11pt;font-family:Arial,sans-serif;">Her Library contains no doors to slam in its infinite twisting hexagons and connectors but she made do with collapsing into a pile of books with a series of honks and squeaks from her many, many interior clown dolls.</span></p>
+
+<p><span style="font-size:11pt;font-family:Arial,sans-serif;">This was the worst day EVER.</span></p>`;
+
+
     const awakeningStory = createElementWithClassAndParent("div", parent, "story awakening");
-    awakeningStory.innerHTML = `<h2>Day 1:</h2>
+    awakeningStory.innerHTML = `<h2>Day 1: Awakening</h2>
     <p><span style="font-size:11pt;font-family:Arial,sans-serif;">&quot;I am the&nbsp;</span><strong><span style="font-size:11pt;font-family:Arial,sans-serif;">Harvest God of The</span></strong><span style="font-size:11pt;font-family:Arial,sans-serif;">&nbsp;</span><strong><span style="font-size:11pt;font-family:Arial,sans-serif;">Library</span></strong><span style="font-size:11pt;font-family:Arial,sans-serif;">. The God Of&nbsp;</span><strong><span style="font-size:11pt;font-family:Arial,sans-serif;">Change</span></strong><span style="font-size:11pt;font-family:Arial,sans-serif;">. Of&nbsp;</span><strong><span style="font-size:11pt;font-family:Arial,sans-serif;">Inspiration</span></strong><span style="font-size:11pt;font-family:Arial,sans-serif;">.</span></p>
 
 <p><span style="font-size:11pt;font-family:Arial,sans-serif;">But above all: Of&nbsp;</span><strong><span style="font-size:11pt;font-family:Arial,sans-serif;">Being Served</span></strong><span style="font-size:11pt;font-family:Arial,sans-serif;">&nbsp;By The Faithfu</span><strong><span style="font-size:11pt;font-family:Arial,sans-serif;">l.</span></strong><span style="font-size:11pt;font-family:Arial,sans-serif;">&quot;</span></p>
@@ -679,6 +700,7 @@ const stories = (parent) => {
 <p><strong><span style="font-size:11pt;font-family:Arial,sans-serif;">(JR NOTE: The Harvest doesn&apos;t feel like taking prayers all the time anymore. Try again later to try to catch her between games! &nbsp;And if you don&apos;t like her current outlook, well, what can you Sacrifice to her this year to change it ;) )</span></strong></p>
   
   `
+
 }
 
 

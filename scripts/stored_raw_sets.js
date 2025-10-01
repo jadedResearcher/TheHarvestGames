@@ -518,6 +518,17 @@ const THEHARVESTTHINKS = {
       "resultChangeValue": 1
     },
     {
+      "title": "Birthday",
+      "text": "It is my BIRTHDAY, my SPECIAL DAY, and the creator could not even handle inviting the Faithful to play cards with me right! The NERVE!",
+      "costStatName": "",
+      "singleUse": false,
+      "autoPlay": false,
+      "costStatValue": 0,
+      "bgAbsoluteSrc": "http://farragofiction.com/CatalystsBathroomSim/audio_utils/weird_sounds/weird_video/WeirdGifs/birthday-moshed-10-01-09-49-04-270.gif",
+      "resultStatName": "Languish",
+      "resultChangeValue": 1
+    },
+    {
       "title": "Blameless",
       "text": "Is it even MY fault if the Faithful's prayers go unanswered? They TOLD me to take it easy so that's what I'm doing!",
       "costStatName": "",
