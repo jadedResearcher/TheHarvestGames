@@ -110,7 +110,9 @@ const displayCardAndDeckEdits = () => {
         testDeck.renderEditForm(contents);
     }
 }
-
+//we need to find out what the harvest wants for the future, what motivates her
+//she is Timeless because her secret aspect of time was destroyed
+//so how do we shake her out of this eternal hedonistic present?
 const handleURLParams = () => {
     const queryString = window.location.search;
     const urlParams = new URLSearchParams(queryString);
