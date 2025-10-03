@@ -57,6 +57,33 @@ body {
     background-image: url("http://lavinraca.eyedolgames.com/TheHarvestWakes/images/HarvestEyes/Offerings/InspiredHarvests/LibraryCardVideoReady.png");
 }
 
+.secret .sass {
+    padding: 2px;
+    position: absolute;
+    top: 25px;
+    font-size: 12px;
+    width: fit-content;
+    color: black;
+    padding-left: 5px;
+    font-weight: bold;
+    white-space: nowrap;
+
+    padding-right: 5px;
+    opacity: 100;
+    margin: 5px;
+    background-color: black;
+    color: purple;
+    z-index: 1000;
+    border: 3px solid purple;
+    line-height: 17px;
+    box-shadow: 2px 2px 2px 3px rgba(0, 0, 0, .2);
+    transition: opacity 1s linear;
+}
+
+.sass.fadeout {
+    opacity: 0;
+}
+
 .form-container {
     margin-top: 13px;
 }

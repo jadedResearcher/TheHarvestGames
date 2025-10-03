@@ -398,9 +398,41 @@ const renderLibraryCardHeader = (container) => {
     //it is NOT easy to get the video working with whatever image so if i choose more than one
     //it'll be not many
     harvest.src = "http://lavinraca.eyedolgames.com/TheHarvestWakes/images/HarvestEyes/Offerings/InspiredHarvests/LibraryCardVideoReady.png";
-
+    const rand = new SeededRandom(Date.now()); //set on getting to page
+    const sassListRaw = `Honk
+    Be safe and don't get lost
+    Funny bumping into you here
+    Plus 1 Candy
+    Happy Birthday
+    Happy Halloween`;
+    const sassList = sassListRaw.split("\n")
+    const chosen_sass_for_this_refresh = rand.pickFrom(sassList)
 
     const secret = createElementWithClassAndParent("div", shop, "secret");
+    secret.onclick = () => {
+
+        const emitSass = () => {
+            const sass = createElementWithClassAndParent("div", secret, "sass");
+            sass.innerText = chosen_sass_for_this_refresh.trim();
+            if (chosen_sass_for_this_refresh.includes("Plus 1 Candy")) {
+                globalDataObject.candy++;
+                save();
+            } else if (chosen_sass_for_this_refresh.includes("Honk")) {
+                global_fx_one_at_a_time.src = "http://farragofiction.com/CatalystsBathroomSim/audio_utils/weird_sounds/ender_sounds_like_clown_clean.mp3";
+                global_fx_one_at_a_time.play();
+            }
+
+            setTimeout(() => {
+                sass.className = "sass fadeout";
+
+            }, 2000);
+
+            setTimeout(() => {
+                sass?.remove();
+            }, 4000);
+        }
+        emitSass(0);
+    }
 
 
 
