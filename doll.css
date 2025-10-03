@@ -45,6 +45,18 @@ body {
     letter-spacing: 1px;
 }
 
+.secret {
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    right: 3px;
+    cursor: pointer;
+    background-size: 312px 186px;
+    background-position-x: -266px;
+    top: 0px;
+    background-image: url("http://lavinraca.eyedolgames.com/TheHarvestWakes/images/HarvestEyes/Offerings/InspiredHarvests/LibraryCardVideoReady.png");
+}
+
 .form-container {
     margin-top: 13px;
 }

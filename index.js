@@ -389,13 +389,20 @@ const renderLibraryCardHeader = (container) => {
 
     const shop = createElementWithClassAndParent("div", parent, "card");
 
+
     const harvest = createElementWithClassAndParent("img", shop, "harvest");
+
     //the Harvest of Inspiration looks like whatever she inspires in you
     //which, practically speaking
     //means fanart you make of her that i edit to have a space for her video (if i can)
     //it is NOT easy to get the video working with whatever image so if i choose more than one
     //it'll be not many
     harvest.src = "http://lavinraca.eyedolgames.com/TheHarvestWakes/images/HarvestEyes/Offerings/InspiredHarvests/LibraryCardVideoReady.png";
+
+
+    const secret = createElementWithClassAndParent("div", shop, "secret");
+
+
 
     const defaultHarvestCSS = ` width: 310px;
                                 z-index: 1;
@@ -488,6 +495,17 @@ const scarecrowLog = (text) => {
     console.log(`%c${text}`, scarecrowCSS);
 }
 
+
+const maccusLog = (text) => {
+    const scarecrowCSS = "letter-spacing: 10px; padding: 10px;font-weight: bold;font-family: 'Courier New'; background-color: black; monospace;color:#ffffff; font-size:31px;";
+    if (scarecrowEle) {
+        const container = createElementWithClassAndParent("div", truthEle);
+        container.style.cssText = scarecrowCSS;
+        container.innerText = text;
+        container.scrollIntoView();
+    }
+    console.log(`%c${text}`, scarecrowCSS);
+}
 
 
 /*
