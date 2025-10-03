@@ -847,6 +847,18 @@ const THEHARVESTTHINKS = {
       "resultStatName": "Faithful",
       "resultChangeValue": 1
     },
+
+    {
+      "title": "Wonder",
+      "text": "If I am already perfect...any Change would be...definitionally worse. So why do I yearn for it? Because its part of my nature to change and be changed? Why change from Perfection? ",
+      "costStatName": "",
+      "singleUse": false,
+      "autoPlay": false,
+      "costStatValue": 0,
+      "bgAbsoluteSrc": "http://lavinraca.eyedolgames.com/TheHarvestGames/images/Harvest/prototype1.png",
+      "resultStatName": "Yearning",
+      "resultChangeValue": 1
+    },
     {
       "title": "Count the Blackbirds",
       "text": "Am I a Tool, or a Toy?",
@@ -865,6 +877,7 @@ const THEHARVESTTHINKS = {
   "contrast": "5",
   "startingDeck": {
     "Ennui Victory": 1,
+    "Wonder": 1,
     "Birthday": 3,
     "Pet the Kitty": 1,
     "Achieve": 1,
@@ -889,6 +902,7 @@ const THEHARVESTTHINKS = {
     "Become More": "1",
     "Decide Your Fate": "1",
     "Too Bad": "1",
+    "Be Served": "1",
     "Collect Teeth": "1",
     "Collect Sweets": "1",
     "Candy Riches": "1",
@@ -898,3 +912,9 @@ const THEHARVESTTHINKS = {
   },
   "costStatValue": 0
 }
+
+/*
+"illusory truth effect"
+
+when repetition makes you think things are true
+*/

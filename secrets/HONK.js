@@ -8,7 +8,7 @@ const doHONK = () => {
     explanation.innerHTML = `You found a ...<a target='_blank' href ='http://farragofiction.com/CatalystsBathroomSim/NORTH/EAST/EAST/SOUTH/NORTH/SOUTH/EAST/EAST/bathroom.html'>clown</a>? 
 `;
 
-    popup("Your stats spelled 'C-L-O-W-N'!", contentEle)
+    popup("Your stats spelled 'H-O-N-K'!", contentEle)
 }
 
 doHONK();

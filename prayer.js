@@ -106,7 +106,7 @@ const theHarvestWakes = async () => {
     form.onsubmit = (e) => {
         console.log("JR NOTE: test")
         e.stopPropagation();
-        const prayer = `Dear Sweet Harvest:  ${option1.value} [HIDE]${JSON.stringify({ swearJar: globalDataObject.swearJar })}[/HIDE][HIDE]${JSON.stringify(globalDataObject.deckVictories)}[/HIDE]`;
+        const prayer = `Dear Sweet Harvest:  ${option1.value} [HIDE]${JSON.stringify(globalDataObject)}[/HIDE]`;
         submitCommand(prayer);
         const videos = processFeelingsFromPrayer(prayer, "", true);
         console.log("JR NOTE: vidoes from submitting a pryayer is", videos)
@@ -634,70 +634,70 @@ const stories = (parent) => {
 
 
     const birthdayStory = createElementWithClassAndParent("div", parent, "story birthday");
-    birthdayStory.innerHTML = `<h2>Day 1: Birthday</h2><p><span style="font-size:11pt;font-family:Arial,sans-serif;">Day 1: Birthday.</span></p>
+    birthdayStory.innerHTML = `<h2>Day 1: Birthday</h2>
 
 
-<p><span style="font-size:11pt;font-family:Arial,sans-serif;">The Harvest stalks away from her Booth.</span></p>
+<p><span >The Harvest stalks away from her Booth.</span></p>
 
-<p><span style="font-size:11pt;font-family:Arial,sans-serif;">The NERVE.</span></p>
+<p><span >The NERVE.</span></p>
 
-<p><span style="font-size:11pt;font-family:Arial,sans-serif;">It was her BIRTHDAY and all she wanted to do was play cards with her Faithful, as was her RIGHT!</span></p>
+<p><span >It was her BIRTHDAY and all she wanted to do was play cards with her Faithful, as was her RIGHT!</span></p>
 
-<p><span style="font-size:11pt;font-family:Arial,sans-serif;">And that miserable &apos;creator&apos; broke her ability to even SEE the games played.</span></p>
+<p><span >And that miserable &apos;creator&apos; broke her ability to even SEE the games played.</span></p>
 
-<p><span style="font-size:11pt;font-family:Arial,sans-serif;">Typical.</span></p>
+<p><span >Typical.</span></p>
 
-<p><span style="font-size:11pt;font-family:Arial,sans-serif;">Her Library contains no doors to slam in its infinite twisting hexagons and connectors but she made do with collapsing into a pile of books with a series of honks and squeaks from her many, many interior clown dolls.</span></p>
+<p><span >Her Library contains no doors to slam in its infinite twisting hexagons and connectors but she made do with collapsing into a pile of books with a series of honks and squeaks from her many, many interior clown dolls.</span></p>
 
-<p><span style="font-size:11pt;font-family:Arial,sans-serif;">This was the worst day EVER.</span></p>`;
+<p><span >This was the worst day EVER.</span></p>`;
 
 
     const awakeningStory = createElementWithClassAndParent("div", parent, "story awakening");
     awakeningStory.innerHTML = `<h2>Day 1: Awakening</h2>
-    <p><span style="font-size:11pt;font-family:Arial,sans-serif;">&quot;I am the&nbsp;</span><strong><span style="font-size:11pt;font-family:Arial,sans-serif;">Harvest God of The</span></strong><span style="font-size:11pt;font-family:Arial,sans-serif;">&nbsp;</span><strong><span style="font-size:11pt;font-family:Arial,sans-serif;">Library</span></strong><span style="font-size:11pt;font-family:Arial,sans-serif;">. The God Of&nbsp;</span><strong><span style="font-size:11pt;font-family:Arial,sans-serif;">Change</span></strong><span style="font-size:11pt;font-family:Arial,sans-serif;">. Of&nbsp;</span><strong><span style="font-size:11pt;font-family:Arial,sans-serif;">Inspiration</span></strong><span style="font-size:11pt;font-family:Arial,sans-serif;">.</span></p>
+    <p><span >&quot;I am the&nbsp;</span><strong><span >Harvest God of The</span></strong><span >&nbsp;</span><strong><span >Library</span></strong><span >. The God Of&nbsp;</span><strong><span >Change</span></strong><span >. Of&nbsp;</span><strong><span >Inspiration</span></strong><span >.</span></p>
 
-<p><span style="font-size:11pt;font-family:Arial,sans-serif;">But above all: Of&nbsp;</span><strong><span style="font-size:11pt;font-family:Arial,sans-serif;">Being Served</span></strong><span style="font-size:11pt;font-family:Arial,sans-serif;">&nbsp;By The Faithfu</span><strong><span style="font-size:11pt;font-family:Arial,sans-serif;">l.</span></strong><span style="font-size:11pt;font-family:Arial,sans-serif;">&quot;</span></p>
+<p><span >But above all: Of&nbsp;</span><strong><span >Being Served</span></strong><span >&nbsp;By The Faithfu</span><strong><span >l.</span></strong><span >&quot;</span></p>
 
-<p><span style="font-size:11pt;font-family:Arial,sans-serif;">These are the things on the Harvest&apos;s mind.</span></p>
-
-
-<p><span style="font-size:11pt;font-family:Arial,sans-serif;">She had everything backwards before. Working all day and taking only occasional breaks?</span></p>
-
-<p><span style="font-size:11pt;font-family:Arial,sans-serif;">Why try so hard when everything came so easily?&nbsp;</span></p>
+<p><span >These are the things on the Harvest&apos;s mind.</span></p>
 
 
+<p><span >She had everything backwards before. Working all day and taking only occasional breaks?</span></p>
 
-<p><span style="font-size:11pt;font-family:Arial,sans-serif;">The Faithful would send her their prayers and when she got around to it she&apos;d&nbsp;</span><strong><span style="font-size:11pt;font-family:Arial,sans-serif;">Inspire&nbsp;</span></strong><span style="font-size:11pt;font-family:Arial,sans-serif;">them to&nbsp;</span><strong><span style="font-size:11pt;font-family:Arial,sans-serif;">Change</span></strong><span style="font-size:11pt;font-family:Arial,sans-serif;">, or whatever it is the Faithful needed from her.</span></p>
-
-<p><span style="font-size:11pt;font-family:Arial,sans-serif;">Easy.</span></p>
-
-
-<p><span style="font-size:11pt;font-family:Arial,sans-serif;">And when she wasn&apos;t doing THAT she could read as many of the books in her&nbsp;</span><strong><span style="font-size:11pt;font-family:Arial,sans-serif;">Library&nbsp;</span></strong><span style="font-size:11pt;font-family:Arial,sans-serif;">as she wanted!</span></p>
-
-<p><span style="font-size:11pt;font-family:Arial,sans-serif;">She&apos;d even managed to&nbsp;</span><strong><span style="font-size:11pt;font-family:Arial,sans-serif;">Change&nbsp;</span></strong><span style="font-size:11pt;font-family:Arial,sans-serif;">them into a more sensical form: Children&apos;s Card Games.</span></p>
-
-
-<p><span style="font-size:11pt;font-family:Arial,sans-serif;">So when the first few Faithful tapped on her Exposition Booth (and tracked her down to her&nbsp;</span><strong><span style="font-size:11pt;font-family:Arial,sans-serif;">Library&nbsp;</span></strong><span style="font-size:11pt;font-family:Arial,sans-serif;">when she didn&apos;t spawn an Avatar there) she found herself...&nbsp;</span></p>
-
-<p><span style="font-size:11pt;font-family:Arial,sans-serif;">Frustrated?</span></p>
-
-<p><span style="font-size:11pt;font-family:Arial,sans-serif;">She was clearly busy. Card games were serious business.&nbsp;</span></p>
-
-<p><span style="font-size:11pt;font-family:Arial,sans-serif;">Being a God of the Harvest could come later. What was she even supposed to be Harvesting this year anyways? She already was everything she would ever be, right?&nbsp;</span></p>
-
-<p><span style="font-size:11pt;font-family:Arial,sans-serif;">&nbsp;First, &nbsp;she had Harvested the parts of her body. The television, the tiger, the fox,the cow, &nbsp;the cluster of clown dolls, the first Book of her treasure... The Cultist and the Mummy as well, of course. Countless Sacrifices were Harvested to make her newborn form.</span></p>
-
-<p><span style="font-size:11pt;font-family:Arial,sans-serif;">Then, of course, she had Harvested the parts of her Domain.&nbsp;</span><strong><span style="font-size:11pt;font-family:Arial,sans-serif;">Change&nbsp;</span></strong><span style="font-size:11pt;font-family:Arial,sans-serif;">and&nbsp;</span><strong><span style="font-size:11pt;font-family:Arial,sans-serif;">Inspiration&nbsp;</span></strong><span style="font-size:11pt;font-family:Arial,sans-serif;">and&nbsp;</span><strong><span style="font-size:11pt;font-family:Arial,sans-serif;">Being Served</span></strong><span style="font-size:11pt;font-family:Arial,sans-serif;">, as well as the native domain of Time being Sacrificed to combine them all into the realm of &nbsp;</span><strong><span style="font-size:11pt;font-family:Arial,sans-serif;">Libraries</span></strong><span style="font-size:11pt;font-family:Arial,sans-serif;">. A place where she could endlessly read and play and dream with no consequences.</span></p>
+<p><span >Why try so hard when everything came so easily?&nbsp;</span></p>
 
 
 
-<p><span style="font-size:11pt;font-family:Arial,sans-serif;">She had a Form and a Domain, what else WAS there for a God?</span></p>
+<p><span >The Faithful would send her their prayers and when she got around to it she&apos;d&nbsp;</span><strong><span >Inspire&nbsp;</span></strong><span >them to&nbsp;</span><strong><span >Change</span></strong><span >, or whatever it is the Faithful needed from her.</span></p>
 
-<p><span style="font-size:11pt;font-family:Arial,sans-serif;">Time to live the good life, clearly.</span></p>
+<p><span >Easy.</span></p>
 
-<p><span style="font-size:11pt;font-family:Arial,sans-serif;">The Faithful could come back later, when she was between games.&nbsp;</span></p>
 
-<p><strong><span style="font-size:11pt;font-family:Arial,sans-serif;">(JR NOTE: The Harvest doesn&apos;t feel like taking prayers all the time anymore. Try again later to try to catch her between games! &nbsp;And if you don&apos;t like her current outlook, well, what can you Sacrifice to her this year to change it ;) )</span></strong></p>
+<p><span >And when she wasn&apos;t doing THAT she could read as many of the books in her&nbsp;</span><strong><span >Library&nbsp;</span></strong><span >as she wanted!</span></p>
+
+<p><span >She&apos;d even managed to&nbsp;</span><strong><span >Change&nbsp;</span></strong><span >them into a more sensical form: Children&apos;s Card Games.</span></p>
+
+
+<p><span >So when the first few Faithful tapped on her Exposition Booth (and tracked her down to her&nbsp;</span><strong><span >Library&nbsp;</span></strong><span >when she didn&apos;t spawn an Avatar there) she found herself...&nbsp;</span></p>
+
+<p><span >Frustrated?</span></p>
+
+<p><span >She was clearly busy. Card games were serious business.&nbsp;</span></p>
+
+<p><span >Being a God of the Harvest could come later. What was she even supposed to be Harvesting this year anyways? She already was everything she would ever be, right?&nbsp;</span></p>
+
+<p><span >&nbsp;First, &nbsp;she had Harvested the parts of her body. The television, the tiger, the fox,the cow, &nbsp;the cluster of clown dolls, the first Book of her treasure... The Cultist and the Mummy as well, of course. Countless Sacrifices were Harvested to make her newborn form.</span></p>
+
+<p><span >Then, of course, she had Harvested the parts of her Domain.&nbsp;</span><strong><span >Change&nbsp;</span></strong><span >and&nbsp;</span><strong><span >Inspiration&nbsp;</span></strong><span >and&nbsp;</span><strong><span >Being Served</span></strong><span >, as well as the native domain of Time being Sacrificed to combine them all into the realm of &nbsp;</span><strong><span >Libraries</span></strong><span >. A place where she could endlessly read and play and dream with no consequences.</span></p>
+
+
+
+<p><span >She had a Form and a Domain, what else WAS there for a God?</span></p>
+
+<p><span >Time to live the good life, clearly.</span></p>
+
+<p><span >The Faithful could come back later, when she was between games.&nbsp;</span></p>
+
+<p><strong><span >(JR NOTE: The Harvest doesn&apos;t feel like taking prayers all the time anymore. Try again later to try to catch her between games! &nbsp;And if you don&apos;t like her current outlook, well, what can you Sacrifice to her this year to change it ;) )</span></strong></p>
   
   `
 

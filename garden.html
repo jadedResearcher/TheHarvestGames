@@ -1,0 +1,81 @@
+<html language="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="description" content="Everyone plants seeds togetether but will all bear fruit?">
+
+  <title>Will You Reap What Everyone Sows In This Garden Of Prayers?</title>
+  <style>
+    body {
+      background-color: black;
+      background-size: contain;
+      background-repeat: no-repeat;
+    }
+
+    .container {
+      width: 1000px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  </style>
+  <script src="scripts/utils.js"></script>
+
+  <script>
+    const flower_url = "http://www.farragofiction.com/DollSource/images/Flower/Body/";
+    const fruit_url = "http://www.farragofiction.com/DollSource/images/Fruit/Body/";
+    let random_flowers;
+    let random_fruit;
+
+    window.onload = async () => {
+      await initImages();
+      debugImages();
+    }
+
+    /*
+      http://farragofiction.com:1972/StoryTimePleaseDearGod
+
+      each [HIDE] tag with a time code should matter.
+    */
+    const convertPrayersToSeeds = () => {
+
+    }
+
+    //render them all
+    const debugImages = () => {
+      const container = document.querySelector(".container");
+      for (let flower of random_flowers) {
+        const image = createElementWithClassAndParent("img", container);
+        image.src = flower;
+      }
+
+      for (let fruit of random_fruit) {
+        const image = createElementWithClassAndParent("img", container);
+        image.src = fruit;
+      }
+    }
+
+    const initImages = async () => {
+      let tmp = await getImages(flower_url);
+      random_flowers = tmp.map((item) => flower_url + item);
+
+      tmp = await getImages(fruit_url);
+      random_fruit = tmp.map((item) => fruit_url + item);
+
+    }
+
+    const drawAFlower = () => {
+
+    }
+  </script>
+
+
+
+</head>
+
+<body>
+  <div class="container">
+
+  </div>
+</body>
+
+</html>
