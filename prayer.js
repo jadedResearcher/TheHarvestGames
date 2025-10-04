@@ -594,7 +594,7 @@ const giantWoman = (index = 0) => {
 
 
     const bigLady = createElementWithClassAndParent("img", fullScreenEle, "harvest big-lady");
-    bigLady.src = "images/Harvest/quick_Ic_sketch_krita_refusedtowakeup_muchliketheharvest_color.png";
+    bigLady.src = "images/Harvest/womanlearnstoreadby_IC_transparent.png";
 
     const textEle = createElementWithClassAndParent("div", fullScreenEle, "god-dialog");
     textEle.style.cssText = `position: fixed;

@@ -665,14 +665,16 @@ button:hover {
 
 
 video.big-screen {
-    width: 50%;
-    height: 50%;
-    z-index: 13;
+    width: 270px;
+    left: 562px;
+    height: 201px;
+    top: 200px;
+    z-index: -1;
     margin-left: auto;
     margin-right: auto;
     display: block;
     position: absolute;
-
+    transform: skew(27deg, -15deg);
 }
 
 
