@@ -20,7 +20,7 @@ function removeItemOnce(arr, value) {
   }
   return arr;
 }
-
+//http://farragofiction.com/FractalShitpost/
 const httpGet = (theUrl) => {
   var xmlHttp = new XMLHttpRequest();
   xmlHttp.open("GET", theUrl, false); // false for synchronous request
@@ -36,7 +36,7 @@ const fetchInitialStory = () => {
       return JSON.parse(httpGet("http://farragofiction.com:1972/StoryTimePleaseDearGod"));
     }
   } catch (e) {
-    console.error("JR NOTE: servers dead i guess? the future comes for us all.",e);
+    console.error("JR NOTE: servers dead i guess? the future comes for us all.", e);
     return (JSON.parse(desperate_plea));
   }
 }
@@ -48,8 +48,8 @@ const fetchPendingCommands = () => {
       return JSON.parse(httpGet("http://farragofiction.com:1972/ListThePleaseCommandList"));
     }
   } catch (e) {
-    console.error("JR NOTE: servers dead i guess? the future comes for us all.",e);
-    return (["Obsession is a Dangerous Thing","Obsession is a Dangerous Thing","Obsession is a Dangerous Thing"]);
+    console.error("JR NOTE: servers dead i guess? the future comes for us all.", e);
+    return (["Obsession is a Dangerous Thing", "Obsession is a Dangerous Thing", "Obsession is a Dangerous Thing"]);
   }
 }
 

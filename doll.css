@@ -505,11 +505,12 @@ video {
 }
 
 .shop video {
-    height: 67px;
+    height: 74px;
     position: absolute;
-    top: 93px;
-    left: 332px;
-    z-index: 2;
+    top: 92px;
+    left: 345px;
+    z-index: 1;
+    background: black;
 }
 
 .full-screen-dialog {
@@ -665,16 +666,16 @@ button:hover {
 
 
 video.big-screen {
-    width: 270px;
-    left: 562px;
+    width: 219px;
+    left: 590px;
     height: 201px;
-    top: 200px;
+    top: 187px;
     z-index: -1;
     margin-left: auto;
     margin-right: auto;
     display: block;
     position: absolute;
-    transform: skew(27deg, -15deg);
+    transform: skew(-1deg, -24deg);
 }
 
 

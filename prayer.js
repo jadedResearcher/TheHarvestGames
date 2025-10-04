@@ -27,7 +27,7 @@ const default_video = video_source + "fox_clip.mp4";
 const happy_video = video_source + "happy_fox_spin.mp4";
 const ominous_video = video_source + "ominous_fox_zoom.mp4";
 const fox_thinking = video_source + "fox_thinking.mp4"
-const default_harvest = "images/Harvest/quick_Ic_sketch_krita_refusedtowakeup_muchliketheharvest_color.png";
+const default_harvest = "images/Harvest/womanlearnstoreadby_IC_transparent.png";
 
 const allFeelingsObjects = [];
 const HAPPY = "HAPPY"; //negative is SAD
@@ -587,7 +587,7 @@ const giantWoman = (index = 0) => {
     }
 
 
-    bigScreenTV.src = video_source + "glitchwaterangry.mp4"; //flash of anger before anything else
+    bigScreenTV.src = "http://farragofiction.com/CatalystsBathroomSim/audio_utils/weird_sounds/weird_video/letsgogambling_by_pupeteer_of_-moshed-10-04-00-05-06-449.mp4"; //flash of anger before anything else
 
     bigScreenTV.autoplay = true;
     bigScreenTV.loop = true;
