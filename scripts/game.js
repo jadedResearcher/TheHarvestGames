@@ -44,7 +44,7 @@ const runSecret = async (fileName, optionalCallback) => {
 //and i am going fast during lavinraca season so doing things sloppy style
 let global_drawAtATime = 5;
 let global_numberOfReshufflesBeforeLose = 4;
-let global_statRange = 2;
+let global_statRange = 1;
 
 class Game {
   cardset;//what are we actually playing with
