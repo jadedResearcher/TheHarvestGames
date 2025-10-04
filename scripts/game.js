@@ -455,7 +455,7 @@ class Game {
       globalDataObject.deckVictories[this.cardset.title] = globalDataObject.deckVictories[this.cardset.title] - 1;
       save();
       if (this.outOfReshuffles()) {
-        alert("You ran out of reshuffles...You could not reap what you sowed.")
+        alert("You ran out of reshuffles...You could not reap what you sowed. Your Harvest lies fallow.")
       } else {
         alert("You LOST! Them's the breaks.")
 
@@ -482,7 +482,18 @@ class Game {
     parent.innerHTML = ""; //clear previous frame
     this.renderStats(parent);
     const reshufflesLeft = createElementWithClassAndParent("div", parent, 'reshuffles-left');
-    reshufflesLeft.innerText = `${this.numberOfReshufflesBeforeLose - this.usedReshuffles} Reshuffles Left`;
+    const reshufflesLeftCount = this.numberOfReshufflesBeforeLose - this.usedReshuffles
+    let flavor = "";
+    if (reshufflesLeftCount === 4) {
+      flavor = "( Winter )"
+    } else if (reshufflesLeftCount === 3) {
+      flavor = "( Spring )"
+    } else if (reshufflesLeftCount === 2) {
+      flavor = "( Summer )"
+    } else if (reshufflesLeftCount === 1) {
+      flavor = "( Harvest Season )"
+    }
+    reshufflesLeft.innerText = `${reshufflesLeftCount} Reshuffles Left ${flavor}`;
 
     const sceneContainer = createElementWithClassAndParent("div", parent, 'game-area');
     if (this.currentBGSrc) {
