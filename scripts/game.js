@@ -47,12 +47,13 @@ class Game {
   quitCallback; //gets set by whatever starts the game, how does the game tear itself down
   done = false;
   drawAtATime = 5; //in theory we can let things change this
+  numberOfReshufflesBeforeLose = 4;//in theory a relic can change this
   discards = [];
   hand = [];
   rand;
   currentBGSrc;
   currentText;
-
+  usedReshuffles = 0;
 
   constructor(cardset) {
 
@@ -266,6 +267,10 @@ class Game {
 
   }
 
+  outOfReshuffles = () => {
+    return this.usedReshuffles >= this.numberOfReshufflesBeforeLose;
+  }
+
   renderDiscardPile = (parent) => {
     const source = this.discards;
     const cardHolder = createElementWithClassAndParent("div", parent, "discard-pile");
@@ -292,6 +297,7 @@ class Game {
 
   renderDrawPile = (parent) => {
     const source = this.deck;
+
     const cardHolder = createElementWithClassAndParent("div", parent, "draw-pile");
 
     const drawCardImage = createElementWithClassAndParent("img", cardHolder, "card-back");
@@ -315,11 +321,23 @@ class Game {
     countEle.innerText = source.length;
 
     const endTurnButton = createElementWithClassAndParent("button", cardHolder, 'end-turn-button');
-    endTurnButton.innerText = "Draw Cards";
+    endTurnButton.innerText = `${source.length <= this.drawAtATime ? "Reshuffle" : "Draw Cards"}  (${source.length}) `;
+
+
 
     endTurnButton.onclick = () => {
-      this.drawNewHand();
-      this.render(parent);
+      if (source.length <= this.drawAtATime) {
+        this.usedReshuffles++;
+      }
+
+      if (!this.outOfReshuffles()) {
+        this.drawNewHand();
+        this.render(parent);
+      } else {
+        this.stats[DEFEAT] = 1;
+        this.render(parent);
+      }
+
     }
 
 
@@ -431,7 +449,18 @@ class Game {
     }
 
     if (this.stats[DEFEAT] > 0) {
-      alert("You LOST!  JR hasn't made this do anything yet tho...")
+      if (!globalDataObject.deckVictories[this.cardset.title]) {
+        globalDataObject.deckVictories[this.cardset.title] = 0;
+      }
+      globalDataObject.deckVictories[this.cardset.title] = globalDataObject.deckVictories[this.cardset.title] - 1;
+      save();
+      if (this.outOfReshuffles()) {
+        alert("You ran out of reshuffles...You could not reap what you sowed.")
+      } else {
+        alert("You LOST! Them's the breaks.")
+
+      }
+
       return true;
     }
     return false;
@@ -452,6 +481,9 @@ class Game {
     }
     parent.innerHTML = ""; //clear previous frame
     this.renderStats(parent);
+    const reshufflesLeft = createElementWithClassAndParent("div", parent, 'reshuffles-left');
+    reshufflesLeft.innerText = `${this.numberOfReshufflesBeforeLose - this.usedReshuffles} Reshuffles Left`;
+
     const sceneContainer = createElementWithClassAndParent("div", parent, 'game-area');
     if (this.currentBGSrc) {
       this.renderCurrentScene(sceneContainer);

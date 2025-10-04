@@ -638,6 +638,35 @@ const giantWoman = (index = 0) => {
 
 const stories = (parent) => {
 
+    const gamblingStory = createElementWithClassAndParent("div", parent, "story gambling");
+    gamblingStory.innerHTML = `<p><h2 >Day 4: Motivation Acquired: Gambling</h2></p>
+
+<p><span >The Harvest blinks at the Prayer.</span></p>
+
+<p><span >You don&apos;t always get to Reap What You Sow...</span></p>
+
+<p><span >It could be good.&nbsp;</span></p>
+
+<p><span >It could be bad.</span></p>
+
+<p><span >She thinks.</span></p>
+
+<p><span >And with a wave of her hand, extends her godly domain of Change over the card games.</span></p>
+
+<p><span >They were too much like the books that spawned them, weren&apos;t they?</span><span ><br></span><span ><br></span><span >She had made them into cards on a whim (somehow it just felt right)... but...</span><span ><br></span><span ><br></span><span >They still simply let you plod forward, assured that with patience you would consume all (why did she feel weirdly...hungry...?) and miss nothing.</span><span ><br></span><span ><br></span><span >But the idea of...</span></p>
+
+<p><span >Failing...</span></p>
+
+<p><span >Through no fault of your own...</span></p>
+
+<p><span >Sent a strange thrill through her.</span></p>
+
+<p><span >To not KNOW ahead of time if you would win or lose?</span></p>
+
+<p><span >Perhaps it could be interesting to try that out... for a bit.</span></p>
+
+<p><span >(jr note: it&apos;ll take a few days but expect the Rules of the Game to change)</span></p>`;
+
 
     const birthdayStory = createElementWithClassAndParent("div", parent, "story birthday");
     birthdayStory.innerHTML = `<h2>Day 1: Birthday</h2>

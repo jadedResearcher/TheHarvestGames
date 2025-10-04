@@ -504,6 +504,13 @@ video {
     border: 3px double #a1b234;
 }
 
+.reshuffles-left {
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    width: fit-content;
+}
+
 .shop video {
     height: 74px;
     position: absolute;
