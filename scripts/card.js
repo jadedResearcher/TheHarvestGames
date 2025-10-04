@@ -185,6 +185,6 @@ class Card {
   }
 
   humanResultSentence = () => {
-    return `${this.resultStatName} will change by ${this.resultChangeValue} `;
+    return `${this.resultStatName} will change by (${this.resultChangeValue - global_statRange}-${this.resultChangeValue + global_statRange}) `;
   }
 }

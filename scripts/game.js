@@ -40,20 +40,27 @@ const runSecret = async (fileName, optionalCallback) => {
   }
 }
 
+///note: yes theres no reason for Game to have copies of these but it came first
+//and i am going fast during lavinraca season so doing things sloppy style
+let global_drawAtATime = 5;
+let global_numberOfReshufflesBeforeLose = 4;
+let global_statRange = 2;
+
 class Game {
   cardset;//what are we actually playing with
   stats = {};// name/value pairs
   deck;
   quitCallback; //gets set by whatever starts the game, how does the game tear itself down
   done = false;
-  drawAtATime = 5; //in theory we can let things change this
-  numberOfReshufflesBeforeLose = 4;//in theory a relic can change this
+  drawAtATime = global_drawAtATime; //in theory we can let things change this
+  numberOfReshufflesBeforeLose = global_numberOfReshufflesBeforeLose;//in theory a relic can change this
   discards = [];
   hand = [];
   rand;
   currentBGSrc;
   currentText;
   usedReshuffles = 0;
+  statRange = global_statRange; //can change this
 
   constructor(cardset) {
 
@@ -122,7 +129,6 @@ class Game {
   }
 
   playCard = (parent, card, cardEle, autoplay = false) => {
-    console.log("JR NOTE: playing card", card)
     /*
    if you can not pay its cost, nope sound
 
@@ -204,7 +210,37 @@ class Game {
       secretsTime = true;
     }
 
-    this.stats[card.resultStatName] += card.resultChangeValue;
+    //the Harvest's first motivation is gambling: WILL you get to reap what you sow?
+    //so now stats are not predictable
+    let chosenValue = this.rand.getRandomNumberBetween(card.resultChangeValue - this.statRange, card.resultChangeValue + this.statRange);
+    let max = false;
+    let min = false;
+    if (chosenValue === 0) {
+      nopeFX.play();
+    } else if (chosenValue === card.resultChangeValue + this.statRange) { //best value
+      max = true;
+      const clap = new Audio();
+      clap.src = "http://farragofiction.com/CatalystsBathroomSim/audio_utils/weird_sounds/clown_chorus_friendly.mp3";
+      clap.play();
+    } else if (chosenValue === card.resultChangeValue - this.statRange) { //worst value
+      min = true;
+    }
+
+    const emitSass = (text) => {
+      const sass = createElementWithClassAndParent("div", parent, "sass big-sass");
+      sass.innerText = text
+      setTimeout(() => {
+        sass.className = "sass fadeout";
+
+      }, 3000);
+
+      setTimeout(() => {
+        sass?.remove();
+      }, 5000);
+    }
+
+    emitSass(`Rolled: ${chosenValue}${max ? "!!!" : ""}${min ? ":(" : ""}`)
+    this.stats[card.resultStatName] += chosenValue;
     const gameArea = parent.querySelector(".game-area");
     const cardEle = card.renderCard(gameArea);
     cardEle.classList.add("played-card")
@@ -419,7 +455,6 @@ class Game {
         }
       }
 
-      console.log("JR NOTE: can have a cool dragging effect, but not in mvp")
       cardEle.onmouseup = () => {
         this.playCard(parent, card, cardEle);
       }
