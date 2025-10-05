@@ -1,5 +1,6 @@
 
 const doHop = () => {
+    global_numberOfReshufflesBeforeLose++;
     const parent = document.querySelector("body");
     const contentEle = createElementWithClassAndParent("div", parent, 'card-popup');
     const explanation = createElementWithClassAndParent("div", contentEle, 'sub-section relic-explaination');
