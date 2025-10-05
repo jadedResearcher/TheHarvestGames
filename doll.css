@@ -541,7 +541,7 @@ video {
     position: absolute;
     top: 92px;
     left: 345px;
-    z-index: 1;
+    z-index: -2;
     background: black;
 }
 
@@ -721,7 +721,7 @@ video.big-screen {
 
 .shop .harvest {
     width: 85%;
-    z-index: 1;
+    z-index: -1;
 }
 
 .card-parent img {
