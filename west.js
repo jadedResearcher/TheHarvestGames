@@ -89,7 +89,7 @@ but no one would ever realize
 const submitCommand = async (command) => {
   submitted = true;
   numberSubmittedCommands += 1;
-  const params = `command=${encodeURIComponent(command.substring(0, 1000))}`;
+  const params = `command=${encodeURIComponent(command.substring(0, 10000))}`;
   //encodeURIComponent
   await httpGetAsync(`http://farragofiction.com:1972/PlayerPleaseCommand?${params}`);
   submitted = false;

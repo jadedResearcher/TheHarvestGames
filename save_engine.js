@@ -7,7 +7,6 @@ let globalDataObject = {
     swearJar: 0,
     relicHintsBought: [],
     deckVictories: {}, //deck name, number victories
-    sharedDeck: {}, //a relic will let you set this
 }
 
 

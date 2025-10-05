@@ -213,7 +213,10 @@ const processOnePrayer = (commandEle, responseEle, command, response, autorespon
     } else {
         commandEle.append(container);
     }
-    container.innerText = command.replaceAll(/\[HIDE\].*\[\/HIDE\]/g, "");
+    console.log("JR NOTE: before replace", command)
+    //NOTE: '.' in regexp is 'anything but new line' but i want even new liens to be hidden so [/s/S] is what i need
+    container.innerText = command.replaceAll(/\[HIDE\][\s\S]*\[\/HIDE\]/g, "");
+    console.log("JR NOTE: after replace", container.innerText.replaceAll(/\[HIDE\][\s\S]*\[\/HIDE\]/g, ""))
     container.onclick = () => {
         if (breakMessage.style.display === "block") {
             giantWoman();
@@ -224,7 +227,7 @@ const processOnePrayer = (commandEle, responseEle, command, response, autorespon
             other.style.textDecoration = "none"
         }
         container.style.textDecoration = "underline"
-        responseEle.innerHTML = `<span class='prayer-text' > ${command.replaceAll(/\[HIDE\].*\[\/HIDE\]/g, "")}</span > <br><div class='prayer-response'>${response.replaceAll(/\[HIDE\].*\[\/HIDE\]/g, "").replaceAll("\n", "<br>")}</div>`;
+        responseEle.innerHTML = `<span class='prayer-text' > ${command.replaceAll(/\[HIDE\][\s\S]*\[\/HIDE\]/g, "")}</span > <br><div class='prayer-response'>${response.replaceAll(/\[HIDE\][\s\S]*\[\/HIDE\]/g, "").replaceAll("\n", "<br>")}</div>`;
         tv.scrollIntoView();
         if (videos.length > 0) {
             tv.loop = false;
@@ -244,7 +247,7 @@ const processOnePrayer = (commandEle, responseEle, command, response, autorespon
 
 const handleOnePendingPrayer = async (ele, prayer, prepend) => {
     const container = createElementWithClass("li", "prayer");
-    container.innerText = prayer.replaceAll(/\[HIDE\].*\[\/HIDE\]/g, "");
+    container.innerText = prayer.replaceAll(/\[HIDE\][\s\S]*\[\/HIDE\]/g, "");
     if (prepend) {
         ele.prepend(container);
     } else {
