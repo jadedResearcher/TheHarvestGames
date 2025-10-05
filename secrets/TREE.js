@@ -1,6 +1,7 @@
 
 const doTREE = () => {
     WASTED_WASTED_FOLLOWING_THE_TREE = true;//lets you edit
+    displayCardAndDeckEdits();
     const parent = document.querySelector("body");
     const contentEle = createElementWithClassAndParent("div", parent, 'card-popup');
     const image = createElementWithClassAndParent("img", contentEle, 'big-relic-image');

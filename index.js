@@ -97,18 +97,23 @@ const initImages = async () => {
 }
 
 const displayCardAndDeckEdits = () => {
+
     const contents = document.querySelector("#contents");
     const editButton = createElementWithClassAndParent("button", contents);
     editButton.innerText = "Create A Card";
     editButton.onclick = () => {
+        document.querySelector("#library").style.display = "none";
         contents.innerHTML = "";
         const testScene = new Card();
         testScene.renderEditForm(contents);
+
     }
 
     const decjButton = createElementWithClassAndParent("button", contents);
     decjButton.innerText = "Create A Deck";
     decjButton.onclick = () => {
+        document.querySelector("#library").style.display = "none";
+
         contents.innerHTML = "";
         const testDeck = new CardSet();
         testDeck.renderEditForm(contents);

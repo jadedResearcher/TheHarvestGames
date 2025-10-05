@@ -1,13 +1,18 @@
 
 const doHand = () => {
-    alert("Not Complete :( Why Not Suggest Something To Put Here?");
-    truthLog("Placeholder", `In Truth, JR wanted to make sure obvious words had placeholder secrets in them. 
-        
-        Most secrets are intended to be created as the holiday progresses, but if a Faithful finds one before its created, they won't think to check again.
-        
-        Do feel free to suggest something to put here for other Faithful to find. 
-        
-        Consider it a Sacrifice to the Harvest, that she may learn what Motivates her for the coming Seasons.`)
+    global_drawAtATime += 1; //doubled
+    const parent = document.querySelector("body");
+    const contentEle = createElementWithClassAndParent("div", parent, 'card-popup');
+    const image = createElementWithClassAndParent("img", contentEle, 'big-relic-image');
+    image.src = "http://lavinraca.eyedolgames.com/Week1/Corn/images/Maze/hand.PNG";
+    const explanation = createElementWithClassAndParent("div", contentEle, 'sub-section relic-explaination');
+    explanation.innerHTML = `You got the HAND relic! 
+    <br><br> You can now draw 1 more card per turn. `;
+
+    popup("Your stats spelled 'H-A-N-D'!", contentEle)
+
+    addRelicToBar("HAND", image.src);
+
 }
 
 doHand();
