@@ -28,6 +28,8 @@ const relicRiddlesRaw = `Lost in Lavinraca Heights, the premier Hotel on the gro
 A horrible F_ _ _ ravaged the corn maze one year.
 When is a door not a door?
 The Harvest has become very obsessed with _ _ _ _ (S).
+The _ _ _ can be rung to summon a butler.
+Pray you do not get lost in the _ _ _ of the corn maze.
 What is the reason for the season? C _ _ _ Y!
 The Harvest is often surrounded by C _ _ (S)!
 The Harvest surrounds herself with more than one BOOK-_ _ _ _ _.

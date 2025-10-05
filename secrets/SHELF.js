@@ -13,6 +13,7 @@ OwO what's this? It's Zawhei's Lusus.
 Chickens and Penguins and Rooster Chickens are all types of _ _ _ _ (S).
 `;
     */
+    relicRiddles.push("The Harvest is the _ _ _ of four domains.")
     relicRiddles.push("Having a K _ _ might help you get past a barrier.")
     relicRiddles.push("A C _ _ _ _ is always good for a laugh.")
     relicRiddles.push("H _ _ _ and foot is one way to wait on people.")
