@@ -1,13 +1,18 @@
 
 const doBell = () => {
-    alert("Not Complete :( Why Not Suggest Something To Put Here?");
-    truthLog("Placeholder", `In Truth, JR wanted to make sure obvious words had placeholder secrets in them. 
-        
-        Most secrets are intended to be created as the holiday progresses, but if a Faithful finds one before its created, they won't think to check again.
-        
-        Do feel free to suggest something to put here for other Faithful to find. 
-        
-        Consider it a Sacrifice to the Harvest, that she may learn what Motivates her for the coming Seasons.`)
+    global_numberOfReshufflesBeforeLose++;
+    const parent = document.querySelector("body");
+    const contentEle = createElementWithClassAndParent("div", parent, 'card-popup');
+    const image = createElementWithClassAndParent("img", contentEle, 'big-relic-image');
+    image.src = "http://farragofiction.com/CatalystsBathroomSim/audio_utils/weird_sounds/weird_video/WeirdGifs/bell.png";
+    const explanation = createElementWithClassAndParent("div", contentEle, 'sub-section relic-explaination');
+    explanation.innerHTML = `You got the BELL relic! 
+    <br><br>You can now have one more reshuffle before losing the bell tolls for thee (and you lose the game) (you just lost The Game, by the way, you're welcome)`;
+
+    popup("Your stats spelled 'B-E-L-L'!", contentEle)
+
+    addRelicToBar("BELL", image.src);
+
 }
 
 doBell();
