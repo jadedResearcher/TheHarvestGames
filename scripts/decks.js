@@ -314,10 +314,13 @@ she's a decadent self indulgent god who wants you to make things for her
 
     const shareButton = createElementWithClassAndParent("button", container);
     shareButton.innerText = "Sow This Deck To The Harvest's Faithful";
+
     shareButton.onclick = () => {
+      //so ALL hides can have this
+      this.lastSaveTimeCode = Date.now();
       console.log("JR NOTE: praying");
       //sends  a special prayer to turn this deck into a Seed, in the hopes it may be one day reaped
-      submitCommand(`A seed has been sown named ${this.title} [HIDE]${JSON.stringify(this, null, 4)}[/HIDE]`);
+      submitCommand(`A seed has been sown named ${this.title} [HIDE] ${JSON.stringify(this, null, 4)}[/HIDE]`);
       alert("If anything went wrong, your Seed will become Corrupt and no one can reap what you sowed. Good luck!")
     }
 
