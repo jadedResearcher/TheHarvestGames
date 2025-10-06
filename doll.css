@@ -536,6 +536,12 @@ video {
     width: fit-content;
 }
 
+.garden {
+    padding: 31px;
+    background-color: black;
+    color: #a1b234;
+}
+
 .shop video {
     height: 74px;
     position: absolute;

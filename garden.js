@@ -4,8 +4,8 @@ let random_flowers;
 let random_fruit;
 
 const garden = async () => {
-    const contentEle = createElementWithClassAndParent("div", container);
-    contentEle.style.padding = "31px"
+    const contentEle = createElementWithClassAndParent("div", container, "garden");
+    contentEle.innerText = "Coming Soon!"
     await initFlowerImages();
     //debugImages(contentEle);
     const story_so_far = await fetchInitialStoryRaw();
@@ -20,14 +20,6 @@ const garden = async () => {
 
 }
 
-/*
-      http://farragofiction.com:1972/StoryTimePleaseDearGod
-
-      each [HIDE] tag with a time code should matter.
-    */
-const convertPrayersToSeeds = () => {
-
-}
 
 //render them all
 const debugImages = (container) => {
@@ -59,6 +51,18 @@ const parseAllHiddenPrayers = (story_so_far) => {
     return ret;
 }
 
+const isTimeCodeOlderThanADay = (milliseconds_since_epoch) => {
+    const milliseconds_in_day = 1000 * 60 * 60 * 24; //1000 ms in second, 60 seconds in minute, 60 minutes in hour, 24 hours in day
+    //if the current milliseconds since epoch is more than the saved plus milliseconds in a day then its true
+    return Date.now() > milliseconds_since_epoch + milliseconds_in_day
+}
+
+const isTimeCodeOlderThanThreeDays = (milliseconds_since_epoch) => {
+    const milliseconds_in_day = 1000 * 60 * 60 * 24; //1000 ms in second, 60 seconds in minute, 60 minutes in hour, 24 hours in day
+    //if the current milliseconds since epoch is more than the saved plus milliseconds in a day times three then its true
+    return Date.now() > milliseconds_since_epoch + 3 * milliseconds_in_day
+}
+
 /*
     will be a single [HIDE][/HIDE] tag
     will either have a lastSaveTimeCode or will not.
@@ -71,5 +75,41 @@ const parseAllHiddenPrayers = (story_so_far) => {
     the deck/game will know what to do with ??? cards () (hopefully each deck has Hidden Lore to add to it)
 */
 const drawAHiddenPrayer = (container, hidden_prayer) => {
-    console.log("JR NOTE: todo draw", hidden_prayer)
+
+    const unhidden_prayer = hidden_prayer.replaceAll(/\[HIDE\]/g, "").replaceAll(/\[\/HIDE\]/g, "").replaceAll(/\\n/g, '').replaceAll(/\\/g, '').trim();
+    //you guys are literally sowing seeds
+    const rand = new SeededRandom(stringtoseed(unhidden_prayer));
+    console.log("JR NOTE: todo draw", unhidden_prayer);
+    if (unhidden_prayer.includes("lastSaveTimeCode")) {
+        //assume its json for me, okay? why else would it have lastSaveTimeCode
+        try {
+            console.log(`JR NOTE: going to assume json '${unhidden_prayer}'`)
+
+            const json = JSON.parse(unhidden_prayer);
+            console.log("JR NOTE: json found is", json)
+            if (isTimeCodeOlderThanThreeDays(json.lastSaveTimeCode)) {
+                const fruit = createElementWithClassAndParent("img", container);
+                fruit.src = rand.pickFrom(random_fruit);
+                //TODO pick a random color for it;
+            } else if (isTimeCodeOlderThanADay(json.lastSaveTimeCode)) {
+                const flower = createElementWithClassAndParent("img", container);
+                flower.src = rand.pickFrom(random_flowers);
+            } else {
+                const seed = createElementWithClassAndParent("img", container);
+                seed.src = "http://farragofiction.com/CatalystsBathroomSim/audio_utils/weird_sounds/weird_video/WeirdGifs/pumpkinseedhack.png";
+
+            }
+        } catch (e) {
+            console.error("Something went wrong parsing this prayer...rotten seed.", e);
+            const rotten_seed = createElementWithClassAndParent("img", container);
+            rotten_seed.src = "http://farragofiction.com/CatalystsBathroomSim/audio_utils/weird_sounds/weird_video/WeirdGifs/pumpkinseedhack-moshed-10-05-22-49-37-179.gif";
+
+        }
+
+    } else {
+        const rotten_seed = createElementWithClassAndParent("img", container);
+        rotten_seed.src = "http://farragofiction.com/CatalystsBathroomSim/audio_utils/weird_sounds/weird_video/WeirdGifs/pumpkinseedhack-moshed-10-05-22-49-37-179.gif";
+
+    }
+
 }
