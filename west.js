@@ -41,6 +41,17 @@ const fetchInitialStory = () => {
   }
 }
 
+const fetchInitialStoryRaw = () => {
+  try {
+    {
+      return httpGet("http://farragofiction.com:1972/StoryTimePleaseDearGod");
+    }
+  } catch (e) {
+    console.error("JR NOTE: servers dead i guess? the future comes for us all.", e);
+    return (desperate_plea);
+  }
+}
+
 //returns string array
 const fetchPendingCommands = () => {
   try {

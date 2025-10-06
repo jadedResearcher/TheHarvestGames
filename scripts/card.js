@@ -39,7 +39,7 @@ class Card {
   autoPlay = false;
   costStatValue = 0;
   bgAbsoluteSrc = "http://farragofiction.com/LifeSim/images/LifeSimBGs/58.png"; //can be things i don't host, go nuts, but beware the rot
-  resultStatName = "Health"
+  resultStatName = "Health" //if its ??? it gets set to be a random one every time we play it
   resultChangeValue = 1; //can be negative
 
   syncToJSON = (json) => {

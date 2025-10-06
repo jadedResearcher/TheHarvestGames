@@ -575,7 +575,7 @@ const waitForFaithfulPrayers = async (commandEle) => {
 
 const giantWoman = (index = 0) => {
     const spiels = ["Oh. Uh. I was in the middle of a game... Whatever you want can wait right?"
-        , "Seriously, can it not wait?", "You just do not give up, do you?", "Blessings be upon you. There. That's good enough, right?", "I am going to level with you, Faithful, I do not even know what you could pray FOR anymore. Aren't I already perfect?", "Ugh, fine, but make it quick."]
+        , "Fair enough. Let us Pray."]
     let video_options = [];
     const fullScreenEle = createElementWithClassAndParent("div", document.querySelector("body"), 'full-screen-dialog')
     fullScreenEle.style.padding = "0px"
@@ -622,7 +622,7 @@ const giantWoman = (index = 0) => {
     please.onclick = () => {
         fullScreenEle.remove();
         //she tries to keep blowing you off but if she's run out of patience it'll just be faster to help you
-        if (index < spiels.length || Math.random() > 0.05 + ((2 * index) / 10)) { //slightly more likely to help you out each time
+        if (index + 1 < spiels.length || Math.random() > 0.05 + ((2 * index) / 10)) { //slightly more likely to help you out each time
             giantWoman(index);
         } else {
             theHarvestWakes();
