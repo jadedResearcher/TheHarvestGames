@@ -106,18 +106,22 @@ const drawAHiddenPrayer = (parent, hidden_prayer) => {
 
             const json = JSON.parse(unhidden_prayer);
             const deckTitle = isThePrayerADeckUpload(json)
+            const candy = json.candy ? json.candy : 0;
+
             console.log("JR NOTE: json found is", json)
             if (isTimeCodeOlderThanThreeDays(json.lastSaveTimeCode)) {
                 const fruit = createElementWithClassAndParent("img", container, deckTitle ? "garden-deck" : "garden-card");
                 fruit.src = rand.pickFrom(random_fruit);
                 fruit.alt = deckTitle ? deckTitle : "???";
+                fruit.style.filter = `hue-rotate(${rand.getRandomNumberBetween(0, 360)}deg)`;
                 //TODO pick a random color for it;
                 fruit.onclick = () => { alert("TODO") }
             } else if (isTimeCodeOlderThanADay(json.lastSaveTimeCode)) {
                 const flower = createElementWithClassAndParent("img", container, deckTitle ? "garden-deck" : "garden-card");
                 flower.src = rand.pickFrom(random_flowers);
                 flower.alt = deckTitle ? deckTitle : "???"
-                container.onclick = () => { emitGardenSass(container, `Good Things Come To Those Who Wait: ${deckTitle ? deckTitle : "???"}`) }
+                flower.style.filter = `hue-rotate(${rand.getRandomNumberBetween(0, 360)}deg)`;
+                container.onclick = () => { emitGardenSass(container, `Good Things Come To Those Who Wait: ${deckTitle ? deckTitle : `Prayer With ${candy} Candy`}`) }
 
             } else {
                 const seed = createElementWithClassAndParent("img", container, deckTitle ? "garden-deck" : "garden-card");
@@ -139,7 +143,7 @@ const drawAHiddenPrayer = (parent, hidden_prayer) => {
     } else {
         const rotten_seed = createElementWithClassAndParent("img", container, 'garden-rot');
         rotten_seed.src = "http://farragofiction.com/CatalystsBathroomSim/audio_utils/weird_sounds/weird_video/WeirdGifs/pumpkinseedhack-moshed-10-05-22-49-37-179.gif";
-        container.onclick = () => { emitGardenSass(container, "The Rot Has Claimed What You Sowed Before You Could Reap") }
+        container.onclick = () => { emitGardenSass(container, "Seeds Planted Before A Garden Rot In The Ground") }
 
     }
 
