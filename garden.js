@@ -63,6 +63,24 @@ const isTimeCodeOlderThanThreeDays = (milliseconds_since_epoch) => {
     return Date.now() > milliseconds_since_epoch + 3 * milliseconds_in_day
 }
 
+const isThePrayerADeckUpload = (prayer_json) => {
+    return prayer_json.title;
+}
+
+const emitGardenSass = (parent, text) => {
+    const sass = createElementWithClassAndParent("div", parent, "sass garden-sass");
+    sass.innerText = text
+    setTimeout(() => {
+        sass.className = "sass fadeout";
+
+    }, 3000);
+
+    setTimeout(() => {
+        sass?.remove();
+    }, 5000);
+}
+
+
 /*
     will be a single [HIDE][/HIDE] tag
     will either have a lastSaveTimeCode or will not.
@@ -74,41 +92,54 @@ const isTimeCodeOlderThanThreeDays = (milliseconds_since_epoch) => {
     if its not a deck, clicking it will give you a card you can add to any deck, it will be ??? based (mystery gambling) but its numbers and names will be seeded from the contents of the hidden prayer
     the deck/game will know what to do with ??? cards () (hopefully each deck has Hidden Lore to add to it)
 */
-const drawAHiddenPrayer = (container, hidden_prayer) => {
+const drawAHiddenPrayer = (parent, hidden_prayer) => {
 
     const unhidden_prayer = hidden_prayer.replaceAll(/\[HIDE\]/g, "").replaceAll(/\[\/HIDE\]/g, "").replaceAll(/\\n/g, '').replaceAll(/\\/g, '').trim();
     //you guys are literally sowing seeds
     const rand = new SeededRandom(stringtoseed(unhidden_prayer));
-    console.log("JR NOTE: todo draw", unhidden_prayer);
+    const container = createElementWithClassAndParent("div", parent, "garden-container");
+
     if (unhidden_prayer.includes("lastSaveTimeCode")) {
         //assume its json for me, okay? why else would it have lastSaveTimeCode
         try {
             console.log(`JR NOTE: going to assume json '${unhidden_prayer}'`)
 
             const json = JSON.parse(unhidden_prayer);
+            const deckTitle = isThePrayerADeckUpload(json)
             console.log("JR NOTE: json found is", json)
             if (isTimeCodeOlderThanThreeDays(json.lastSaveTimeCode)) {
-                const fruit = createElementWithClassAndParent("img", container);
+                const fruit = createElementWithClassAndParent("img", container, deckTitle ? "garden-deck" : "garden-card");
                 fruit.src = rand.pickFrom(random_fruit);
+                fruit.alt = deckTitle ? deckTitle : "???";
                 //TODO pick a random color for it;
+                fruit.onclick = () => { alert("TODO") }
             } else if (isTimeCodeOlderThanADay(json.lastSaveTimeCode)) {
-                const flower = createElementWithClassAndParent("img", container);
+                const flower = createElementWithClassAndParent("img", container, deckTitle ? "garden-deck" : "garden-card");
                 flower.src = rand.pickFrom(random_flowers);
+                flower.alt = deckTitle ? deckTitle : "???"
+                container.onclick = () => { emitGardenSass(container, `Good Things Come To Those Who Wait: ${deckTitle ? deckTitle : "???"}`) }
+
             } else {
-                const seed = createElementWithClassAndParent("img", container);
+                const seed = createElementWithClassAndParent("img", container, deckTitle ? "garden-deck" : "garden-card");
+                seed.alt = deckTitle ? deckTitle : "???";
                 seed.src = "http://farragofiction.com/CatalystsBathroomSim/audio_utils/weird_sounds/weird_video/WeirdGifs/pumpkinseedhack.png";
+                container.onclick = () => { emitGardenSass(container, "Good Things Come To Those Who Wait: What Will It Be?") }
+
 
             }
         } catch (e) {
             console.error("Something went wrong parsing this prayer...rotten seed.", e);
-            const rotten_seed = createElementWithClassAndParent("img", container);
+            const rotten_seed = createElementWithClassAndParent("img", container, 'garden-rot');
             rotten_seed.src = "http://farragofiction.com/CatalystsBathroomSim/audio_utils/weird_sounds/weird_video/WeirdGifs/pumpkinseedhack-moshed-10-05-22-49-37-179.gif";
+            container.onclick = () => { emitGardenSass(container, "The Rot Has Claimed What You Sowed Before You Could Reap") }
+
 
         }
 
     } else {
-        const rotten_seed = createElementWithClassAndParent("img", container);
+        const rotten_seed = createElementWithClassAndParent("img", container, 'garden-rot');
         rotten_seed.src = "http://farragofiction.com/CatalystsBathroomSim/audio_utils/weird_sounds/weird_video/WeirdGifs/pumpkinseedhack-moshed-10-05-22-49-37-179.gif";
+        container.onclick = () => { emitGardenSass(container, "The Rot Has Claimed What You Sowed Before You Could Reap") }
 
     }
 

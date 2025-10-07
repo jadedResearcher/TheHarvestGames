@@ -518,6 +518,95 @@ const THEHARVESTTHINKS = {
       "resultChangeValue": 1
     },
     {
+      "title": "Halloween Town",
+      "text": "A strange movie. A stranger town. In some ways very like the town of Lavinraca...in some ways, very different.",
+      "costStatName": "",
+      "singleUse": false,
+      "autoPlay": false,
+      "costStatValue": 0,
+      "bgAbsoluteSrc": "http://lavinraca.eyedolgames.com/images/2025Eyes/MoviesTheHarvestPlayed/HalloweenTown_Harvest.png",
+      "resultStatName": "Town",
+      "resultChangeValue": 1
+    },
+
+    {
+      "title": "RETURN TO HOUSE ON HAUNTED HILL",
+      "text": "Why would they return? Are haunted houses fun? I only am awake for a single spooky season each year. I suppose they must be. The joy of spooks and thrills is what lends me life, after all.",
+      "costStatName": "",
+      "singleUse": false,
+      "autoPlay": false,
+      "costStatValue": 0,
+      "bgAbsoluteSrc": "http://lavinraca.eyedolgames.com/images/2025Eyes/MoviesTheHarvestPlayed/ReturnToHouseOnHauntedHill_Harvest.png",
+      "resultStatName": "Spook",
+      "resultChangeValue": 1
+    },
+
+    {
+      "title": "Children of the Corn",
+      "text": "Corn. A miserable plant. Why anyone would plant whole fields of it is beyond me. Everywhere the eye could see, corn. I am... Immeasurably grateful, that I now live in a Library rather than a dirty field.",
+      "costStatName": "",
+      "singleUse": false,
+      "autoPlay": false,
+      "costStatValue": 0,
+      "bgAbsoluteSrc": "http://lavinraca.eyedolgames.com/images/2025Eyes/MoviesTheHarvestPlayed/ChildrenOfTheCorn_Harvest.png",
+      "resultStatName": "Corn",
+      "resultChangeValue": 1
+    },
+
+    {
+      "title": "The Shining",
+      "text": "... All work and no play makes Jack a dull boy. ...  Indeed. But there is something about the... assumption that...being alone.... unhinges something in a person. ...  Am I ... too alone in my Library? ... Maybe I should answer prayers more...",
+      "costStatName": "",
+      "singleUse": false,
+      "autoPlay": false,
+      "costStatValue": 0,
+      "bgAbsoluteSrc": "http://lavinraca.eyedolgames.com/images/2025Eyes/MoviesTheHarvestPlayed/TheShining_Harvest.png",
+      "resultStatName": "Redrum",
+      "resultChangeValue": 1
+    }, {
+      "title": "KILER KLOWNS FROM OUTERSPACE",
+      "text": "31/31 clown dolls inside my cloak approve. I'm glad my Library contains all movies ever created now.",
+      "costStatName": "",
+      "singleUse": false,
+      "autoPlay": false,
+      "costStatValue": 0,
+      "bgAbsoluteSrc": "http://lavinraca.eyedolgames.com/images/2025Eyes/MoviesTheHarvestPlayed/KillerKlownsFromOuterSpace_Harvest.png",
+      "resultStatName": "Klowns",
+      "resultChangeValue": 1
+    },
+    {
+      "title": "Change Request",
+      "text": "Change. Inspiration. Being Served. What a mouthful to always have to say. Perhaps an acronym? CIBS?.... No. Nevermind. That's terrible.",
+      "costStatName": "",
+      "singleUse": false,
+      "autoPlay": false,
+      "costStatValue": 0,
+      "bgAbsoluteSrc": "http://lavinraca.eyedolgames.com/TheHarvestWakes/images/source_images/fox.png",
+      "resultStatName": "Change",
+      "resultChangeValue": 1
+    }, {
+      "title": "Order Request",
+      "text": "Can you imagine? A Faithful ordered ME to make a card? THREE, no less? ... Still, I had forgotten how nice it was to get prayers...",
+      "costStatName": "",
+      "singleUse": false,
+      "autoPlay": false,
+      "costStatValue": 0,
+      "bgAbsoluteSrc": "http://lavinraca.eyedolgames.com/TheHarvestWakes/images/source_images/lunchtimemmm.png",
+      "resultStatName": "Order",
+      "resultChangeValue": 1
+    },
+    {
+      "title": "Unique Request",
+      "text": "Well it certainly is unique for one of the Faithful to make demands of me. I suppose it's...good? I like being useful, evne if takes time away from playing the games myself...",
+      "costStatName": "",
+      "singleUse": false,
+      "autoPlay": false,
+      "costStatValue": 0,
+      "bgAbsoluteSrc": "http://lavinraca.eyedolgames.com/TheHarvestWakes/images/source_images/chibi_harvest3.png",
+      "resultStatName": "Unique",
+      "resultChangeValue": 1
+    },
+    {
       "title": "Birthday",
       "text": "It is my BIRTHDAY, my SPECIAL DAY, and the creator could not even handle inviting the Faithful to play cards with me right! The NERVE!",
       "costStatName": "",
