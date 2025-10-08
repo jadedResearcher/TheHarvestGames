@@ -92,12 +92,20 @@ const reapWhatYouSowed = (ele, fruit, index, isRot) => {
         if (deckTitle) {
             alert("TODO: deck")
         } else {
-            const candy = json.candy ? json.candy : 0;
+            const candy = fruit.candy ? fruit.candy : 0;
             globalDataObject.candy += candy;
+            //the card will handle creating itself correctly
+            const seedCard = new Card(fruit);
+            if (!globalDataObject.cardsReaped || !globalDataObject.cardsReaped.length) {
+                globalDataObject.cardsReaped = [];
+            }
+            globalDataObject.cardsReaped.push(seedCard);
+            const contentEle = createElementWithClassAndParent("div", container);
+            contentEle.style.padding = "31px"
+            seedCard.renderCard(contentEle);
 
+            const popupEle = popup(`You Reaped A Card With ${candy} 🍬!`, contentEle)
 
-
-            alert("TODO: card")
         }
     }
 
@@ -149,7 +157,7 @@ const drawAHiddenPrayer = (parent, hidden_prayer, index) => {
                 fruit.style.filter = `hue-rotate(${rand.getRandomNumberBetween(0, 360)}deg)`;
                 //TODO pick a random color for it;
                 fruit.onclick = () => {
-                    reapWhatYouSowed(fruit, json)
+                    reapWhatYouSowed(fruit, json, index)
                 }
             } else if (isTimeCodeOlderThanADay(json.lastSaveTimeCode)) {
                 const flower = createElementWithClassAndParent("img", container, deckTitle ? "garden-deck" : "garden-card");
@@ -162,7 +170,7 @@ const drawAHiddenPrayer = (parent, hidden_prayer, index) => {
                 const seed = createElementWithClassAndParent("img", container, deckTitle ? "garden-deck" : "garden-card");
                 seed.alt = deckTitle ? deckTitle : "???";
                 seed.src = "http://farragofiction.com/CatalystsBathroomSim/audio_utils/weird_sounds/weird_video/WeirdGifs/pumpkinseedhack.png";
-                container.onclick = () => { emitGardenSass(container, "Good Things Come To Those Who Wait: What Will It Be?") }
+                container.onclick = () => { emitGardenSass(container, "Good Things Come To Those Who Wait: What Will This Seed Become?") }
 
 
             }

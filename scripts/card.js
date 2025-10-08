@@ -42,6 +42,27 @@ class Card {
   resultStatName = "Health" //if its ??? it gets set to be a random one every time we play it
   resultChangeValue = 1; //can be negative
 
+  //prayers to the harvest can turn into cards
+  constructor(prayer_seed) {
+    //example of prayer seed: 
+    /*
+    [HIDE]{"candy":1,"deckVictories":{"The Harvest Thinks":1},
+    "lastSaveTimeCode":1759894280663,
+    "lastLoadTimeCode":1759894269822}[/HIDE]
+    */
+    //guaranteed to have data like this, otherwise it rotted (or was a deck)
+    if (prayer_seed) {
+      const rand = new SeededRandom(prayer_seed.lastSaveTimeCode);
+      const random_text = "Here Lies The Strangling Fruit That Grasps The Hand Of The Sinner And There Will Come Soft Rains Falling Forever And Ever Amen"
+      this.text = prayer_seed.lastPrayerSent ? prayer_seed.lastPrayerSent : random_text;
+      const words = this.text.split(" ");
+      this.title = `Seeded Card: ${rand.pickFrom(words)} ${rand.pickFrom(words)}`;
+      this.costStatName = "???";
+      this.resultStatName = "???";
+      this.bgAbsoluteSrc = rand.pickFrom(weird_gifs)
+    }
+  }
+
   syncToJSON = (json) => {
     for (let key of Object.keys(json)) {
       this[key] = json[key];
