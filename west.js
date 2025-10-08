@@ -101,8 +101,7 @@ const submitCommand = async (command, limitless = false) => {
   submitted = true;
   numberSubmittedCommands += 1;
   //longer than last year because decks
-  const params = limitless ? `command=${encodeURIComponent(command)}` : `command = ${encodeURIComponent(command.substring(0, 31000))
-    }`;
+  const params = limitless ? `command=${encodeURIComponent(command)}` : `command=${encodeURIComponent(command.substring(0, 31000))}`;
   //encodeURIComponent
   await httpGetAsync(`http://farragofiction.com:1972/PlayerPleaseCommand?${params}`);
   submitted = false;
