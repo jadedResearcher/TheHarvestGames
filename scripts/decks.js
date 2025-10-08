@@ -321,7 +321,7 @@ she's a decadent self indulgent god who wants you to make things for her
       console.log("JR NOTE: praying");
       save(); //to get timecode
       //sends  a special prayer to turn this deck into a Seed, in the hopes it may be one day reaped
-      submitCommand(`A seed has been sown named ${this.title} [HIDE] ${JSON.stringify(this, null, 4)}[/HIDE]`);
+      submitCommand(`A seed has been sown named ${this.title} [HIDE] ${JSON.stringify(this, null, 4)}[/HIDE]`, true);
       alert("If anything went wrong, your Seed will become Corrupt and no one can reap what you sowed. Good luck!")
     }
 
