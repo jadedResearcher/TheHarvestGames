@@ -56,7 +56,7 @@ class Card {
       const random_text = "Here Lies The Strangling Fruit That Grasps The Hand Of The Sinner And There Will Come Soft Rains Falling Forever And Ever Amen"
       this.text = prayer_seed.lastPrayerSent ? prayer_seed.lastPrayerSent : random_text;
       const words = this.text.split(" ");
-      this.title = `Seeded Card: ${rand.pickFrom(words)} ${rand.pickFrom(words)}`;
+      this.title = `Prayer: ${rand.pickFrom(words)} ${rand.pickFrom(words)}`;
       this.costStatName = "???";
       this.resultStatName = "???";
       this.bgAbsoluteSrc = rand.pickFrom(weird_gifs)
