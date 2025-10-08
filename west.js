@@ -100,7 +100,8 @@ but no one would ever realize
 const submitCommand = async (command) => {
   submitted = true;
   numberSubmittedCommands += 1;
-  const params = `command=${encodeURIComponent(command.substring(0, 10000))}`;
+  //longer than last year because decks
+  const params = `command=${encodeURIComponent(command.substring(0, 310000))}`;
   //encodeURIComponent
   await httpGetAsync(`http://farragofiction.com:1972/PlayerPleaseCommand?${params}`);
   submitted = false;
