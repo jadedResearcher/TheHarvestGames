@@ -58,7 +58,9 @@ class Card {
       const words = this.text.split(" ");
       this.title = `Prayer: ${rand.pickFrom(words)} ${rand.pickFrom(words)}`;
       this.costStatName = "???";
+      this.costStatValue = rand.pickFrom[1, 1, 1, 2, 2, 3]
       this.resultStatName = "???";
+      this.resultChangeValue = rand.pickFrom[1, 1, 1, 2, 2, 3]
       this.bgAbsoluteSrc = rand.pickFrom(weird_gifs)
     }
   }
