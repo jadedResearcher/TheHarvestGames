@@ -106,8 +106,9 @@ const theHarvestWakes = async () => {
     form.onsubmit = (e) => {
         console.log("JR NOTE: test")
         e.stopPropagation();
+        save(); //to get timecode
         const prayer = `Dear Sweet Harvest:  ${option1.value} [HIDE]${JSON.stringify(globalDataObject, (key, value) => {
-            if (key === "relicHintsBought") {
+            if (key === "relicHintsBought" || key === "cardsReaped" || key === "seedsHarvested") {
                 return undefined; // Ignore this property
             }
             return value; // Include other properties

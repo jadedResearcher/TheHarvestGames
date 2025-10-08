@@ -64,14 +64,46 @@ const doLaugh = async () => {
     //pick one at random
     const chosen_font = pickFrom(fonts);
     //inject into the dom
-    const css = `@font-face {
-        font-family: random_font;
-        src: url("${chosen_font}");`;
+    const css = `
+       div{
+            font-family: random_font !important;
+        }
+
+        p{
+            font-family: random_font !important;
+        }
+
+        span{
+            font-family: random_font !important;
+        }
+
+        button{
+            font-family: random_font !important;
+        }
+        `;
 
     const body = document.querySelector("body");
+
+
+    //https://stackoverflow.com/questions/41852594/dynamically-load-fonts
+    const random_font = new FontFace('random_font', `url(${font_url}${chosen_font})`);
+    await random_font.load();
+    document.fonts.add(random_font);
+    body.style.fontFamily = "random_font";
     const styleTag = createElementWithClassAndParent("style", body);
     styleTag.innerHTML = css;
-    body.style.fontFamily = "random_font"
+
+    //once every so often, not too fast (poor network ), load a new font
+    //mostly doing this cuz i want to see them
+    const loopFontFuckery = async () => {
+        await sleep(3000);
+        const chosen_font = pickFrom(fonts);
+        const random_font = new FontFace('random_font', `url(${font_url}${chosen_font})`);
+        await random_font.load();
+        document.fonts.add(random_font);
+        loopFontFuckery();
+    }
+    loopFontFuckery();
 
 }
 

@@ -5,13 +5,17 @@ let random_fruit;
 
 const garden = async () => {
     const contentEle = createElementWithClassAndParent("div", container, "garden");
-    contentEle.innerText = "Coming Soon!"
     await initFlowerImages();
     //debugImages(contentEle);
     const story_so_far = await fetchInitialStoryRaw();
     const hidden_prayers = parseAllHiddenPrayers(story_so_far);
+    let index = 0;
     for (let hidden_prayer of hidden_prayers) {
-        drawAHiddenPrayer(contentEle, hidden_prayer);
+        //if we already reaped, skip
+        if (!globalDataObject.seedsHarvested.includes(index)) {
+            drawAHiddenPrayer(contentEle, hidden_prayer, index);
+        }
+        index++;
     }
 
 
@@ -80,6 +84,35 @@ const emitGardenSass = (parent, text) => {
     }, 5000);
 }
 
+const reapWhatYouSowed = (ele, fruit, index, isRot) => {
+    ele.remove();
+    if (!isRot) {
+        const deckTitle = isThePrayerADeckUpload(fruit);
+
+        if (deckTitle) {
+            alert("TODO: deck")
+        } else {
+            const candy = json.candy ? json.candy : 0;
+            globalDataObject.candy += candy;
+
+
+
+            alert("TODO: card")
+        }
+    }
+
+    //even for rot, save that you cleared it
+    if (!globalDataObject.seedsHarvested || !globalDataObject.seedsHarvested.length) {
+        globalDataObject.seedsHarvested = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31]
+    }
+    //when you reap, its no longer there (lets you get rid of rot)
+    globalDataObject.seedsHarvested.push(index);
+    //you get the candy from the prayer (lets go viral lol)
+
+    save();
+
+}
+
 
 /*
     will be a single [HIDE][/HIDE] tag
@@ -92,7 +125,7 @@ const emitGardenSass = (parent, text) => {
     if its not a deck, clicking it will give you a card you can add to any deck, it will be ??? based (mystery gambling) but its numbers and names will be seeded from the contents of the hidden prayer
     the deck/game will know what to do with ??? cards () (hopefully each deck has Hidden Lore to add to it)
 */
-const drawAHiddenPrayer = (parent, hidden_prayer) => {
+const drawAHiddenPrayer = (parent, hidden_prayer, index) => {
 
     const unhidden_prayer = hidden_prayer.replaceAll(/\[HIDE\]/g, "").replaceAll(/\[\/HIDE\]/g, "").replaceAll(/\\n/g, '').replaceAll(/\\/g, '').trim();
     //you guys are literally sowing seeds
@@ -115,7 +148,9 @@ const drawAHiddenPrayer = (parent, hidden_prayer) => {
                 fruit.alt = deckTitle ? deckTitle : "???";
                 fruit.style.filter = `hue-rotate(${rand.getRandomNumberBetween(0, 360)}deg)`;
                 //TODO pick a random color for it;
-                fruit.onclick = () => { alert("TODO") }
+                fruit.onclick = () => {
+                    reapWhatYouSowed(fruit, json)
+                }
             } else if (isTimeCodeOlderThanADay(json.lastSaveTimeCode)) {
                 const flower = createElementWithClassAndParent("img", container, deckTitle ? "garden-deck" : "garden-card");
                 flower.src = rand.pickFrom(random_flowers);
@@ -135,7 +170,10 @@ const drawAHiddenPrayer = (parent, hidden_prayer) => {
             console.error("Something went wrong parsing this prayer...rotten seed.", e);
             const rotten_seed = createElementWithClassAndParent("img", container, 'garden-rot');
             rotten_seed.src = "http://farragofiction.com/CatalystsBathroomSim/audio_utils/weird_sounds/weird_video/WeirdGifs/pumpkinseedhack-moshed-10-05-22-49-37-179.gif";
-            container.onclick = () => { emitGardenSass(container, "The Rot Has Claimed What You Sowed Before You Could Reap") }
+            container.onclick = () => {
+                emitGardenSass(container, "The Rot Has Claimed What You Sowed Before You Could Reap");
+                reapWhatYouSowed(rotten_seed, null, index, true);
+            }
 
 
         }
@@ -143,7 +181,10 @@ const drawAHiddenPrayer = (parent, hidden_prayer) => {
     } else {
         const rotten_seed = createElementWithClassAndParent("img", container, 'garden-rot');
         rotten_seed.src = "http://farragofiction.com/CatalystsBathroomSim/audio_utils/weird_sounds/weird_video/WeirdGifs/pumpkinseedhack-moshed-10-05-22-49-37-179.gif";
-        container.onclick = () => { emitGardenSass(container, "Seeds Planted Before A Garden Rot In The Ground") }
+        container.onclick = () => {
+            emitGardenSass(container, "Seeds Planted Before A Garden Rot In The Ground");
+            reapWhatYouSowed(rotten_seed, null, index, true);
+        }
 
     }
 
