@@ -151,7 +151,7 @@ const drawAHiddenPrayer = (parent, hidden_prayer, index) => {
 
             console.log("JR NOTE: json found is", json)
             if (isTimeCodeOlderThanThreeDays(json.lastSaveTimeCode)) {
-                const fruit = createElementWithClassAndParent("img", container, deckTitle ? "garden-deck" : "garden-card");
+                const fruit = createElementWithClassAndParent("img", container, deckTitle ? "garden-deck pulse-animation" : "garden-card pulse-animation");
                 fruit.src = rand.pickFrom(random_fruit);
                 fruit.alt = deckTitle ? deckTitle : "???";
                 fruit.style.filter = `hue-rotate(${rand.getRandomNumberBetween(0, 360)}deg)`;
