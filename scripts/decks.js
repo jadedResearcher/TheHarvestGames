@@ -349,10 +349,7 @@ she's a decadent self indulgent god who wants you to make things for her
       } else {
         this[attributeName] = value;
       }
-      //no cost
-      if (!this.costStatName) {
-        this.costStatValue = 0;
-      }
+
       container.remove();
       this.renderEditForm(parent);
     }

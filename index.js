@@ -197,11 +197,11 @@ const renderPrayerButton = (parent) => {
         relicHintStore();
     }
 
-    /*const reapButton = createElementWithClassAndParent("button", container, "prayer-button");
+    const reapButton = createElementWithClassAndParent("button", container, "prayer-button");
     reapButton.innerText = "Reap What You Sow"
     reapButton.onclick = () => {
         garden();
-    }*/
+    }
 
     const button3 = createElementWithClassAndParent("button", container, "prayer-button");
     button3.innerHTML = "<a href='https://discord.gg/TEE7P8qakp' target='_blank'>Join Discord</a>"
