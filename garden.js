@@ -12,6 +12,9 @@ const garden = async () => {
     let index = 0;
     for (let hidden_prayer of hidden_prayers) {
         //if we already reaped, skip
+        if (!globalDataObject.seedsHarvested) {
+            globalDataObject.seedsHarvested = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31]
+        }
         if (!globalDataObject.seedsHarvested.includes(index)) {
             drawAHiddenPrayer(contentEle, hidden_prayer, index);
         }

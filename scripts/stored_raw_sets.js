@@ -517,6 +517,29 @@ const THEHARVESTTHINKS = {
       "resultStatName": "Victory",
       "resultChangeValue": 1
     },
+
+    {
+      "title": "Passion Victory",
+      "text": "Sure, whatever, win whenever you want, what does it matter?",
+      "costStatName": "Passion",
+      "singleUse": true,
+      "autoPlay": false,
+      "costStatValue": 3,
+      "bgAbsoluteSrc": "http://lavinraca.eyedolgames.com/images/2025Eyes/Week1TheGarden.pnghttp://farragofiction.com/CatalystsBathroomSim/audio_utils/weird_sounds/weird_video/WeirdGifs/pumpkinseedhack.png",
+      "resultStatName": "Victory",
+      "resultChangeValue": 10
+    },
+    {
+      "title": "Randomness and Multiplayer",
+      "text": "In the First Week, the Faithful introduced the Harvest to more than just solitary reading and challengeless games. They added complexity to her world, and she finds herself addicted to the Change and Inspiration their Prayers Serve her.",
+      "costStatName": "",
+      "singleUse": false,
+      "autoPlay": false,
+      "costStatValue": 0,
+      "bgAbsoluteSrc": "http://lavinraca.eyedolgames.com/images/2025Eyes/Week1TheGarden.png",
+      "resultStatName": "Passion",
+      "resultChangeValue": 1
+    },
     {
       "title": "Halloween Town",
       "text": "A strange movie. A stranger town. In some ways very like the town of Lavinraca...in some ways, very different.",
@@ -990,6 +1013,7 @@ const THEHARVESTTHINKS = {
     "Become Noble": "1",
     "Become More": "1",
     "Decide Your Fate": "1",
+    "Passion Victory": "1",
     "Too Bad": "1",
     "Be Served": "1",
     "Collect Teeth": "1",
