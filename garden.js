@@ -95,7 +95,7 @@ const reapWhatYouSowed = (ele, fruit, index, isRot) => {
             const deck = new CardSet();
             deck.syncToJSON(fruit);
             unlockedDecks.push(deck);
-            cardSetRenderInPopup(deck, document.querySelector("body"));
+            cardSetRenderInPopup(document.querySelector("#library"), deck, document.querySelector("body"));
             //fruit does NOT go in the seedsHarvest pile, because you can come back her eand get it again later (it doesn't stay)
             //or mayb eit will if i change my mind
         } else {

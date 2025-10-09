@@ -379,6 +379,7 @@ const cardSetRenderInPopup = (container, item, parent) => {
 
     const playCallback = () => {
         p.remove();
+        document.querySelectorAll(".popup").forEach((x) => x.remove());
         container.style.display = "none";
         //re-render library cuz you mighta unlocked a book
         renderLibrary();
@@ -386,6 +387,7 @@ const cardSetRenderInPopup = (container, item, parent) => {
 
     const quitCallback = () => {
         p.remove();
+        document.querySelectorAll(".popup").forEach((x) => x.remove());
         container.style.display = "block";
         //re-render library cuz you mighta unlocked a book
         renderLibrary();

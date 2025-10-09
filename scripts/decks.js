@@ -150,6 +150,41 @@ class CardSet {
     this.render(parent, playCallback, quitCallback)
   }
 
+  renderReapedCards = (real_parent, parent, playCallback, quitCallback) => {
+    console.log("JR NOTE: renderReapedCards ", globalDataObject.cardsReaped)
+    let reapedCards = [];
+    if (globalDataObject.cardsReaped && globalDataObject.cardsReaped.length) {
+      for (let json of globalDataObject.cardsReaped) {
+        try {
+          const card = new Card();
+          card.syncToJSON(json);
+          reapedCards.push(card);
+        } catch (e) {
+          console.error("JR NOTE: an error happened while trying to parse a reaped card", json)
+        }
+      }
+    }
+
+    for (let card of reapedCards) {
+      const container = createElementWithClassAndParent("div", parent, 'reaped-card-container');
+
+      card.renderCard(container);
+      const addReapedCards = createElementWithClassAndParent("button", container);
+      addReapedCards.innerText = "Add To Deck";
+      addReapedCards.onclick = () => {
+        container.remove();
+        const stats = getAllStatsForCardset(this)
+        const rand = new SeededRandom(stringtoseed(card.title));
+        card.costStatName = rand.pickFrom(stats);
+        card.resultStatName = rand.pickFrom(stats);
+        this.cards.push(card);
+        this.startingDeck[card.title] = 1;
+        real_parent.innerHTML = "";
+        this.render(real_parent, playCallback, quitCallback)
+      }
+    }
+  }
+  //https://archiveofourown.org/works/46657027/chapters/127781674?view_adult=true
 
   render = (parent, playCallback, quitCallback) => {
     const title = createElementWithClassAndParent("h2", parent);
@@ -163,6 +198,24 @@ class CardSet {
       zampanioButton.innerText = "Infect With Zampanio Card?"
       zampanioButton.onclick = () => {
         this.addRandomZampanioCardToDeck(parent, playCallback, quitCallback);
+      }
+    }
+
+    const addReapedCards = createElementWithClassAndParent("button", parent);
+    addReapedCards.innerText = "View Reaped Cards";
+    const reapedCardsContainer = createElementWithClassAndParent("div", parent, "grid tiny-cards");
+    reapedCardsContainer.style.display = "none";
+    this.renderReapedCards(parent, reapedCardsContainer, playCallback, quitCallback)
+
+    addReapedCards.onclick = () => {
+      console.log("JR NOTE: toggle")
+      if (reapedCardsContainer.style.display === "none") {
+        reapedCardsContainer.style.display = "flex";
+        addReapedCards.innerText = "Hide Reaped Cards";
+      } else {
+        reapedCardsContainer.style.display = "none";
+        addReapedCards.innerText = "View Reaped Cards";
+
       }
     }
 

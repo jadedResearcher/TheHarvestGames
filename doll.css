@@ -501,6 +501,11 @@ label {
     animation: pulse 1s ease-in-out 0s infinite alternate;
 }
 
+.reaped-card-container {
+    background-color: rgba(0, 0, 0, .2);
+    padding: 3px;
+}
+
 @keyframes pulse {
     0% {
         transform: scale(1.0);
