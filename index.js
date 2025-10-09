@@ -180,15 +180,7 @@ const renderPrayerButton = (parent) => {
     const button = createElementWithClassAndParent("button", container, "prayer-button");
     button.innerText = "Pray To The Harvest"
     button.onclick = () => {
-        //true random, she's not keeping set hours anymore, too lazy
-        //i should encourage people to click the button again if she's said no, like a little text box you can put flattery into, to see if you can coax her pride into working instead of rotting
-        //the Harvest is here to HELP the people, not to simply rot in the field
-        if (Math.random() > 0.05) {
-            theHarvestSlacks();
-        } else {
-            theHarvestWakes();
-
-        }
+        theHarvestWakes();
     }
 
     const button2 = createElementWithClassAndParent("button", container, "prayer-button");
