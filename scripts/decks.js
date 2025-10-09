@@ -169,6 +169,7 @@ class CardSet {
     const gameTestButton = createElementWithClassAndParent("button", parent);
     gameTestButton.innerText = "Play Game";
     gameTestButton.onclick = () => {
+      console.log("JR NOTE: play game")
       const container = document.querySelector("#container")
 
       const gameContainer = createElementWithClassAndParent("div", container, 'game-container');
@@ -178,6 +179,7 @@ class CardSet {
       game = new Game(this);
       parent.style.display = "none";
       if (playCallback) {
+        console.log("JR NOTE: play callback")
         playCallback(); //any other cleanup we need to do
       }
       quitButton.innerText = "Quit Game";

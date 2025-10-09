@@ -90,8 +90,16 @@ const reapWhatYouSowed = (ele, fruit, index, isRot) => {
         const deckTitle = isThePrayerADeckUpload(fruit);
 
         if (deckTitle) {
-            alert("TODO: deck")
+            //do NOT remove decks, they should stay here and you should be able to re-add it whenever
+            //better than putting it in local storage...i think... decks can get big
+            const deck = new CardSet();
+            deck.syncToJSON(fruit);
+            unlockedDecks.push(deck);
+            cardSetRenderInPopup(deck, document.querySelector("body"));
+            //fruit does NOT go in the seedsHarvest pile, because you can come back her eand get it again later (it doesn't stay)
+            //or mayb eit will if i change my mind
         } else {
+
             const candy = fruit.candy ? fruit.candy : 0;
             globalDataObject.candy += candy;
             //the card will handle creating itself correctly
@@ -105,16 +113,19 @@ const reapWhatYouSowed = (ele, fruit, index, isRot) => {
             seedCard.renderCard(contentEle);
 
             const popupEle = popup(`You Reaped A Card With ${candy} 🍬!`, contentEle)
-
+            //when you reap, its no longer there (lets you get rid of rot)
+            globalDataObject.seedsHarvested.push(index);
         }
+    } else {
+        //when you reap, its no longer there (lets you get rid of rot)
+        globalDataObject.seedsHarvested.push(index);
     }
 
     //even for rot, save that you cleared it
     if (!globalDataObject.seedsHarvested || !globalDataObject.seedsHarvested.length) {
         globalDataObject.seedsHarvested = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31]
     }
-    //when you reap, its no longer there (lets you get rid of rot)
-    globalDataObject.seedsHarvested.push(index);
+
     //you get the candy from the prayer (lets go viral lol)
 
     save();

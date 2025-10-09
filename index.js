@@ -363,31 +363,34 @@ const renderBookcase = (container) => {
         //if it has a 'render' function, call it inside the popup
         //otherwise assume its a relic and try fetching it from network
         if (item.render) {
-            //cardset can handle rendering itself but lets give it a popup first.
-            const contentEle = createElementWithClassAndParent("div", parent, 'card-popup');
-            const p = popup("Deck: " + item.title, contentEle)
-
-            const playCallback = () => {
-                p.remove();
-                container.style.display = "none";
-                //re-render library cuz you mighta unlocked a book
-                renderLibrary();
-            }
-
-            const quitCallback = () => {
-                p.remove();
-                container.style.display = "block";
-                //re-render library cuz you mighta unlocked a book
-                renderLibrary();
-            }
-            item.render(contentEle, playCallback, quitCallback);
-
+            cardSetRenderInPopup(container, item, parent);
         } else {
             //relic will handle displaying itself and doing its thing
             runSecret(item.title, renderLibrary);
         }
     })
 
+}
+
+const cardSetRenderInPopup = (container, item, parent) => {
+    //cardset can handle rendering itself but lets give it a popup first.
+    const contentEle = createElementWithClassAndParent("div", parent, 'card-popup');
+    const p = popup("Deck: " + item.title, contentEle)
+
+    const playCallback = () => {
+        p.remove();
+        container.style.display = "none";
+        //re-render library cuz you mighta unlocked a book
+        renderLibrary();
+    }
+
+    const quitCallback = () => {
+        p.remove();
+        container.style.display = "block";
+        //re-render library cuz you mighta unlocked a book
+        renderLibrary();
+    }
+    item.render(contentEle, playCallback, quitCallback);
 }
 
 //little harvest library card the catalyst made, with looping fox animation on screen
