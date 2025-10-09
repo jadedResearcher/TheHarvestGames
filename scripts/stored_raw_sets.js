@@ -525,7 +525,7 @@ const THEHARVESTTHINKS = {
       "singleUse": true,
       "autoPlay": false,
       "costStatValue": 3,
-      "bgAbsoluteSrc": "http://lavinraca.eyedolgames.com/images/2025Eyes/Week1TheGarden.pnghttp://farragofiction.com/CatalystsBathroomSim/audio_utils/weird_sounds/weird_video/WeirdGifs/pumpkinseedhack.png",
+      "bgAbsoluteSrc": "http://farragofiction.com/CatalystsBathroomSim/audio_utils/weird_sounds/weird_video/WeirdGifs/pumpkinseedhack.png",
       "resultStatName": "Victory",
       "resultChangeValue": 10
     },

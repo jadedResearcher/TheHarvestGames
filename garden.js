@@ -5,6 +5,8 @@ let random_fruit;
 
 const garden = async () => {
     const contentEle = createElementWithClassAndParent("div", container, "garden");
+    const instructions = createElementWithClassAndParent("div", contentEle);
+    instructions.innerHTML = `Each Prayer sent to the Harvest becomes a Seed in her Garden.<br><br>Over time, each seed will blossom into a Flower, and eventually a Fruit.<br><br>Reap the Fruit to gain candy, cards or even whole new decks to play in the Harvest's Library. Candy and Cards can only be Reaped a single time, but Decks can be Reaped again and again.`;
     await initFlowerImages();
     //debugImages(contentEle);
     const story_so_far = await fetchInitialStoryRaw();

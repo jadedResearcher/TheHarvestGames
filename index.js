@@ -464,7 +464,7 @@ const renderLibraryCardHeader = (container) => {
     tv.loop = true;
 
     const words = createElementWithClassAndParent("div", parent, "words");
-    words.innerText = "The Indulgent Harvest God provides Change and Inspiration to All Who Worship In Her Library of Dreams."
+    words.innerText = "The Harvest Beckons You To Pray To Her! Change Her Garden With Your Inspiration! Serve Her Surprises and Delights! Reap The Benefits Of Everyone's Prayers Together!"
 
 }
 
