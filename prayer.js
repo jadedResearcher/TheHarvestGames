@@ -107,6 +107,9 @@ const theHarvestWakes = async () => {
         console.log("JR NOTE: test")
         e.stopPropagation();
         globalDataObject.lastPrayerSent = option1.value;
+        //add now that im not hiding it anymore
+        globalDataObject.relicsUnlocked = keyToLocalStorageArray(FOUNDSECRETSKEY);
+
         save(); //to get timecode
         const prayer = `Dear Sweet Harvest:  ${option1.value} [HIDE]${JSON.stringify(globalDataObject, (key, value) => {
             if (key === "relicHintsBought" || key === "cardsReaped" || key === "seedsHarvested") {
@@ -642,6 +645,41 @@ const giantWoman = (index = 0) => {
 //changes every year
 
 const stories = (parent) => {
+
+    const motivationSocialStory = createElementWithClassAndParent("div", parent, "story social");
+    motivationSocialStory.innerHTML = `<p><h2 >Week 2: Motivation: Socialization</h2></p>
+
+<p><span >The Harvest spins and twirls, her cloak flapping as cards and books and clown dolls come tumbling out in her excitement.</span></p>
+
+<p><span >She eagerly mans her booth, waiting for prayers.</span></p>
+
+<p><em><span >What will happen today?</span></em></p>
+
+<p><span >How could she think books and games were more boring than the endlessly surprising variation of PEOPLE!?</span></p>
+
+<p><span >You could never predict them, never predict if you would reap what you sowed, the very idea of multiplayer games is so much MORE than anything you could do alone in a library.</span></p>
+
+<p><span >She swirls her the prayers she&apos;s received into a garden (no boring old musty corn HERE, flowers and fruit only), eagerly waiting to see if they rot on the vine or produce deletactably unpredictable cards or even...</span></p>
+
+<p><span >Dare she dream....</span></p>
+
+<p><span >Whole new decks she never could have imagined!</span></p>
+
+<p><span >All from the minds of the Faithful!</span></p>
+
+<p><span >Her mouth waters just thinking of it.</span></p>
+
+<p><span >Her library may be infinite, but the human mind is somehow something more: It does everything for a reason, no matter how obscure.</span></p>
+
+<p><span >And trying to figure out that reason, to figure out the rules under which some seeds rot and some seeds flourish....</span></p>
+
+<p><span >Life is a pleasure.</span></p>
+
+
+<p><span >((JR NOTE: The Harvest has learned there is a pleasure to unpredictability and iterating with others, but is pleasure the only thing that motivates her? ))</span></p>
+
+<p><span style='font-family: gameboy' >System Notification! You&apos;ve appealed to her Being Served And Change And Inspiration Domains all at once. Bonus Reward: Relic Hints Added To Sown Cards! Spell them out with your stats to unlock extra features!</span></p>`;
+
 
     const gamblingStory = createElementWithClassAndParent("div", parent, "story gambling");
     gamblingStory.innerHTML = `<p><h2 >Day 4: Motivation Acquired: Gambling</h2></p>

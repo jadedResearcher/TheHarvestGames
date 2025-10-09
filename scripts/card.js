@@ -55,8 +55,9 @@ class Card {
       const rand = new SeededRandom(prayer_seed.lastSaveTimeCode);
       const random_text = "Here Lies The Strangling Fruit That Grasps The Hand Of The Sinner And There Will Come Soft Rains Falling Forever And Ever Amen"
       this.text = prayer_seed.lastPrayerSent ? prayer_seed.lastPrayerSent : random_text;
-      const words = this.text.split(" ");
-      this.title = `Prayer: ${rand.pickFrom(words)} ${rand.pickFrom(words)}`;
+      const words_first = this.text.split(" ");
+      const words_second = prayer_seed.relicsUnlocked ? prayer_seed.relicsUnlocked : words_first;
+      this.title = `Prayer: ${rand.pickFrom(words_first)} ${rand.pickFrom(words_second)}`;
       this.costStatName = "???";
       this.costStatValue = rand.pickFrom([1, 1, 1, 2, 2, 3])
       this.resultStatName = "???";
