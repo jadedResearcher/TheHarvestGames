@@ -21,7 +21,9 @@ so, if the Faithful this year convince her to DO something, the pen will be invo
 */
 const video_source = "http://lavinraca.eyedolgames.com/TheHarvestWakes/videos/"
 const beep = new Audio("http://lavinraca.eyedolgames.com/TheHarvestWakes/audio/fx/264828__cmdrobot__text-message-or-videogame-jump.mp3")
-
+//NOTE: '.' in regexp is 'anything but new line' but i want even new liens to be hidden so [/s/S] is what i need
+//plus *? is greedy (gets the first it can find that matches) while normal * tries for the biggest
+const HIDE_PATTERN = /\[HIDE\][\s\S]*?\[\/HIDE\]/g;
 
 const default_video = video_source + "fox_clip.mp4";
 const happy_video = video_source + "happy_fox_spin.mp4";
@@ -190,8 +192,10 @@ const theHarvestWakes = async () => {
     recentPrayersEle.innerHTML = "None..."
 
 
-    pastPrayers.innerHTML = "<br><br>Previous Prayers<br>"
-    let commands = await fetchInitialStory();
+    pastPrayers.innerHTML = "<br><br>Previous Prayers<br>";
+    const rawStory = await fetchInitialStoryRaw().replaceAll(HIDE_PATTERN, "");
+
+    let commands = JSON.parse(rawStory);
     commands = commands.reverse();
     let responded = false;
     for (let c of commands) {
@@ -218,10 +222,7 @@ const processOnePrayer = (commandEle, responseEle, command, response, autorespon
     } else {
         commandEle.append(container);
     }
-    console.log("JR NOTE: before replace", command)
-    //NOTE: '.' in regexp is 'anything but new line' but i want even new liens to be hidden so [/s/S] is what i need
-    container.innerText = command.replaceAll(/\[HIDE\][\s\S]*\[\/HIDE\]/g, "");
-    console.log("JR NOTE: after replace", container.innerText.replaceAll(/\[HIDE\][\s\S]*\[\/HIDE\]/g, ""))
+    container.innerText = command;
     container.onclick = () => {
         if (breakMessage.style.display === "block") {
             giantWoman();
@@ -232,7 +233,7 @@ const processOnePrayer = (commandEle, responseEle, command, response, autorespon
             other.style.textDecoration = "none"
         }
         container.style.textDecoration = "underline"
-        responseEle.innerHTML = `<span class='prayer-text' > ${command.replaceAll(/\[HIDE\][\s\S]*\[\/HIDE\]/g, "")}</span > <br><div class='prayer-response'>${response.replaceAll(/\[HIDE\][\s\S]*\[\/HIDE\]/g, "").replaceAll("\n", "<br>")}</div>`;
+        responseEle.innerHTML = `<span class='prayer-text' > ${command.replaceAll(/\[HIDE\][\s\S]*?\[\/HIDE\]/g, "")}</span > <br><div class='prayer-response'>${response.replaceAll(/\[HIDE\][.]*\[\/HIDE\]/g, "").replaceAll("\n", "<br>")}</div>`;
         tv.scrollIntoView();
         if (videos.length > 0) {
             tv.loop = false;
@@ -252,7 +253,7 @@ const processOnePrayer = (commandEle, responseEle, command, response, autorespon
 
 const handleOnePendingPrayer = async (ele, prayer, prepend) => {
     const container = createElementWithClass("li", "prayer");
-    container.innerText = prayer.replaceAll(/\[HIDE\][\s\S]*\[\/HIDE\]/g, "");
+    container.innerText = prayer;
     if (prepend) {
         ele.prepend(container);
     } else {
@@ -533,7 +534,8 @@ const waitForResponse = async (commandEle, rantEle) => {
         if (commandEle.innerText === "None...") {
             commandEle.innerText = "";
         }
-        const jsonArray = (JSON.parse(httpGet("http://farragofiction.com:1972/StoryTimePleaseDearGod"))).reverse();
+        const rawData = fetchInitialStoryRaw().replaceAll(HIDE_PATTERN, "");
+        const jsonArray = (JSON.parse(rawData)).reverse();
         const json = jsonArray[0];
         console.log("JR NOTE: got response", json)
 
