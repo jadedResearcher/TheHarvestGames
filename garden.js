@@ -73,7 +73,7 @@ const isTimeCodeOlderThanThreeDays = (milliseconds_since_epoch) => {
 }
 
 const isThePrayerADeckUpload = (prayer_json) => {
-    return prayer_json.title;
+    return prayer_json.title; //technically it looks for both card (new) and deck uploads but not for generic prayers
 }
 
 const emitGardenSass = (parent, text) => {
@@ -94,7 +94,7 @@ const reapWhatYouSowed = (ele, fruit, index, isRot) => {
     if (!isRot) {
         const deckTitle = isThePrayerADeckUpload(fruit);
 
-        if (deckTitle) {
+        if (deckTitle && fruit.cards) {
             //do NOT remove decks, they should stay here and you should be able to re-add it whenever
             //better than putting it in local storage...i think... decks can get big
             const deck = new CardSet();
@@ -103,7 +103,25 @@ const reapWhatYouSowed = (ele, fruit, index, isRot) => {
             cardSetRenderInPopup(document.querySelector("#library"), deck, document.querySelector("body"));
             //fruit does NOT go in the seedsHarvest pile, because you can come back her eand get it again later (it doesn't stay)
             //or mayb eit will if i change my mind
-        } else {
+        } else if (deckTitle) { //its a sown card (instead of random)
+            const card = new Card();
+            card.syncToJSON(fruit);
+            if (!globalDataObject.cardsReaped || !globalDataObject.cardsReaped.length) {
+                globalDataObject.cardsReaped = [];
+            }
+            globalDataObject.cardsReaped.push(card);
+
+            const contentEle = createElementWithClassAndParent("div", container);
+            contentEle.style.padding = "31px"
+            card.renderCard(contentEle);
+
+            const popupEle = popup(`You Reaped A Card Made By The Faithful!`, contentEle)
+            //when you reap, its no longer there (lets you get rid of rot)
+            globalDataObject.seedsHarvested.push(index);
+        }
+
+
+        else {
 
             const candy = fruit.candy ? fruit.candy : 0;
             globalDataObject.candy += candy;

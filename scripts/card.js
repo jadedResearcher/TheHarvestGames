@@ -56,7 +56,8 @@ class Card {
       const random_text = "Here Lies The Strangling Fruit That Grasps The Hand Of The Sinner And There Will Come Soft Rains Falling Forever And Ever Amen"
       this.text = prayer_seed.lastPrayerSent ? prayer_seed.lastPrayerSent : random_text;
       const words_first = this.text.split(" ");
-      const words_second = prayer_seed.relicsUnlocked ? prayer_seed.relicsUnlocked : words_first;
+      const words_second = prayer_seed.relicsUnlocked && prayer_seed.relicsUnlocked.length ? prayer_seed.relicsUnlocked : words_first;
+      console.log("JR NOTE: words second is", { words_second, prayer_seed })
       this.title = `Prayer: ${rand.pickFrom(words_first)} ${rand.pickFrom(words_second)}`;
       this.costStatName = "???";
       this.costStatValue = rand.pickFrom([1, 1, 1, 2, 2, 3])
@@ -128,7 +129,19 @@ class Card {
     headerEle.innerText = "Edit Card!";
     const summaryEle = createElementWithClassAndParent("div", container, 'summary');
     summaryEle.innerHTML = this.humanSummarySentence();
+    const shareButton = createElementWithClassAndParent("button", container);
+    shareButton.innerText = "Sow This Card To The Harvest's Faithful";
 
+    shareButton.onclick = () => {
+      //so ALL hides can have this
+      //const debugOverride = - 3 * 24 * 60 * 60 * 1000; //so i can see it right away
+      this.lastSaveTimeCode = Date.now();
+      console.log("JR NOTE: praying");
+      save(); //to get timecode
+      //sends  a special prayer to turn this deck into a Seed, in the hopes it may be one day reaped
+      submitCommand(`A seed has been sown named ${this.title} [HIDE] ${JSON.stringify(this, null, 4)}[/HIDE]`, true);
+      alert("If anything went wrong, your Seed will become Corrupt and no one can reap what you sowed. Good luck!")
+    }
     const jsonForm = createTextAreaInputWithLabel(container, 'json', "Save Data*:", JSON.stringify(this, null, 4));
     const note = createElementWithClassAndParent("div", container, 'sub-section');
     note.innerHTML = "* NOTE: you can edit this card either in the save data directly, or the form below. <br><br>You can copy the save data to import this into your deck as well.";
