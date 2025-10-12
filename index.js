@@ -55,6 +55,8 @@ window.onload = () => {
     initImages();
     truthEle = document.querySelector("#mobileFriendlyConsole")
     scarecrowEle = document.querySelector("#mobileFriendlyConsole")
+    jrRamble();
+
     const consoleShortcut = document.querySelector("#console-shortcut")
     consoleShortcut.onclick = () => {
         if (truthEle.style.display === "block") {
@@ -68,7 +70,20 @@ window.onload = () => {
         click.play();
     }
     handleURLParams();
+}
 
+const jrRamble = () => {
+    jrLog(`<p>week 1 was wild.</p>
+        <p>probably bit off more than I can chew</p>
+        </p><p>i added more decks, multiplayer aspects AND a whole gardening mini game
+        </p><p>in response to just a handful of prayers that seemed motivation adjacent
+        </p><p>technically i wasn't the one making those decks
+        </p><p>the garden itself lets ppl share decks with each other
+        </p><p>if you wanna do that but don't wanna figure out the relic system to unlock it
+        </p><p>i got your back
+        </p><p>go here
+        </p><p><a href='http://lavinraca.eyedolgames.com/?editMode=true'>http://lavinraca.eyedolgames.com/?editMode=true</a>
+        </p>`)
 }
 
 //this only works if the library gets rerendered
@@ -502,6 +517,20 @@ const renderTest = () => {
         game.render(contents)
     }*/
 
+}
+
+const jrLog = (text) => {
+    const truthCSSBody = "font-weight: bold;font-family: 'Courier New', monospace;color:black; font-size:13px;";
+    if (truthEle) {
+        const container = createElementWithClassAndParent("div", truthEle);
+        container.style.cssText = "padding: 10px;";
+        const textEle = createElementWithClassAndParent("div", container);
+        textEle.innerHTML = "JR LOG: " + text;
+        textEle.style.cssText = truthCSSBody;
+        container.scrollIntoView();
+
+    }
+    console.log(`%cJR LOG: ${text}`, truthCSSBody);
 }
 
 const truthLog = (title, text) => {

@@ -23,6 +23,7 @@ const video_source = "http://lavinraca.eyedolgames.com/TheHarvestWakes/videos/"
 const beep = new Audio("http://lavinraca.eyedolgames.com/TheHarvestWakes/audio/fx/264828__cmdrobot__text-message-or-videogame-jump.mp3")
 //NOTE: '.' in regexp is 'anything but new line' but i want even new liens to be hidden so [/s/S] is what i need
 //plus *? is greedy (gets the first it can find that matches) while normal * tries for the biggest
+//make sure to call this BEFORE parsing as json, it'll be more accurate
 const HIDE_PATTERN = /\[HIDE\][\s\S]*?\[\/HIDE\]/g;
 
 const default_video = video_source + "fox_clip.mp4";

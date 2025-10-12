@@ -11,3 +11,18 @@ const doPRAY = () => {
 }
 
 doPRAY();
+
+
+/*
+theres something really freeing about running the Harvest
+compared to west
+she's so JUDGEMENTAL
+she keeps it on lock
+she's in Customer Service mode
+but
+she makes these snippy little comments about how much people are playing her card game
+because every "prayer" comes with parts of their save data
+so she can SEE if you're praying to her but NOT doing the Service of playing her game
+and one person HAD played the game, played it a SHIT TON or at least was committed to hacking their save data to SAY They did
+and she fawned all over them
+*/
