@@ -64,10 +64,44 @@ const school = async () => {
         return false;
 
     }
+    relicViewing(parent);
 
 
 
 
 
+}
+
+
+const relicViewing = (parent) => {
+    const container = createElementWithClassAndParent("div", parent, "school-house god-dialog");
+
+    const form = createElementWithClassAndParent("form", container, "pray-to-your-unresponsive-god");
+    const instructions = createElementWithClassAndParent("div", form);
+    instructions.innerText = "Would  you like to learn the Secrets of a Relic?"
+
+    const option1 = createElementWithClassAndParent("input", form, "relic-viewer-input");
+    option1.focus();
+    option1.placeholder = "Relic Name";
+    const button = createElementWithClassAndParent("button", form, "option");
+    button.innerText = "Submit";
+    button.type = "submit";
+    const javascriptEle = createElementWithClassAndParent("div", parent, "javascript-console");
+
+    form.onsubmit = (e) => {
+        const secret = option1.value.toUpperCase();
+        runSecret(secret, () => { syncNewestRelicToEle(option1.value.toUpperCase(), javascriptEle) });
+        return false;
+
+    }
+
+
+}
+
+const syncNewestRelicToEle = async (secret, parent) => {
+
+    const text = await fetchText(`http://lavinraca.eyedolgames.com/TheHarvestGames/secrets/${secret}.js`);
+    parent.innerText = `Secrets of http://lavinraca.eyedolgames.com/TheHarvestGames/secrets/${secret}.js
+    ${text}`;
 }
 

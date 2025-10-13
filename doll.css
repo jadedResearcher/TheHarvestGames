@@ -617,6 +617,10 @@ video {
     color: #a1b234;
 }
 
+.school-house.god-dialog {
+    margin-top: 31px;
+}
+
 .pray-to-your-unresponsive-god {
     width: 100%;
 }
@@ -886,6 +890,17 @@ video.big-screen {
     position: fixed;
     z-index: 113;
     /* my arc number*/
+}
+
+.javascript-console {
+    background: white;
+    padding: 31px;
+    width: 100%;
+    height: 1000px;
+    overflow: auto;
+    margin-left: auto;
+    margin-right: auto;
+
 }
 
 .book {
