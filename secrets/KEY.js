@@ -1,13 +1,17 @@
 
 const doKEY = () => {
-    alert("Not Complete :( Why Not Suggest Something To Put Here?");
-    truthLog("Placeholder", `In Truth, JR wanted to make sure obvious words had placeholder secrets in them. 
-        
-        Most secrets are intended to be created as the holiday progresses, but if a Faithful finds one before its created, they won't think to check again.
-        
-        Do feel free to suggest something to put here for other Faithful to find. 
-        
-        Consider it a Sacrifice to the Harvest, that she may learn what Motivates her for the coming Seasons.`)
-}
+    //catalyst suggested this
+    //http://farragofiction.com/CatalystsBathroomSim/EAST/SOUTH/EAST/NORTH/NORTH/NORTH/bathroom.html?lavinraca_keys=harvested
+    //they wanted 99 but i figured the arc number of 31 was better
+    //plus you just gotta save and refresh to get another 31
+    const parent = document.querySelector("body");
+    const contentEle = createElementWithClassAndParent("div", parent, 'card-popup');
+    const explanation = createElementWithClassAndParent("div", contentEle, 'sub-section relic-explaination');
+    explanation.innerHTML = `You found a ...<a target='_blank' href ='http://farragofiction.com/CatalystsBathroomSim/EAST/SOUTH/EAST/NORTH/NORTH/NORTH/bathroom.html?lavinraca_keys=harvested'>key</a>? What is this even to?
+`;
+
+    popup("Your stats spelled 'K-E-Y'!", contentEle)
+
+};
 
 doKEY();

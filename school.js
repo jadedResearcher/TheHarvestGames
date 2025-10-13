@@ -191,7 +191,10 @@ const syncNewestRelicToEle = async (secret, parent) => {
     const link = createElementWithClassAndParent("a", parent);
     link.href = url;
     link.target = "_blank"
-    link.innerText = `Secrets of ${url}`;
+    link.innerText = `Secrets of ${url} * `;
+    const asterisk = createElementWithClassAndParent("div", parent);
+    asterisk.innerText = "(If the code looks completely different from what happened, I discovered that code that is about to RUN has no cache, its exactly the bytes on the server. But code that is just going to be DISPLAYED *is* cached, so it could be out of date. Nothing I can do about that. Just be aware I'm not actively trying to gaslight us all, lol)"
+
     const iframe = createElementWithClassAndParent("iframe", parent);
     iframe.src = url;
 
