@@ -193,13 +193,13 @@ const renderPrayerButton = (parent) => {
 
 
     const button = createElementWithClassAndParent("button", container, "prayer-button");
-    button.innerText = "Pray To The Harvest"
+    button.innerText = "Pray"
     button.onclick = () => {
         theHarvestWakes();
     }
 
     const button2 = createElementWithClassAndParent("button", container, "prayer-button");
-    button2.innerText = "Buy Hints For Relics"
+    button2.innerText = "Relic Hints"
     button2.onclick = () => {
         relicHintStore();
     }
@@ -208,6 +208,12 @@ const renderPrayerButton = (parent) => {
     reapButton.innerText = "Reap What You Sow"
     reapButton.onclick = () => {
         garden();
+    }
+
+    const teacherButton = createElementWithClassAndParent("button", container, "prayer-button");
+    teacherButton.innerText = "Learn"
+    teacherButton.onclick = () => {
+        school();
     }
 
     const button3 = createElementWithClassAndParent("button", container, "prayer-button");

@@ -100,14 +100,13 @@ const theHarvestWakes = async () => {
     const buttonHolder = createElementWithClassAndParent("div", harvestSpeaks, "god-dialog-button-holder");
     const form = createElementWithClassAndParent("form", buttonHolder, "pray-to-your-unresponsive-god");
 
-    const option1 = createElementWithClassAndParent("input", form, "pray-to-your-unresponsive-god");
+    const option1 = createElementWithClassAndParent("textarea", form, "pray-to-your-unresponsive-god");
     option1.focus();
-    option1.placeholder = "Pray to the Harvest?";
+    option1.placeholder = "Pray to the Harvest? Tell her what Motivates you. Share with her your Dreams. Inspire your fellow Faithful. Celebrate the joy and spook of this Harvest Season.";
     const button = createElementWithClassAndParent("button", form, "option");
     button.innerText = "Submit";
     button.type = "submit";
     form.onsubmit = (e) => {
-        console.log("JR NOTE: test")
         e.stopPropagation();
         globalDataObject.lastPrayerSent = option1.value;
         //add now that im not hiding it anymore

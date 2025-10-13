@@ -617,8 +617,19 @@ video {
     color: #a1b234;
 }
 
+.pray-to-your-unresponsive-god {
+    width: 100%;
+}
+
+.pray-to-your-unresponsive-god textarea {
+    width: 100%;
+    height: 113px;
+    padding: 13px;
+}
+
 .shop video {
     height: 74px;
+    width: 131px;
     position: absolute;
     top: 92px;
     left: 345px;
