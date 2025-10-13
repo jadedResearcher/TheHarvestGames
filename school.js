@@ -19,7 +19,7 @@ const school = async () => {
 
 
     container.style.display = "none";
-    const parent = createElementWithClassAndParent("div", body, "video-parent");
+    const parent = createElementWithClassAndParent("div", body, "school-parent");
 
     quitButton.onclick = () => {
         parent.remove();
@@ -114,7 +114,7 @@ const javascriptHacking = (parent) => {
     <br><br>
     TIP: If you have viewed the SOW relic, you'll see a variable inside it, it looks like this: <span style='text-decoration: italics; color: red;'>    candyEarnedPerVictory = 1; //other relics might ADD or MULTIPLY but this simply starts it up. you reap what you sow</span>
     <br><br>
-    Try writing and submitting <span  style='text-decoration: italics; color: red;'>candyEarnedPerVictory = 1000</span> and try playing a game to see just how much candy you earn.
+    Try writing and submitting <span  style='text-decoration: italics; color: red;'>candyEarnedPerVictory = 1000</span> and try returning to the library to play a game to see just how much candy you earn.
     <br><br>
     Most relics will have examples of simple hacks you can do (since they are themselves hacks). 
     <br><br>
@@ -131,8 +131,15 @@ const javascriptHacking = (parent) => {
     button.innerText = "Submit";
     button.type = "submit";
 
+
+    const results = createElementWithClassAndParent("div", container, 'instructions');
+
     form.onsubmit = (e) => {
         //option1.value
+        e.stopPropagation();
+        const code_return = eval(option1.value);
+        results.innerHTML = `Running... ${code_return ? code_return : "No String Returned But It Still May Have Had An Effect"}`
+
         return false;
 
     }
@@ -155,6 +162,8 @@ const relicViewing = (parent) => {
     const javascriptEle = createElementWithClassAndParent("div", parent, "javascript-console");
 
     form.onsubmit = (e) => {
+        e.stopPropagation();
+
         const secret = option1.value.toUpperCase();
         runSecret(secret, () => { syncNewestRelicToEle(option1.value.toUpperCase(), javascriptEle) });
         return false;

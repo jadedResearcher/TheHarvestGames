@@ -57,6 +57,10 @@ body {
     background-image: url("http://lavinraca.eyedolgames.com/TheHarvestWakes/images/HarvestEyes/Offerings/InspiredHarvests/LibraryCardVideoReady.png");
 }
 
+.school-parent {
+    margin: 31px;
+}
+
 .sass {
     padding: 2px;
     position: absolute;
@@ -623,6 +627,7 @@ video {
 
 .school-house.god-dialog .instructions {
     font-family: 'Courier New', Courier, monospace;
+    font-size: 12px;
 
 }
 
