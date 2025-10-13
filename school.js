@@ -82,7 +82,7 @@ const relicViewing = (parent) => {
 
     const option1 = createElementWithClassAndParent("input", form, "relic-viewer-input");
     option1.focus();
-    option1.placeholder = "Relic Name";
+    option1.placeholder = "Relic Name (try SOW)";
     const button = createElementWithClassAndParent("button", form, "option");
     button.innerText = "Submit";
     button.type = "submit";
