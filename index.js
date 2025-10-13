@@ -73,6 +73,19 @@ window.onload = () => {
 }
 
 const jrRamble = () => {
+    jrLog(`<p>Week 2 is still ongoing</p>
+        <p>but enough people had a theme going with their prayers that i knew what to do p quickly</p>
+        <p>Lots of people trying to teach the harvest self-determination</p>
+        <p>(a good idea in general but she's a god, not a mortal, and needs you to Sacrifice to define her)</p>
+        <p>Plus some wastes showing off and trying to teach others how to make decks, cards, or find relics</p>
+        <p>oh, if thats a new term to you, a 'waste' is someone who skips playing the game and just hacks it for secrets/cheats</p>
+        <p>i am one of them, so design my games to have lots of toys and enrichment for wastes</p>
+        <p>Anyways, the Harvest has realized that if she TEACHES people to do weird stuff, she's more likely to be surprised by them</p>
+        <p>so here we are</p>
+        <p>the two motivations (wanting to be surprised, wanting to teach) combined</p>
+        
+        
+        `)
     jrLog(`<p>week 1 was wild.</p>
         <p>probably bit off more than I can chew</p>
         </p><p>i added more decks, multiplayer aspects AND a whole gardening mini game

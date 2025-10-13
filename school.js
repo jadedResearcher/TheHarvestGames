@@ -125,7 +125,6 @@ const javascriptHacking = (parent) => {
     const form = createElementWithClassAndParent("form", container, "pray-to-your-unresponsive-god");
 
     const option1 = createElementWithClassAndParent("textarea", form, "relic-viewer-input");
-    option1.focus();
     option1.placeholder = "Type any JavaScript you want to execute here!";
     const button = createElementWithClassAndParent("button", form, "option");
     button.innerText = "Submit";
@@ -137,8 +136,14 @@ const javascriptHacking = (parent) => {
     form.onsubmit = (e) => {
         //option1.value
         e.stopPropagation();
-        const code_return = eval(option1.value);
-        results.innerHTML = `Running... ${code_return ? code_return : "No String Returned But It Still May Have Had An Effect"}`
+        try {
+            const code_return = eval(option1.value);
+            results.innerHTML = `Running... ${code_return ? code_return : "No String Returned But It Still May Have Had An Effect"}`
+
+        } catch (error) {
+            results.innerHTML = `Running... <span style="color:red">ERROR DETECTED! ${error}</span>`
+
+        }
 
         return false;
 
@@ -154,7 +159,6 @@ const relicViewing = (parent) => {
     instructions.innerText = "Would  you like to learn the Secrets of a Relic?"
 
     const option1 = createElementWithClassAndParent("input", form, "relic-viewer-input");
-    option1.focus();
     option1.placeholder = "Relic Name (try SOW)";
     const button = createElementWithClassAndParent("button", form, "option");
     button.innerText = "Submit";
