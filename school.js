@@ -62,7 +62,7 @@ const school = async () => {
 
     const option1 = createElementWithClassAndParent("textarea", form, "pray-to-your-unresponsive-god");
     option1.focus();
-    option1.placeholder = "Pray For A Relic? The Harvest just may create it. Or do you instead wish insight on how existing Relics work? (Or even how to find them?). You'll need to visit the Prayer section to see her answers, of course, but this is a great place to fire off questions.";
+    option1.placeholder = "Pray For A Relic? The Harvest just may create it. Or do you instead wish insight on how existing Relics work? (Or even how to find them?). You'll need to visit the Prayer section to see her answers, of course, but this is a great place to fire off questions about how the code works.";
     const button = createElementWithClassAndParent("button", form, "option");
     button.innerText = "Submit";
     button.type = "submit";

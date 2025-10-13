@@ -170,6 +170,7 @@ const renderLibrary = () => {
     container.innerHTML = "";
     renderLibraryCardHeader(container);
     renderBookcase(container);
+    stories(container)
 
 }
 

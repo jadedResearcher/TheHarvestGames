@@ -648,8 +648,53 @@ const giantWoman = (index = 0) => {
 
 const stories = (parent) => {
 
+    const teachingStory = createElementWithClassAndParent("div", parent, "story social");
+    teachingStory.innerHTML = `<p><h2 >Week 3: Motivation Acquired: Teaching</h2></p>
+
+<p><span >The Harvest sifts through her garden, pruning the weeds and delighting in the unexpected Fruits of her Faithful&apos;s Labor.</span></p>
+
+<p><span >So many unexpected cats!</span></p>
+
+<p><span >And...</span></p>
+
+<p><span >She stills.</span></p>
+
+<p><span >A familiar title.</span></p>
+
+<p><span >&quot;The Catalyst&quot;.</span></p>
+
+<p><span >The one who gave them their library card.</span></p>
+
+<p><span >Somehow an entire deck of cards bursts from the ripe fruit the Catalyst sowed, dripping and sticky in the Harvest&apos;s hand.</span></p>
+
+<p><span >...</span></p>
+
+<p><span >A...Spelling Bee? The Deck calls itself...</span></p>
+
+<p><span >Filled with lessons on how to find Relics in the card game...</span></p>
+
+<p>She thinks of the Medium's Blasphemy, the Change and Inspiration it showed in creating an entire False Corn Maze... They pray to her still, poems of Myths and Echoes...  Is Blasphemy still Blasphemy if it ultimately Serves her?</p>
+
+<p><span >She thinks of prayers trying to teach her something. To learn what she wants. What would make her happy.</span></p>
+
+<p><span >Did it make the Faithful happy, to try to teach her?</span><span ><br></span><span ><br></span><span >Would SHE be happy to teach others?</span></p>
+
+<p><span >To, in the Catalyst&apos;s footsteps, teach others to Create. To Inspire them to learn to alter the fabric of reality itself?</span></p>
+
+<p><span >Her Faithful would grow...just like this garden, and what strange fruit they would bear...</span></p>
+
+<p><span >There would be no way to know what would happen!</span></p>
+
+<p><span >The Harvest feels the heady rush in not knowing, in gambling with the very fate of the Faithful.</span></p>
+
+<p><span >To Teach them Forbidden Secrets... It could lead the Faithful to great rewards. Candy and cards and lore to treasure and hoard until Lavinraca Season returns once again.</span></p>
+
+<p><span >It could also lead them to great sorrow as well.. Lost save data, lost Motivation (as who has not felt the pang of regret after feasting too much on halloween candy?). Perhaps even crashed pages...</span></p>
+
+<p><span >She can&apos;t wait to find out what happens.</span></p>`;
+
     const motivationSocialStory = createElementWithClassAndParent("div", parent, "story social");
-    motivationSocialStory.innerHTML = `<p><h2 >Week 2: Motivation: Socialization</h2></p>
+    motivationSocialStory.innerHTML = `<p><h2 >Week 2: Motivation Acquired: Socialization</h2></p>
 
 <p><span >The Harvest spins and twirls, her cloak flapping as cards and books and clown dolls come tumbling out in her excitement.</span></p>
 
