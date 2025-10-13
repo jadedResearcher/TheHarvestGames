@@ -892,14 +892,26 @@ video.big-screen {
     /* my arc number*/
 }
 
+iframe {
+    display: block;
+    width: 100%;
+    height: 500px;
+    outline: none;
+    border: none;
+}
+
 .javascript-console {
     background: white;
-    padding: 31px;
     width: 100%;
     height: 1000px;
     overflow: auto;
     margin-left: auto;
     margin-right: auto;
+
+}
+
+.javascript-console * {
+    padding: 31px;
 
 }
 

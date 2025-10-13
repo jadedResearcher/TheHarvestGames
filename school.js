@@ -99,9 +99,17 @@ const relicViewing = (parent) => {
 }
 
 const syncNewestRelicToEle = async (secret, parent) => {
+    parent.innerHTML = "";
+    const url = `http://lavinraca.eyedolgames.com/TheHarvestGames/secrets/${secret}.js`;
 
-    const text = await fetchText(`http://lavinraca.eyedolgames.com/TheHarvestGames/secrets/${secret}.js`);
-    parent.innerText = `Secrets of http://lavinraca.eyedolgames.com/TheHarvestGames/secrets/${secret}.js
-    ${text}`;
+    const link = createElementWithClassAndParent("a", parent);
+    link.href = url;
+    link.target = "_blank"
+    link.innerText = `Secrets of ${url}`;
+    const iframe = createElementWithClassAndParent("iframe", parent);
+    iframe.src = url;
+
+
+
 }
 
