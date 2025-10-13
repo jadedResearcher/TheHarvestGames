@@ -19,7 +19,7 @@ discardCardFX.src = "http://farragofiction.com/CatalystsBathroomSim/audio_utils/
 let ohgodplzletjrdebugiaskedniceys = false;
 let DEADhax = false; //lets you zero out any stat  you click
 
-console.warn("JR NOTE: don't forget to disable debug mode")
+//console.warn("JR NOTE: don't forget to disable debug mode")
 
 //runSecret(`DEAD`);
 //file name is relative because you can't use this to trick someone
