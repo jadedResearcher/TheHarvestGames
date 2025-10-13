@@ -621,6 +621,12 @@ video {
     margin-top: 31px;
 }
 
+.school-house.god-dialog .instructions {
+    font-family: 'Courier New', Courier, monospace;
+
+}
+
+
 .pray-to-your-unresponsive-god {
     width: 100%;
 }
