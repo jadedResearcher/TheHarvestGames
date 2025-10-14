@@ -253,7 +253,7 @@ const processOnePrayer = (commandEle, responseEle, command, response, autorespon
 
 const handleOnePendingPrayer = async (ele, prayer, prepend) => {
     const container = createElementWithClass("li", "prayer");
-    container.innerText = prayer;
+    container.innerText = prayer.replaceAll(HIDE_PATTERN, "");
     if (prepend) {
         ele.prepend(container);
     } else {
