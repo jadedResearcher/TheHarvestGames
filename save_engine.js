@@ -2,6 +2,7 @@
 const SAVE_KEY = "PLEASE_HELP_THE_HARVEST_FIND_A_PURPOSE";
 
 //up to what uses this to define this
+//https://catalystsbathroomlibrary.neocities.org/
 let globalDataObject = {
     candy: 13,
     swearJar: 0,
