@@ -621,6 +621,12 @@ video {
     color: #a1b234;
 }
 
+#imsohungry {
+    position: fixed;
+    bottom: 31px;
+    left: 31px;
+}
+
 .school-house.god-dialog {
     margin-top: 31px;
 }

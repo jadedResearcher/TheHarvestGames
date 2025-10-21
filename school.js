@@ -4,6 +4,25 @@ Week 2 had a lot of people trying to TEACH.
 Some people tried to show the Harvest how to find her own motivation (admirable, but not how this god works, she needs SACRIFICES from the faithful, ,by which I mean we're doing collaborative improv with all our Guests)
 
 Some people hacked the game and showed off how to do it to others (hi wastes!)
+
+
+summary of prayers:
+
+ if we were to wish for anything, it would be... for the assurance that no matter what happens, you will be back next year to guide everyone through another joyous festival.
+  -Duty (the Camellia part feels that strongly)
+Enrich yourself perspective and live as your followers for a short while
+ this was Empathy and Fun (it was maccus reminding me that the movies were playing on the harvests face)
+could there please be additional C, O, and U cards for the Harvest deck? I was thinking Change, Order, and Unique
+ creation?
+Have you heard of the game In Stars And Time? It also has a God of Change. They shapeshift constantly and frequently use chatspeak and kaomojis. I just thought you might find that funny.
+ Fighting (jealousy of Rival gods)
+ May you hear of wonderful stories and myths this year.
+ Collection (adding to the library, but she was already kinda doing that)
+Dear Harvest, the minecraft world has been plunged into eternal night and as much i love the crisp air and solitude i find myself longing for the sun, for the passage of time. Is that strange? I hope its okay i confide this to you.
+ restoring Light to the Protected realm
+ Dear Sweet Harvest, what do you want to do? What do you want to be? I think it's okay if you don't know the answers to these questions. And I think it's okay if you change your mind later.
+ Self Discovery
+thats all of them so far
 */
 
 const school = async () => {
@@ -201,4 +220,21 @@ const syncNewestRelicToEle = async (secret, parent) => {
 
 
 }
+
+/*
+she's been , very camellia like, resisting the hunger she's been feeling
+i've mentioned it a few times
+in the scarecrow's all lower case
+(im so hungry)
+teenagers are ravenous
+
+like, i want to keep her more merged, not "this is camellia speaking, this is eustace etc"
+but the fact that the 'big bad' of the corn maze is part of her
+is such a fun thing
+yes you're praying to your benevolent if haughty harvest god
+also she's half demon
+have fun with that
+well...not hahlf
+more like, a twentieth
+*/
 

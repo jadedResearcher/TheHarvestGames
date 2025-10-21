@@ -107,3 +107,11 @@ const submitCommand = async (command, limitless = false) => {
   await httpGetAsync(`http://farragofiction.com:1972/PlayerPleaseCommand?${params}`);
   submitted = false;
 }
+
+
+/*
+so zampanio is, among many, many things, a meditation on impermanence
+the rot takes all in the end
+no matter how good i am, one day the fandom will be a funny story someone tells , about a game that used to exist
+and thats not just okay, its the POINT, its the final form of what i'm doing right now 
+*/

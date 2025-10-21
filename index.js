@@ -56,6 +56,7 @@ window.onload = () => {
     truthEle = document.querySelector("#mobileFriendlyConsole")
     scarecrowEle = document.querySelector("#mobileFriendlyConsole")
     jrRamble();
+    imsohungry();
 
     const consoleShortcut = document.querySelector("#console-shortcut")
     consoleShortcut.onclick = () => {
