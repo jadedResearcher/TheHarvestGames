@@ -37,14 +37,51 @@ Ideas:
 
 const imsohungry = () => {
     console.log("JR NOTE: imsohungry")
+    const body = document.querySelector("body")
     //have a button in the bottom left of the screen at all times that says 'imsohungry' (don't do this at random, people seem to be having fun making decks, don't make this unplayable)
     //pick a dom element at random
     //remove it while playing a eating/chewing/slurping/skinning noise and display a harvest quip explaining what's going on
-    const button = createElementWithClassAndParent("button", document.querySelector("body"));
+    const button = createElementWithClassAndParent("button", body);
     button.id = "imsohungry";
     button.innerText = "imsohungry";
     button.onclick = () => {
-        alert("TODO")
+        //as long as you have this up, until you close it, she's going to be eating
+        const contentEle = createElementWithClassAndParent("div", body, "imsohungry-popup");
+        const bigScreenTV = createElementWithClassAndParent("video", contentEle, "hungry-screen");
+        bigScreenTV.playsinline = true; //so ios doesn't cry
+        bigScreenTV.setAttribute('playsinline', true)
+        bigScreenTV.src = "http://farragofiction.com/CatalystsBathroomSim/audio_utils/weird_sounds/weird_video/harvest_eating_imsohungry.mp4";
+        bigScreenTV.play();
+
+
+
+        bigScreenTV.autoplay = true;
+        bigScreenTV.loop = true;
+
+
+        const bigLady = createElementWithClassAndParent("img", contentEle, "hungry-lady");
+        bigLady.src = "http://lavinraca.eyedolgames.com/images/Harvest/shessohungry.png";
+
+        const popupEle = popup("imsohungry feed me your website", contentEle)
+        popupEle.querySelector(".popup-body").style.backgroundColor = "black";
+        popupEle.style.opacity = "0.75";
+        eatAsLongAsPopupIsOpen(body, popupEle);
+
     }
 
+}
+
+//if you eat the popup that counts as it not being open anymore, dunkass
+//don't get greedy
+const eatAsLongAsPopupIsOpen = async (target, popup) => {
+    const children = target.querySelectorAll("*");
+    const child = pickFrom(children);
+    console.log("JR NOTE: removing child: ", child)
+    child.remove();
+
+    if (document.body.contains(popup)) {
+        await sleep(500);
+        console.log("JR NOTE: popup is still open, going to eat")
+        eatAsLongAsPopupIsOpen(target, popup);
+    }
 }

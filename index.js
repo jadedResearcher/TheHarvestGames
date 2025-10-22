@@ -48,7 +48,7 @@ const FOUNDSECRETSKEY = 'LAVINRACA2025SECRETS'
 let ALLOWZAMPANIOINFECTION = false; //life spiralling out of control
 
 const click = new Audio();
-click.src = "http://farragofiction.com/CatalystsBathroomSim/audio_utils/weird_sounds/chip.mp3"
+click.src = "http://farragofiction.com/CatalystsBathroomSim/audio_utils/weird_sounds/static_chrip.mp3"
 window.onload = () => {
     load();
     initThemes();

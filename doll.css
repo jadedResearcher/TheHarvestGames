@@ -631,6 +631,8 @@ video {
     margin-top: 31px;
 }
 
+
+
 .school-house.god-dialog .instructions {
     font-family: 'Courier New', Courier, monospace;
     font-size: 12px;
@@ -675,6 +677,33 @@ video {
     margin-left: auto;
     margin-right: auto;
     display: block;
+
+}
+
+.imsohungry-popup {
+    position: relative;
+}
+
+video.hungry-screen {
+    width: 255px;
+    left: 503px;
+    height: 203px;
+    top: 177px;
+    z-index: 0;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    position: absolute;
+    transform: skew(-1deg, -24deg);
+}
+
+.hungry-lady {
+    height: 500px;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    position: relative;
+    z-index: 1;
 }
 
 
