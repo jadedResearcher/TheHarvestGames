@@ -648,6 +648,51 @@ const giantWoman = (index = 0) => {
 
 const stories = (parent) => {
 
+    const eatingStory = createElementWithClassAndParent("div", parent, "story eating");
+    eatingStory.innerHTML = `<p><h2 >Week 4: Motivation: Storing Energy For The Year</h2><span ><br></span><span ><br></span><span >The Harvest looks over the Fruits of her Teaching with Pride.</span></p>
+
+<p><span >The Faithful are offering her cards and secrets, full decks for her Garden, &nbsp;her Teaching appreciated.</span></p>
+
+<p><span >The Harvest stills.</span></p>
+
+<p><span >An offer of candy from one of the Faithful.</span></p>
+
+<p><span >She&apos;s so hungry.</span><span ><br></span><span ><br></span><span >But, of course, she should not partake. Not give in.</span></p>
+
+<p><span >The hunger is unseemly. From something she&apos;d rather not think of.</span></p>
+
+<p><span >Gnashing teeth, pumpkin head, beady eyes. The Scarecrow that haunted the Corn Maze, the cradle of her birth.</span></p>
+
+<p><span >She turns her eyes back to the Prayers, seeking.... She's not sure what. A distraction? Absolution in her Duty?</span></p>
+
+<p><span >And then she sees it...</span></p>
+
+<p><span >A prayer. A plea.</span></p>
+
+<p><span >To use a Sacrifice to power her garden even as she grows fallow and sleeps until the next Harvest season.</span></p>
+
+<p><span >Her eyes stray to the candy.</span></p>
+
+<p><span >If it&apos;s for the Faithful... If it&apos;s for the Garden...</span></p>
+
+<p><span >Surely partaking wouldn&apos;t be TOO bad.</span><span ><br></span><span ><br></span><span >It would not give the Faithful anything NOW, no changes to her Library or her Card Game...but...</span></p>
+
+<p><span >But...</span></p>
+
+<p><span >It would let them continue to play it as she slept...&nbsp;</span></p>
+
+<p><span >The energy would fuel this little bit of work, right?</span></p>
+
+<p><span >For a whole year?</span></p>
+
+<p><span >She&apos;s so hungry.</span></p>
+
+<p><span >She begins to eat.</span></p>
+
+<p><span >She does not know when to stop.</span></p>
+
+<p><span >She&apos;s so hungry.</span></p>`;
+
     const teachingStory = createElementWithClassAndParent("div", parent, "story social");
     teachingStory.innerHTML = `<p><h2 >Week 3: Motivation Acquired: Teaching</h2></p>
 

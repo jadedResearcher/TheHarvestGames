@@ -64,7 +64,9 @@ const imsohungry = () => {
 
         const popupEle = popup("imsohungry feed me your website", contentEle)
         popupEle.querySelector(".popup-body").style.backgroundColor = "black";
-        popupEle.style.opacity = "0.75";
+        popupEle.style.transform = "scale(0.5)";
+        popupEle.style.overflow = "hidden";
+
         eatAsLongAsPopupIsOpen(body, popupEle);
 
     }
@@ -78,6 +80,17 @@ const eatAsLongAsPopupIsOpen = async (target, popup) => {
     const child = pickFrom(children);
     console.log("JR NOTE: removing child: ", child)
     child.remove();
+
+    const fx = ["http://farragofiction.com/CatalystsBathroomSim/audio_utils/weird_sounds/crunch_static4.mp3"
+        , "http://farragofiction.com/CatalystsBathroomSim/audio_utils/weird_sounds/crunch_static3.mp3",
+        , "http://farragofiction.com/CatalystsBathroomSim/audio_utils/weird_sounds/crunch_static2.mp3",
+
+        , "http://farragofiction.com/CatalystsBathroomSim/audio_utils/weird_sounds/crunch_static.mp3",
+
+    ]
+
+    global_fx_one_at_a_time.src = pickFrom(fx);
+    global_fx_one_at_a_time.play();
 
     if (document.body.contains(popup)) {
         await sleep(500);
