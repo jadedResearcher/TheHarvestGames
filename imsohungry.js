@@ -41,10 +41,25 @@ const imsohungry = () => {
     //have a button in the bottom left of the screen at all times that says 'imsohungry' (don't do this at random, people seem to be having fun making decks, don't make this unplayable)
     //pick a dom element at random
     //remove it while playing a eating/chewing/slurping/skinning noise and display a harvest quip explaining what's going on
+
+
+    const meatButton = createElementWithClassAndParent("button", body);
+    meatButton.id = "sleepsoftly";
+    meatButton.innerText = "sleep deeply for you are fed";
+    meatButton.onclick = () => {
+        const prayer = `Gentle Creature Harvest: You have fed her meat. She sleeps deeply with the surety of one with a full stomach, reassured in the knowledge that good things come to those who wait.`
+        submitCommand(prayer);
+        GodOfDreams();
+
+
+    }
+
     const button = createElementWithClassAndParent("button", body);
     button.id = "imsohungry";
     button.innerText = "imsohungry";
     button.onclick = () => {
+        const prayer = `Ravenous Beast Harvest: You have fed her candy. She stirs to half sleep, just enough energy to allow seeds to be sown and cards to be played.`
+        submitCommand(prayer);
         //as long as you have this up, until you close it, she's going to be eating
         const contentEle = createElementWithClassAndParent("div", body, "imsohungry-popup");
         const bigScreenTV = createElementWithClassAndParent("video", contentEle, "hungry-screen");
@@ -72,13 +87,20 @@ const imsohungry = () => {
     }
 
 }
+/*
+and now the eye killer challenging them to duels is even funnier
+earlier loops it was a terrifying off wall thing for a serial killer to do
+very few cultists even had decks
+now its just
+"oh yes of course the monster in the air vent wants to play yugioh'
+*/
 
 //if you eat the popup that counts as it not being open anymore, dunkass
 //don't get greedy
 const eatAsLongAsPopupIsOpen = async (target, popup) => {
     const children = target.querySelectorAll("*");
     const child = pickFrom(children);
-    console.log("JR NOTE: removing child: ", child)
+    scarecrowLog("im so hungry");
     child.remove();
 
     const fx = ["http://farragofiction.com/CatalystsBathroomSim/audio_utils/weird_sounds/crunch_static4.mp3"

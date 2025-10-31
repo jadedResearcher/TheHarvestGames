@@ -625,6 +625,27 @@ video {
     position: fixed;
     bottom: 31px;
     left: 31px;
+    height: fit-content;
+
+}
+
+#sleepsoftly {
+    position: fixed;
+    bottom: 75px;
+    left: 31px;
+    height: fit-content;
+}
+
+.god-of-dreams #imsohungry {
+    position: fixed;
+    top: 31px;
+    left: 31px;
+}
+
+.god-of-dreams #sleepsoftly {
+    position: fixed;
+    top: 75px;
+    left: 31px;
 }
 
 .school-house.god-dialog {
@@ -1331,4 +1352,107 @@ input[type="color"] {
     padding: 13px;
     margin: 3px;
     width: 150px;
+}
+
+
+
+.sleeping-gurl {
+    width: 310px;
+    height: 310px;
+    background-color: black;
+    border-radius: 10000px;
+    opacity: 90%;
+    animation: hover 13s ease-in-out infinite;
+
+}
+
+.sleeping-display {
+    background-color: black;
+    animation: hover 31s ease-in-out infinite;
+    border-radius: 31px;
+    padding: 31px;
+    width: 100%;
+    overflow-y: auto;
+    pointer-events: all;
+
+    p {
+        margin: 0px;
+    }
+
+}
+
+.sleeping-holder {
+    width: 90%;
+    height: 60%;
+    position: fixed;
+    top: 31%;
+    left: 3%;
+    gap: 31px;
+    display: flex;
+    pointer-events: none;
+
+    button {
+        margin-left: auto;
+        margin-right: auto;
+        display: block;
+        background: black;
+        border-radius: 13px;
+        pointer-events: all;
+    }
+}
+
+@keyframes glow {
+
+    0%,
+    20%,
+    40%,
+    60%,
+    80%,
+    100% {
+        -webkit-filter: drop-shadow(-1px -1px 13px #06FFC9);
+        filter: drop-shadow(-1px -1px 13px #06FFC9);
+    }
+
+    10%,
+    30%,
+    50%,
+    70%,
+    90% {
+        -webkit-filter: drop-shadow(1px 1px 13px #06FFC9);
+        filter: drop-shadow(1px 1px 13px #06FFC9);
+    }
+
+}
+
+@keyframes hover {
+
+    0%,
+    20%,
+    40%,
+    60%,
+    80%,
+    100% {
+        transform: translate(1px, 3px);
+    }
+
+    10%,
+    30%,
+    50%,
+    70%,
+    90% {
+        transform: translate(-1px, 0px);
+    }
+
+}
+
+
+
+.sleeping-shelf {
+    display: flex;
+    border: 13px solid #677221;
+    background-color: #212604;
+    width: 95%;
+    margin-left: auto;
+    height: 180px;
+    margin-right: auto;
 }

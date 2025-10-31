@@ -49,7 +49,13 @@ let ALLOWZAMPANIOINFECTION = false; //life spiralling out of control
 
 const click = new Audio();
 click.src = "http://farragofiction.com/CatalystsBathroomSim/audio_utils/weird_sounds/static_chrip.mp3"
-window.onload = () => {
+window.onload = async () => {
+    const asleep = await harvestShouldBeSleeping();
+    if (asleep) {
+        GodOfDreams();
+        imsohungry(); //abilitiiy to influence your god
+        return;
+    }
     load();
     initThemes();
     initImages();
@@ -71,6 +77,55 @@ window.onload = () => {
         click.play();
     }
     handleURLParams();
+}
+
+const isOctober = () => {
+    return new Date().getMonth() === 9;
+}
+
+const harvestShouldBeSleeping = async () => {
+    const rawData = fetchInitialStoryRaw().replaceAll(HIDE_PATTERN, "");
+    const jsonArray = (JSON.parse(rawData)).reverse();
+    console.log("JR NOTE: harvestShouldBeSleeping", jsonArray);
+    let candyInRecentPrayers = 0;
+    let meatInRecentPrayers = 0;
+
+    const prayersToCheck = 3;
+
+    for (let i = 0; i < prayersToCheck; i++) {
+        const toCheck = jsonArray[i]?.command.toUpperCase();
+        console.log("JR NOTE: toCheck", toCheck)
+        if (toCheck) {
+            if (toCheck.includes("MEAT")) {
+                meatInRecentPrayers++;
+            }
+
+            if (toCheck.includes("CANDY")) {
+                candyInRecentPrayers++;
+            }
+        }
+    }
+
+
+
+    truthLog("Should The Harvest Sleep?", `In Truth, the motivations given to the harvest this year have lead her to sleep fitfully. She Hungers for novelty, for the Faithful to show her impossible things. Give her candy, and she will wake up just enough to lend you part of her power, to let you continue to help her garden to bloom.
+         Is It October: ${isOctober()}, Have You Given Her Meat To Soothe Her To Sleep: ${meatInRecentPrayers}, Have You Lured Her Awake With Candy: ${candyInRecentPrayers}... `)
+    /*
+logic: if its not october, never sleep.
+if there more meat than candy (or the same amount), be soothed to sleep
+otherwise, if theres any candy at all, its awake time.
+*/
+
+    if (isOctober()) {
+        return false;
+    }
+
+    if (meatInRecentPrayers >= candyInRecentPrayers) {
+        return true;
+    }
+    console.log("JR NOTE: checking candy", candyInRecentPrayers)
+    return candyInRecentPrayers == 0; //if there is no candy, she should sleep, otherwise, half awake (no praying)
+
 }
 
 const jrRamble = () => {
@@ -207,11 +262,14 @@ const renderPrayerButton = (parent) => {
     }
 
 
-    const button = createElementWithClassAndParent("button", container, "prayer-button");
-    button.innerText = "Pray"
-    button.onclick = () => {
-        theHarvestWakes();
+    if (isOctober()) {
+        const button = createElementWithClassAndParent("button", container, "prayer-button");
+        button.innerText = "Pray"
+        button.onclick = () => {
+            theHarvestWakes();
+        }
     }
+
 
     const button2 = createElementWithClassAndParent("button", container, "prayer-button");
     button2.innerText = "Relic Hints"
@@ -225,11 +283,14 @@ const renderPrayerButton = (parent) => {
         garden();
     }
 
-    const teacherButton = createElementWithClassAndParent("button", container, "prayer-button");
-    teacherButton.innerText = "Learn"
-    teacherButton.onclick = () => {
-        school();
+    if (isOctober()) {
+        const teacherButton = createElementWithClassAndParent("button", container, "prayer-button");
+        teacherButton.innerText = "Learn"
+        teacherButton.onclick = () => {
+            school();
+        }
     }
+
 
     const button3 = createElementWithClassAndParent("button", container, "prayer-button");
     button3.innerHTML = "<a href='https://discord.gg/TEE7P8qakp' target='_blank'>Join Discord</a>"
@@ -318,11 +379,11 @@ const relicHintStore = () => {
 /*
 It turns out when you max out a god's Pride and make an entire third of her being
 "Being Served By The Faithful"...
-
+ 
 She doesn't exactly have a good work ethic anymore, lol. 
-
+ 
 I hope we can work together to find something she cares about more than reading her books and playing her card games. 
-
+ 
 The Harvest is meant to be used to help the people, not to rot in the field.
 */
 const theHarvestSlacks = () => {
@@ -500,7 +561,13 @@ const renderLibraryCardHeader = (container) => {
     tv.loop = true;
 
     const words = createElementWithClassAndParent("div", parent, "words");
-    words.innerText = "The Harvest Beckons You To Pray To Her! Change Her Garden With Your Inspiration! Serve Her Surprises and Delights! Reap The Benefits Of Everyone's Prayers Together!"
+    if (isOctober()) {
+        words.innerText = "The Harvest Beckons You To Pray To Her! Change Her Garden With Your Inspiration! Serve Her Surprises and Delights! Reap The Benefits Of Everyone's Prayers Together!"
+
+    } else {
+        words.innerText = "The Harvest Dreams...but...something stirs her, drives her hunger, gives her restless dreams. You may garden, you may play, only so long as this half awake murmering lasts."
+
+    }
 
 }
 
