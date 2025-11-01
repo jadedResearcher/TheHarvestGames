@@ -52,10 +52,15 @@ click.src = "http://farragofiction.com/CatalystsBathroomSim/audio_utils/weird_so
 window.onload = async () => {
     const asleep = await harvestShouldBeSleeping();
     if (asleep) {
+        truthLog("The GATE is Closed:", "Let sleeping Gods Lie, as they say.")
+
         GodOfDreams();
         imsohungry(); //abilitiiy to influence your god
         return;
     }
+    truthLog("The GATE is Open:", "I am sure, but reverse-ways, that it is a great idea to keep this god half awake hopped up on sugar.")
+
+
     load();
     initThemes();
     initImages();
