@@ -100,11 +100,11 @@ class Story {
 //she is not afraid to go to sleep again this year, not anymore
 //she is loved and fed
 GodOfDreams = async () => {
+    let all_books;
     document.title = "Harvest of Dreams"
     harvestIsIn = false;
     const queryString = window.location.search;
     console.log(queryString);
-    const urlParams = new URLSearchParams(queryString);
 
     const body = document.querySelector("body");
     body.innerHTML = "";
@@ -120,6 +120,7 @@ GodOfDreams = async () => {
     const random = createElementWithClassAndParent("button", gurlHolder);
     random.innerText = "Read Random Book?"
     random.onclick = () => {
+        console.log("JR NOTE: all_books is", all_books)
         pickFrom(all_books).click();
     }
 
@@ -216,7 +217,7 @@ One of the seeds bore not a CARD, but a full DECK, filled with secrets and myste
         }
     }
 
-    const all_books = renderBookCase(content, (item) => {
+    all_books = await renderBookCase(content, (item) => {
         //her domains are Change, Inspiration, Being Served and Libraries.
         display.innerHTML = `<h3>The Harvest Dreams of ${item.title}</h3><i style="font-size: 11px;
       letter-spacing: 3px;
