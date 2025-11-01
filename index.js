@@ -84,6 +84,16 @@ const isOctober = () => {
 }
 
 const harvestShouldBeSleeping = async () => {
+    const queryString = window.location.search;
+    const urlParams = new URLSearchParams(queryString);
+    let gate = urlParams.get('GATE');
+    if (gate === "CANDY") {
+        return false;
+    } else if (gate === "MEAT") {
+        return true;
+    }
+
+
     const rawData = fetchInitialStoryRaw().replaceAll(HIDE_PATTERN, "");
     const jsonArray = (JSON.parse(rawData)).reverse();
     console.log("JR NOTE: harvestShouldBeSleeping", jsonArray);
