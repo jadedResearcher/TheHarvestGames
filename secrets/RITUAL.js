@@ -1,13 +1,33 @@
 
 const doRITUAL = () => {
-    alert("Not Complete :( Why Not Suggest Something To Put Here?");
-    truthLog("Placeholder", `In Truth, JR wanted to make sure obvious words had placeholder secrets in them. 
+    //one FAITHFUL was offered the ability to change the Harvests' color for halloween
+    //they declined.
+    //this was the result
+    /*
+        //note, intentionally entirely stand alone, no utils used
+        //wanna inject this into any random page later
+    */
+    const body = document.querySelector("body");
+    const styleEle = document.createElement("style");
+
+    const duration = 365 + Math.round(Math.random() * 60 * 10); //at least one second per change (IMPORTANT: because filter animation is so heavy, you want to let it take forever)
+    const delay = 3 + Math.round(Math.random() * 10); //at least three seconds
+    console.log("JR NOTE:  animation with", { duration, delay })
+    styleEle.innerHTML = `
+        body{
+            animation: color-gaslight ${duration}s steps(365,jump-end) ${delay}s infinite;
+        }   
+        @keyframes color-gaslight {
+        0% {
+            filter: hue-rotate(0deg);
+        }
+
+        100% {
+            filter: hue-rotate(360deg);
+        }
         
-        Most secrets are intended to be created as the holiday progresses, but if a Faithful finds one before its created, they won't think to check again.
-        
-        Do feel free to suggest something to put here for other Faithful to find. 
-        
-        Consider it a Sacrifice to the Harvest, that she may learn what Motivates her for the coming Seasons.`)
+    `;
+    body.append(styleEle);
 }
 
 doRITUAL();

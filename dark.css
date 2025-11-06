@@ -38,21 +38,21 @@ body {
   margin-top: 1%;
 }
 
-.dark-image{
+.dark-image {
   max-height: 40vh;
 }
 
 
 
-#mask-overlay{
-  border-radius:50%;
-  box-shadow:0 0 0 9999px rgba(0,0,0,1);
-  height:180px;
-  width:180px;
+#mask-overlay {
+  border-radius: 50%;
+  box-shadow: 0 0 0 9999px rgba(0, 0, 0, 1);
+  height: 180px;
+  width: 180px;
   pointer-events: none;
-  position:absolute;
+  position: absolute;
   z-index: 10;
-  background: rgba(255,255,200,0.1);
+  background: rgba(255, 255, 200, 0.1);
 }
 
 .spin {
@@ -155,6 +155,7 @@ body {
   30% {
     transform: rotate(-1deg);
   }
+
   33% {
     transform: rotate(-1deg);
   }
@@ -166,7 +167,7 @@ body {
 
 }
 
-.wrapper{
+.wrapper {
   display: inline-block;
   position: relative;
   width: fit-content;
@@ -181,13 +182,13 @@ body {
   transition: transform 0.8s;
 }
 
-.ring-spin:hover{
+.ring-spin:hover {
   transform: rotateY(360deg);
 }
 
 
 
-#click-button{
+#click-button {
   background: black;
   color: white;
   padding: 20px;
@@ -198,22 +199,22 @@ body {
   margin-top: 25%;
 }
 
-#mask-underlay{
-  border-radius:50%;
+#mask-underlay {
+  border-radius: 50%;
   border: 13px solid black;
-  height:180px;
-  width:180px;
+  height: 180px;
+  width: 180px;
   filter: blur(13px);
   z-index: 11;
   box-sizing: border-box;
 }
 
 
-img{
+img {
   vertical-align: middle;
 }
 
-svg{
+svg {
   fill: #ff5c39;
   margin-right: 5px;
 }
@@ -244,7 +245,7 @@ svg{
   gap: 30px;
 }
 
-.gallery-image{
+.gallery-image {
   width: 200px;
   filter: none;
   height: 200px;
@@ -255,7 +256,7 @@ svg{
   cursor: pointer;
 }
 
-.gallery-popup{
+.gallery-popup {
   position: fixed;
   background: black;
   top: 5%;
@@ -268,13 +269,13 @@ svg{
 
 }
 
-.close-button{
+.close-button {
   position: absolute;
   top: 10px;
   right: 10px;
 }
 
-.gallery-title{
+.gallery-title {
   position: absolute;
   top: 10px;
   left: 0%;
@@ -312,12 +313,12 @@ button:disabled {
 
 
 
-.gallery-popup img{
+.gallery-popup img {
   filter: none;
   max-width: 100%;
 }
 
-.gallery-button-wrapper{
+.gallery-button-wrapper {
   border: none;
   background: none;
   border-radius: 13px;
@@ -325,12 +326,12 @@ button:disabled {
   padding: 0px;
 }
 
-.gallery-button-wrapper:hover{
+.gallery-button-wrapper:hover {
   box-shadow: 1px 1px 30px var(--main-bg-color);
   background: none;
 }
 
-.gallery-button-wrapper:focus-visible{
+.gallery-button-wrapper:focus-visible {
   box-shadow: 1px 1px 30px var(--main-bg-color);
   background: none;
   border: none;
@@ -444,7 +445,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   list-style-type: none;
 }
 
-#sample-rooms{
+#sample-rooms {
   display: flex;
   gap: 20px;
   flex-wrap: wrap;
@@ -472,12 +473,12 @@ a:hover {
   color: dfd3ff;
 }
 
-.hover-secret img{
+.hover-secret img {
   width: 800px;
-  visibility:hidden;
+  visibility: hidden;
 }
 
-.hover-secret:hover img{
+.hover-secret:hover img {
   visibility: visible !important;
 }
 
@@ -498,14 +499,14 @@ a {
   text-decoration: none;
 }
 
-.error{
+.error {
   color: red;
   height: 30px;
   padding-bottom: 30px;
   visibility: hidden;
 }
 
-button{
+button {
   cursor: pointer;
 }
 
@@ -566,35 +567,35 @@ button{
   }
 }
 
-#cleaning{
+#cleaning {
   display: flex;
   gap: 85px;
 }
 
-#cleaning svg{
+#cleaning svg {
   margin-top: 32px;
 }
 
-#cleaning h3{
+#cleaning h3 {
   display: inline;
   margin-left: 20px;
 }
 
-#cleaning p{
+#cleaning p {
   margin-left: 44px;
 }
 
-#policies{
+#policies {
   display: flex;
   gap: 85px;
 }
 
-#info{
+#info {
   display: flex;
   gap: 85px;
 }
 
-#footer{
+#footer {
   text-align: center;
   opacity: 50%;
   font-size: 12px;
