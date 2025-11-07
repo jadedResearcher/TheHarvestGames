@@ -57,6 +57,7 @@ const doLoop = () => {
             "flavor", "evil fox", "lazy dog", "quick fox", "dead fox",
             "terrible fox", "bad fox", "fox", "untrustworthy fox",
             "taste", "smell", "feeling", "failure", "fear",
+            "crow", "quotidian", "horse", "dolphin",
             "zampanio", "mall", "blorbo", "rat", "quotidian",
             "angel", "god", "harvest", "devil", "spiral",
             "training", "team", "eyedol games", "immune system", "loop",
