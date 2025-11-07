@@ -101,7 +101,6 @@ const harvestShouldBeSleeping = async () => {
 
     const rawData = fetchInitialStoryRaw().replaceAll(HIDE_PATTERN, "");
     const jsonArray = (JSON.parse(rawData)).reverse();
-    console.log("JR NOTE: harvestShouldBeSleeping", jsonArray);
     let candyInRecentPrayers = 0;
     let meatInRecentPrayers = 0;
 
